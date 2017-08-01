@@ -35,7 +35,7 @@
       images.startInterval(number)
     },
     startInterval() {
-      imageInterval = setInterval(images.changeImage, 6000);
+      imageInterval = setInterval(images.changeImage, 4000);
     },
     pauzeInterval() {
       clearInterval(imageInterval);
@@ -73,7 +73,7 @@
     },
     openInfo() {
       clearInterval(imageInterval);
-      negativeInterval = setInterval(images.negativeInterval, 6000);
+      negativeInterval = setInterval(images.negativeInterval, 4000);
       elements.image_groups[actualNumber].childNodes[1].style.opacity = 0;
       elements.image_groups[actualNumber].childNodes[3].style.opacity = 1;
       elements.info.style.opacity = 1;
@@ -82,7 +82,7 @@
     },
     closeInfo() {
       clearInterval(negativeInterval);
-      imageInterval = setInterval(images.changeImage, 6000);
+      imageInterval = setInterval(images.changeImage, 4000);
       elements.image_groups[actualNumber].childNodes[1].style.opacity = 1;
       elements.image_groups[actualNumber].childNodes[3].style.opacity = 0;
       elements.info.style.opacity = 0;

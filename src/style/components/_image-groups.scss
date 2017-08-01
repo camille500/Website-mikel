@@ -16,11 +16,11 @@
     &.__normal {
       z-index: 1;
       opacity: 1;
-      transition: opacity 1.75s linear;
+      transition: opacity 0s linear;
     }
     &.__negative {
       opacity: 0;
-      transition: opacity .5s linear;
+      transition: opacity 0s linear;
     }
   }
 }

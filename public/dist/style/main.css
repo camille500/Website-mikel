@@ -61,7 +61,7 @@ section.__info {
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.6);
   opacity: 0;
-  transition: opacity .15s linear; }
+  transition: opacity 0s linear; }
   section.__info .__title_dark {
     color: black; }
   section.__info .__close {
@@ -78,7 +78,7 @@ section.__info {
   section.__info .__contact {
     position: absolute;
     top: 5em;
-    left: 3em; }
+    left: 5em; }
     section.__info .__contact h2 {
       font-size: 1.2em;
       margin-bottom: 1em; }
@@ -90,17 +90,22 @@ section.__info {
           margin-left: 1em; } }
       section.__info .__contact span p {
         margin: 0;
-        margin-bottom: .3em; }
+        margin-bottom: .25em; }
         section.__info .__contact span p:last-of-type {
           margin-bottom: 1.5em; }
+        section.__info .__contact span p a {
+          text-decoration: none;
+          color: black; }
     @media only screen and (max-width: 50em) {
       section.__info .__contact {
-        left: 1.5em; } }
+        left: 3.5em; } }
   section.__info .__text {
     max-width: 29em;
     position: absolute;
     top: 20em;
-    left: 3em; }
+    left: 5em;
+    margin-bottom: .25em;
+    line-height: 1.2em; }
     @media only screen and (max-width: 50em) {
       section.__info .__text {
         left: 1.5em;
@@ -115,7 +120,8 @@ section.__info {
     right: 3em;
     bottom: 2em;
     max-width: 27.5em;
-    text-align: right; }
+    text-align: right;
+    margin-bottom: .15em; }
     @media only screen and (max-width: 50em) {
       section.__info .__copyright_text {
         display: none; } }
@@ -124,7 +130,7 @@ section.__info {
   position: absolute;
   font-size: 1.15em;
   top: 2em;
-  left: 2.7em;
+  left: 2.55em;
   z-index: 1000; }
   @media only screen and (max-width: 50em) {
     .__title, .__title_dark {
@@ -148,7 +154,7 @@ section.__info {
     .__image_wrapper img.__normal {
       z-index: 1;
       opacity: 1;
-      transition: opacity 1.75s linear; }
+      transition: opacity 0s linear; }
     .__image_wrapper img.__negative {
       opacity: 0;
-      transition: opacity .5s linear; }
+      transition: opacity 0s linear; }
