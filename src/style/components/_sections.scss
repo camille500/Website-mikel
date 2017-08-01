@@ -55,8 +55,13 @@ section {
             margin-bottom: 1.5em;
           }
           a {
+            transition: 1s;
             text-decoration: none;
             color: black;
+            &:hover {
+              transition: 1s;
+              color: #00FF24;
+            }
           }
         }
       }

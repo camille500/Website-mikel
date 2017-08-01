@@ -22,7 +22,8 @@
 /* GENERAL
 ------------------------------- */
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  letter-spacing: 0.02em; }
 
 body {
   transition: 1s;
@@ -94,8 +95,12 @@ section.__info {
         section.__info .__contact span p:last-of-type {
           margin-bottom: 1.5em; }
         section.__info .__contact span p a {
+          transition: 1s;
           text-decoration: none;
           color: black; }
+          section.__info .__contact span p a:hover {
+            transition: 1s;
+            color: #00FF24; }
     @media only screen and (max-width: 50em) {
       section.__info .__contact {
         left: 3.5em; } }
