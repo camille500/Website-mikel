@@ -2,7 +2,6 @@
 ----------------------------------------- */
 const express = require('express');
 const path = require('path');
-const request = require('request');
 const session = require('express-session');
 const compression = require('compression');
 const bodyParser = require('body-parser');
