@@ -1,0 +1,37 @@
+{
+  "name": "playwall",
+  "version": "1.0.0",
+  "description": "Repository for the Playwall app ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://camille500@github.com/camille500/Playwall.git"
+  },
+  "author": "Camille, Janno, Zish",
+  "bugs": {
+    "url": "https://github.com/camille500/Playwall/issues"
+  },
+  "homepage": "https://github.com/camille500/Playwall#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "compression": "^1.6.2",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "mongodb": "^2.2.29",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "nodemon": "^1.11.0"
+  }
+}
