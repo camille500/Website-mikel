@@ -1,4 +1,16 @@
 <%- include('./partials/head.ejs') %>
-
+  <% let count = 0; %>
+  <% images.forEach(function(image) { %>
+    <% if(count === 0)  { %>
+      <section class="image_wrapper">
+      <img src="/images/<%= image %>" class="normal" />
+    <% } %>
+    <% count++ %>
+    <% if(count === 2)  { %>
+      <img src="/images/<%= image %>" class="negative" />
+      </section>
+      <% count = 0; %>
+    <% } %>
+  <% }) %>
 
 <%- include('./partials/foot.ejs') %>
