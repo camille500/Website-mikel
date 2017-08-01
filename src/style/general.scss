@@ -27,12 +27,14 @@
 }
 
 body {
+	transition: 1s;
 	overflow: hidden;
   margin: 0;
   padding: 0;
   font-family: 'Fruitiger-Bold', sans-serif;
 	background-color: black;
 	&.__white {
+		transition: 1s;
 		background-color: white;
 	}
 }

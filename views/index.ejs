@@ -24,7 +24,7 @@
       <p>&copy SébastienOrphée <span id="copy_date"></span></p>
     </div>
     <div class="__copyright_text">
-      <p>This website and its content is copyright ofstudio SébastienOrphée.
+      <p>This website and its content is copyright of studio SébastienOrphée.
         Any redistribution or reproduction of the contents in any form is PROHIBITED.</p>
     </div>
   </section>
@@ -35,7 +35,7 @@
     <% images.forEach(function(image) { %>
       <% if(count === 0)  { %>
         <section class="__image_wrapper">
-        <img src="/images/<%= image %>" class="__normal" />
+        <img src="/images/<%= image %>" class="__normal __clickable" />
       <% } %>
       <% count++ %>
       <% if(count === 2)  { %>
