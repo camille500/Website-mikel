@@ -2,6 +2,8 @@
 
   const elements = {
     image_groups: document.querySelectorAll('.__image_wrapper'),
+    info: document.querySelector('.__info'),
+    close: document.querySelector('#close'),
     title: document.querySelector('.__title'),
   }
 
@@ -12,9 +14,6 @@
     init() {
       images.init();
       eventListeners.init();
-    },
-    enhance() {
-
     }
   }
 
@@ -46,12 +45,23 @@
   const eventListeners = {
     init() {
       elements.title.addEventListener("click", eventListeners.openInfo);
+      elements.close.addEventListener("click", eventListeners.closeInfo);
     },
     openInfo() {
       clearInterval(imageInterval);
       elements.image_groups[actualNumber].childNodes[1].style.opacity = 0;
       elements.image_groups[actualNumber].childNodes[3].style.opacity = 1;
-      console.log(actualNumber);
+      elements.info.style.opacity = 1;
+      elements.info.style.zIndex = 100000;
+      document.body.style.backgroundColor = 'white';
+    },
+    closeInfo() {
+      imageInterval = setInterval(images.changeImage, 7500);
+      elements.image_groups[actualNumber].childNodes[1].style.opacity = 1;
+      elements.image_groups[actualNumber].childNodes[3].style.opacity = 0;
+      elements.info.style.opacity = 0;
+      elements.info.style.zIndex = -100000;
+      document.body.style.backgroundColor = 'black';
     }
   }
 

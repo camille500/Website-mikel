@@ -1,7 +1,7 @@
 /* TYPO
 ------------------------------- */
 @font-face {
-	font-family: 'Frutiger-Ligth';
+	font-family: 'Frutiger-Light';
 	src: local('Frutiger LT Std 45 Light'), local('FrutigerLTStd-Light'),
 		url('font/FrutigerLTStd-Light.woff2') format('woff2'),
 		url('font/FrutigerLTStd-Light.woff') format('woff'),
@@ -40,4 +40,13 @@ body {
 img {
   width: 100%;
 	height: auto;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+p {
+	font-family: 'Fruitiger-Light', sans-serif;
+	font-weight: 700;
 }

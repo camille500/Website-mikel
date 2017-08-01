@@ -8,7 +8,7 @@
 /* TYPO
 ------------------------------- */
 @font-face {
-  font-family: 'Frutiger-Ligth';
+  font-family: 'Frutiger-Light';
   src: local("Frutiger LT Std 45 Light"), local("FrutigerLTStd-Light"), url("font/FrutigerLTStd-Light.woff2") format("woff2"), url("font/FrutigerLTStd-Light.woff") format("woff"), url("font/FrutigerLTStd-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal; }
@@ -37,15 +37,96 @@ img {
   width: 100%;
   height: auto; }
 
+.uppercase {
+  text-transform: uppercase; }
+
+p {
+  font-family: 'Fruitiger-Light', sans-serif;
+  font-weight: 700; }
+
 section.__head .__title {
-  position: absolute;
-  font-size: 1em;
-  top: 2em;
-  left: 3em;
-  z-index: 1000;
   color: white; }
   section.__head .__title:hover {
     cursor: pointer; }
+
+section.__info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: opacity 3.5s linear; }
+  section.__info .__title_dark {
+    color: black; }
+  section.__info .__close {
+    color: black;
+    position: absolute;
+    top: 2em;
+    right: 3em;
+    font-size: 1.15em; }
+    section.__info .__close:hover {
+      cursor: pointer; }
+    @media only screen and (max-width: 50em) {
+      section.__info .__close {
+        right: 2.5em; } }
+  section.__info .__contact {
+    position: absolute;
+    top: 5em;
+    left: 3em; }
+    section.__info .__contact h2 {
+      font-size: 1.2em;
+      margin-bottom: 1em; }
+    section.__info .__contact span {
+      display: block;
+      margin-left: 2em; }
+      @media only screen and (max-width: 50em) {
+        section.__info .__contact span {
+          margin-left: 1em; } }
+      section.__info .__contact span p {
+        margin: 0;
+        margin-bottom: .3em; }
+        section.__info .__contact span p:last-of-type {
+          margin-bottom: 1.5em; }
+    @media only screen and (max-width: 50em) {
+      section.__info .__contact {
+        left: 1.5em; } }
+  section.__info .__text {
+    max-width: 29em;
+    position: absolute;
+    top: 20em;
+    left: 3em; }
+    @media only screen and (max-width: 50em) {
+      section.__info .__text {
+        left: 1.5em;
+        max-width: 25em;
+        padding-right: 1em; } }
+  section.__info .__copyright {
+    position: absolute;
+    bottom: 2em;
+    left: 3em; }
+  section.__info .__copyright_text {
+    position: absolute;
+    right: 3em;
+    bottom: 2em;
+    max-width: 27.5em;
+    text-align: right; }
+    @media only screen and (max-width: 50em) {
+      section.__info .__copyright_text {
+        display: none; } }
+
+.__title, .__title_dark {
+  position: absolute;
+  font-size: 1.15em;
+  top: 2em;
+  left: 2.7em;
+  z-index: 1000; }
+  @media only screen and (max-width: 50em) {
+    .__title, .__title_dark {
+      left: 1.5em; } }
 
 .__image_wrapper {
   width: 100%;
