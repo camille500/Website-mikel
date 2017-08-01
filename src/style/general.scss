@@ -1,13 +1,43 @@
+/* TYPO
+------------------------------- */
+@font-face {
+	font-family: 'Frutiger-Ligth';
+	src: local('Frutiger LT Std 45 Light'), local('FrutigerLTStd-Light'),
+		url('font/FrutigerLTStd-Light.woff2') format('woff2'),
+		url('font/FrutigerLTStd-Light.woff') format('woff'),
+		url('font/FrutigerLTStd-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Frutiger-Bold';
+	src: local('Frutiger LT Std 65 Bold'), local('FrutigerLTStd-Bold'),
+		url('font/FrutigerLTStd-Bold.woff2') format('woff2'),
+		url('font/FrutigerLTStd-Bold.woff') format('woff'),
+		url('font/FrutigerLTStd-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* GENERAL
+------------------------------- */
 * {
   box-sizing: border-box;
 }
 
 body {
+	overflow: hidden;
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Fruitiger-Bold', sans-serif;
+	background-color: black;
+	&.__white {
+		background-color: white;
+	}
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
+	height: auto;
 }

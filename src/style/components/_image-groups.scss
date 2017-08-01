@@ -1,0 +1,26 @@
+.__image_wrapper {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 4s linear;
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include bp-medium {
+      margin-top: 35vh;
+      transform: scale(1.75);
+    }
+    &.__normal {
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 2.5s linear;
+    }
+    &.__negative {
+      opacity: 0;
+      transition: opacity 2.5s linear;
+    }
+  }
+}

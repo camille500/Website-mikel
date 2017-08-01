@@ -1,0 +1,15 @@
+section {
+  &.__head {
+    .__title {
+      position: absolute;
+      font-size: 1em;
+      top: 2em;
+      left: 3em;
+      z-index: 1000;
+      color: white;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

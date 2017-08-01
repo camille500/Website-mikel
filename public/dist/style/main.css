@@ -5,13 +5,67 @@
 /* Usage: @include padding(1em 1em 2em); */
 /* Usage: @include border-radius(1em 1em 2em 2em); */
 /* Usage: @include bp-small { width: 100%; float: none; margin: 0; }; */
+/* TYPO
+------------------------------- */
+@font-face {
+  font-family: 'Frutiger-Ligth';
+  src: local("Frutiger LT Std 45 Light"), local("FrutigerLTStd-Light"), url("font/FrutigerLTStd-Light.woff2") format("woff2"), url("font/FrutigerLTStd-Light.woff") format("woff"), url("font/FrutigerLTStd-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Frutiger-Bold';
+  src: local("Frutiger LT Std 65 Bold"), local("FrutigerLTStd-Bold"), url("font/FrutigerLTStd-Bold.woff2") format("woff2"), url("font/FrutigerLTStd-Bold.woff") format("woff"), url("font/FrutigerLTStd-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+/* GENERAL
+------------------------------- */
 * {
   box-sizing: border-box; }
 
 body {
+  overflow: hidden;
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif; }
+  font-family: 'Fruitiger-Bold', sans-serif;
+  background-color: black; }
+  body.__white {
+    background-color: white; }
 
 img {
-  max-width: 100%; }
+  width: 100%;
+  height: auto; }
+
+section.__head .__title {
+  position: absolute;
+  font-size: 1em;
+  top: 2em;
+  left: 3em;
+  z-index: 1000;
+  color: white; }
+  section.__head .__title:hover {
+    cursor: pointer; }
+
+.__image_wrapper {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 4s linear; }
+  .__image_wrapper img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+    @media only screen and (max-width: 50em) {
+      .__image_wrapper img {
+        margin-top: 35vh;
+        transform: scale(1.75); } }
+    .__image_wrapper img.__normal {
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 2.5s linear; }
+    .__image_wrapper img.__negative {
+      opacity: 0;
+      transition: opacity 2.5s linear; }

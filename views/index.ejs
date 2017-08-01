@@ -1,13 +1,19 @@
 <%- include('./partials/head.ejs') %>
+  <section class="__info">
+
+  </section>
+  <section class="__head">
+    <h1 class="__title">Orphée</h1>
+  </section>
   <% let count = 0; %>
   <% images.forEach(function(image) { %>
     <% if(count === 0)  { %>
-      <section class="image_wrapper">
-      <img src="/images/<%= image %>" class="normal" />
+      <section class="__image_wrapper">
+      <img src="/images/<%= image %>" class="__normal" />
     <% } %>
     <% count++ %>
     <% if(count === 2)  { %>
-      <img src="/images/<%= image %>" class="negative" />
+      <img src="/images/<%= image %>" class="__negative" />
       </section>
       <% count = 0; %>
     <% } %>
