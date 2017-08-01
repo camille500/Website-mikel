@@ -77,7 +77,7 @@ section.__info {
         right: 2.5em; } }
   section.__info .__contact {
     position: absolute;
-    top: 5em;
+    top: 6em;
     left: 5em; }
     section.__info .__contact h2 {
       font-size: 1.2em;
@@ -121,7 +121,8 @@ section.__info {
     bottom: 2em;
     max-width: 27.5em;
     text-align: right;
-    margin-bottom: .15em; }
+    margin-bottom: .15em;
+    line-height: 1.2em; }
     @media only screen and (max-width: 50em) {
       section.__info .__copyright_text {
         display: none; } }
