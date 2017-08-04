@@ -10,7 +10,7 @@ const fs = require('fs');
 ----------------------------------------- */
 router.get('/', function(req, res) {
   req.session.images = [];
-  const imageFolder = 'public/images'
+  const imageFolder = 'public/dist/images'
   fs.readdir(imageFolder, (err, files) => {
     files.forEach(file => {
       req.session.images.push(file);

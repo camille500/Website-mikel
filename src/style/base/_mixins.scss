@@ -31,3 +31,9 @@
     @content;
   }
 }
+
+@mixin bp-horizon {
+  @media (max-width: 50em) and (orientation: landscape) {
+   display: none;
+  }
+}

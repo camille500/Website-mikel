@@ -34,11 +34,11 @@
     <% images.forEach(function(image) { %>
       <% if(count === 0)  { %>
         <section class="__image_wrapper">
-        <img src="/images/<%= image %>" class="__image __normal __clickable" />
+        <img src="/dist/images/<%= image %>" class="__image __normal __clickable" />
       <% } %>
       <% count++ %>
       <% if(count === 2)  { %>
-        <img src="/images/<%= image %>" class="__negative" />
+        <img src="/dist/images/<%= image %>" class="__negative" />
         </section>
         <% count = 0; %>
       <% } %>
