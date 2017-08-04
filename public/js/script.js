@@ -46,7 +46,6 @@
       elements.image_groups.forEach(function(group) {
         group.style.opacity = 0;
       });
-      console.log(number);
       elements.image_groups[number].childNodes[1].style.opacity = 0;
       elements.image_groups[number].childNodes[3].style.opacity = 1;
       elements.image_groups[number].style.opacity = 1;
@@ -91,7 +90,9 @@
       document.body.style.backgroundColor = 'black';
     },
     goToNext() {
-      // LOGIC HERE
+      clearInterval(imageInterval);
+      images.changeImage();
+      imageInterval = setInterval(images.changeImage, 4000);
       console.log('click');
     },
   }

@@ -133,6 +133,7 @@ section.__info {
         display: none; } }
 
 .__title, .__title_dark {
+  transition: 1s;
   position: absolute;
   font-size: 1.15em;
   top: 2em;
@@ -141,6 +142,9 @@ section.__info {
   @media only screen and (max-width: 50em) {
     .__title, .__title_dark {
       left: 1.5em; } }
+  .__title:hover, .__title_dark:hover {
+    transition: 1s;
+    transform: scale(1.2); }
 
 .__image_wrapper {
   width: 100%;
@@ -155,7 +159,7 @@ section.__info {
     left: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        margin-top: 35vh;
+        margin-top: 37.5vh;
         transform: scale(1.75); } }
     .__image_wrapper img.__normal {
       z-index: 1;

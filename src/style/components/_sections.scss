@@ -103,6 +103,7 @@ section {
 }
 
 .__title, .__title_dark {
+  transition: 1s;
   position: absolute;
   font-size: $basic-font;
   top: 2em;
@@ -110,5 +111,9 @@ section {
   z-index: 1000;
   @include bp-medium {
     left: 1.5em;
+  }
+  &:hover {
+    transition: 1s;
+    transform: scale(1.2);
   }
 }
