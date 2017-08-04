@@ -14,6 +14,7 @@
   let imageInterval = false;
   let negativeInterval = false;
   let actualNumber = false;
+  latestNumber = false;
   let allLatest = [];
 
   const app = {
@@ -71,6 +72,7 @@
     generateNumber() {
       const amountOfGroups = elements.image_groups.length - 1;
       let number = Math.floor(Math.random() * amountOfGroups) + 1;
+      latestNumber = number;
       if(allLatest.length <= amountOfGroups) {
         if(allLatest.indexOf(number) == -1) {
           allLatest.push(number);
@@ -109,18 +111,19 @@
     openInfo() {
       clearInterval(imageInterval);
       negativeInterval = setInterval(images.negativeInterval, 5000);
-      elements.image_groups[actualNumber].childNodes[1].style.opacity = 0;
-      elements.image_groups[actualNumber].childNodes[3].style.opacity = 1;
+      console.log(actualNumber)
+      elements.image_groups[latestNumber].childNodes[1].style.display = 'none';
+      elements.image_groups[latestNumber].childNodes[3].style.opacity = 1;
       elements.about.style.display = 'none';
       elements.title.style.display = 'none';
       elements.info.style.opacity = 1;
       elements.info.style.zIndex = 100000;
-      document.body.style.backgroundColor = 'white';
+      // document.body.style.backgroundColor = 'white';
     },
     closeInfo() {
       clearInterval(negativeInterval);
       imageInterval = setInterval(images.changeImage, 5000);
-      elements.image_groups[actualNumber].childNodes[1].style.opacity = 1;
+      elements.image_groups[latestNumber].childNodes[1].style.opacity = 1;
       elements.image_groups[actualNumber].childNodes[3].style.opacity = 0;
       elements.info.style.opacity = 0;
       elements.info.style.zIndex = -100000;

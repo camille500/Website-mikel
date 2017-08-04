@@ -185,13 +185,16 @@ section.__info {
     opacity: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        margin-top: 36.5vh;
-        max-width: 110%; } }
+        margin-top: 36.5vh; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
         margin-top: 2.5vh; } }
     @media (max-width: 50em) and (orientation: portrait) {
       .__image_wrapper img {
+        -ms-transform: translate(1.5, 1.5);
+        /* IE 9 */
+        -webkit-transform: translate(1.5);
+        /* Safari */
         transform: scale(1.5); } }
     .__image_wrapper img.__normal {
       z-index: 1;

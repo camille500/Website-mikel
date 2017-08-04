@@ -12,12 +12,13 @@
     opacity: 0;
     @include bp-medium {
       margin-top: 36.5vh;
-      max-width: 110%;
     }
     @include bp-horizon {
       margin-top: 2.5vh;
     }
     @include bp-portrait {
+      -ms-transform: translate(1.5, 1.5); /* IE 9 */
+      -webkit-transform: translate(1.5); /* Safari */
       transform: scale(1.5);
     }
     &.__normal {
@@ -31,3 +32,22 @@
     }
   }
 }
+
+// section {
+//   &.__image_info {
+//     color: #00FF24;
+//     z-index: 10000000;
+//     position: absolute;
+//     bottom: 1em;
+//     right: 1em;
+//     max-width: 45em;
+//     .__image_title {
+//       max-width: 30%;
+//       display: inline-block;
+//     }
+//     .__description {
+//       max-width: 65%;
+//       display: inline-block;
+//     }
+//   }
+// }

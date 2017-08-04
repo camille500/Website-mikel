@@ -5,24 +5,12 @@ const path = require('path');
 const session = require('express-session');
 const compression = require('compression');
 const bodyParser = require('body-parser');
-const mongodb = require("mongodb");
 
 /* DEPENDENCIES CONFIGURATION
 ----------------------------------------- */
 const app = express();
 const http = require('http').Server(app);
 require('dotenv').config();
-
-/* MONGODB CONFIGURATION
------------------------------------------ */
-// const MongoClient = mongodb.MongoClient;
-// const dbConfig = process.env.MONGODB_URI;
-//
-// MongoClient.connect(dbConfig, (err, database) => {
-//   if (err)
-//     return console.log(err)
-//   db = database;
-// });
 
 /* SESSIONS CONFIGURATION
 ----------------------------------------- */
@@ -44,6 +32,7 @@ app.use(compression());
 /* LOAD ALL ROUTERS
 ----------------------------------------- */
 const indexRouter = require('./routes/index');
+const adminRouter = require('./routes/admin');
 
 /* MIDDLEWARE FOR THE VIEW ENGINE
 ----------------------------------------- */
@@ -59,6 +48,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 ----------------------------------------- */
 app.use(express.static('public')); // For server static files
 app.use('/', indexRouter);
+app.use('/admin', adminRouter);
 
 /* 404 PAGE
 ----------------------------------------- */
