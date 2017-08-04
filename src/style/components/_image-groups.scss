@@ -11,10 +11,10 @@
     left: 0;
     @include bp-medium {
       margin-top: 37.5vh;
-      // transform: scale(1.75);
+      max-width: 110%;
     }
-    &.__horizontal {
-      margin-top: 5vh;
+    @include bp-horizon {
+      margin-top: 2.5vh;
     }
     &.__normal {
       z-index: 1;
