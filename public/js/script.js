@@ -8,6 +8,7 @@
     title: document.querySelector('.__title'),
     copyright: document.querySelector('#copy_date'),
     image: document.querySelectorAll('.__clickable'),
+    about: document.querySelector('.__about_title'),
   }
 
   let imageInterval = false;
@@ -19,11 +20,20 @@
       images.init();
       eventListeners.init();
       this.setCopyright();
+      titleInterval = setInterval(app.changeTitle, 5000);
     },
     setCopyright() {
       const date = new Date();
       const year = date.getFullYear();
       elements.copyright.textContent = year;
+    },
+    changeTitle() {
+      const text = elements.about.textContent;
+      if(text === 'Contact') {
+        elements.about.textContent = 'About';
+      } else {
+        elements.about.textContent = 'Contact';
+      }
     }
   }
 
@@ -31,7 +41,7 @@
     init() {
       const amountOfGroups = elements.image_groups.length - 1;
       const number = Math.floor(Math.random() * amountOfGroups) + 1;
-      elements.image_groups[number].style.opacity = 1;
+      this.changeImage();
       actualNumber = number;
       images.startInterval(number)
     },
@@ -67,6 +77,7 @@
   const eventListeners = {
     init() {
       elements.title.addEventListener("click", eventListeners.openInfo);
+      elements.about.addEventListener("click", eventListeners.openInfo);
       elements.close.addEventListener("click", eventListeners.closeInfo);
       elements.image.forEach(function(image){
         image.addEventListener("click", eventListeners.goToNext);
@@ -77,6 +88,8 @@
       negativeInterval = setInterval(images.negativeInterval, 5000);
       elements.image_groups[actualNumber].childNodes[1].style.opacity = 0;
       elements.image_groups[actualNumber].childNodes[3].style.opacity = 1;
+      elements.about.style.display = 'none';
+      elements.title.style.display = 'none';
       elements.info.style.opacity = 1;
       elements.info.style.zIndex = 100000;
       document.body.style.backgroundColor = 'white';
@@ -89,6 +102,8 @@
       elements.info.style.opacity = 0;
       elements.info.style.zIndex = -100000;
       document.body.style.backgroundColor = 'black';
+      elements.about.style.display = 'block';
+      elements.title.style.display = 'block';
     },
     goToNext() {
       clearInterval(imageInterval);

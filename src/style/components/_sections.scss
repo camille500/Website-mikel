@@ -8,12 +8,22 @@ section {
     }
   }
   &.__about {
-    z-index: 100000;
-    position: absolute;
-    right: 2em;
-    top: 3em;
-    &.__title {
+    .__about_title {
+      transition: 1s;
+      font-size: $basic-font;
+      z-index: 1000000;
+      position: absolute;
+      right: 2em;
+      top: 2em;
       color: white;
+      @include bp-medium {
+        right: 1.5em;
+      }
+      &:hover {
+        cursor: pointer;
+        transition: 1s;
+        transform: scale(1.2);
+      }
     }
   }
   &.__info {
@@ -44,6 +54,7 @@ section {
       }
     }
     .__contact {
+      transition: 1s;
       position: absolute;
       top: 6em;
       left: 5em;
@@ -75,10 +86,11 @@ section {
         }
       }
       @include bp-medium {
-        left: 3.5em;
+        left: 2.5em;
       }
     }
     .__text {
+      transition: 1s;
       max-width: 29em;
       position: absolute;
       top: 18em;
@@ -86,7 +98,7 @@ section {
       margin-bottom: .25em;
       line-height: 1.2em;
       @include bp-medium {
-        left: 1.5em;
+        left: 2.5em;
         max-width: 25em;
         padding-right: 1em;
       }
@@ -129,6 +141,7 @@ section {
     left: 1.5em;
   }
   &:hover {
+    cursor: pointer;
     transition: 1s;
     transform: scale(1.2);
   }

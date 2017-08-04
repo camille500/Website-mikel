@@ -23,7 +23,8 @@
 ------------------------------- */
 * {
   box-sizing: border-box;
-  letter-spacing: 0.02em; }
+  letter-spacing: 0.02em;
+  user-select: none; }
 
 body {
   transition: 1s;
@@ -52,13 +53,21 @@ section.__head .__title {
   section.__head .__title:hover {
     cursor: pointer; }
 
-section.__about {
-  z-index: 100000;
+section.__about .__about_title {
+  transition: 1s;
+  font-size: 1.15em;
+  z-index: 1000000;
   position: absolute;
   right: 2em;
-  top: 3em; }
-  section.__about.__title {
-    color: white; }
+  top: 2em;
+  color: white; }
+  @media only screen and (max-width: 50em) {
+    section.__about .__about_title {
+      right: 1.5em; } }
+  section.__about .__about_title:hover {
+    cursor: pointer;
+    transition: 1s;
+    transform: scale(1.2); }
 
 section.__info {
   position: absolute;
@@ -85,6 +94,7 @@ section.__info {
       section.__info .__close {
         right: 2.5em; } }
   section.__info .__contact {
+    transition: 1s;
     position: absolute;
     top: 6em;
     left: 5em; }
@@ -111,8 +121,9 @@ section.__info {
             color: #00FF24; }
     @media only screen and (max-width: 50em) {
       section.__info .__contact {
-        left: 3.5em; } }
+        left: 2.5em; } }
   section.__info .__text {
+    transition: 1s;
     max-width: 29em;
     position: absolute;
     top: 18em;
@@ -121,7 +132,7 @@ section.__info {
     line-height: 1.2em; }
     @media only screen and (max-width: 50em) {
       section.__info .__text {
-        left: 1.5em;
+        left: 2.5em;
         max-width: 25em;
         padding-right: 1em; } }
     section.__info .__text h2 {
@@ -156,6 +167,7 @@ section.__info {
     .__title, .__title_dark {
       left: 1.5em; } }
   .__title:hover, .__title_dark:hover {
+    cursor: pointer;
     transition: 1s;
     transform: scale(1.2); }
 
@@ -169,7 +181,8 @@ section.__info {
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0; }
+    left: 0;
+    opacity: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
         margin-top: 37.5vh;
