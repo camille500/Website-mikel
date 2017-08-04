@@ -190,6 +190,9 @@ section.__info {
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
         margin-top: 2.5vh; } }
+    @media (max-width: 50em) and (orientation: portrait) {
+      .__image_wrapper img {
+        transform: scale(1.5); } }
     .__image_wrapper img.__normal {
       z-index: 1;
       opacity: 1;
