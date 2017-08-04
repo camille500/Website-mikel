@@ -14,6 +14,7 @@
   let imageInterval = false;
   let negativeInterval = false;
   let actualNumber = false;
+  let allLatest = [];
 
   const app = {
     init() {
@@ -39,8 +40,7 @@
 
   const images = {
     init() {
-      const amountOfGroups = elements.image_groups.length - 1;
-      const number = Math.floor(Math.random() * amountOfGroups) + 1;
+      const number = this.generateNumber();
       this.changeImage();
       actualNumber = number;
       images.startInterval(number)
@@ -52,26 +52,49 @@
       clearInterval(imageInterval);
     },
     negativeInterval() {
-      const amountOfGroups = elements.image_groups.length - 1;
-      const number = Math.floor(Math.random() * amountOfGroups) + 1;
+      const number = images.generateNumber();
       elements.image_groups.forEach(function(group) {
         group.style.opacity = 0;
       });
       elements.image_groups[number].childNodes[1].style.opacity = 0;
       elements.image_groups[number].childNodes[3].style.opacity = 1;
       elements.image_groups[number].style.opacity = 1;
-      actualNumber = number;
     },
     changeImage() {
-      const amountOfGroups = elements.image_groups.length - 1;
-      const number = Math.floor(Math.random() * amountOfGroups) + 1;
+      const number = images.generateNumber();
       elements.image_groups.forEach(function(group) {
         group.style.opacity = 0;
       });
       elements.image_groups[number].childNodes[1].style.opacity = 1;
       elements.image_groups[number].style.opacity = 1;
-      actualNumber = number;
     },
+    generateNumber() {
+      const amountOfGroups = elements.image_groups.length - 1;
+      let number = Math.floor(Math.random() * amountOfGroups) + 1;
+      if(allLatest.length <= amountOfGroups) {
+        if(allLatest.indexOf(number) == -1) {
+          allLatest.push(number);
+          actualNumber = number;
+        } else {
+          number = images.newNumber();
+          allLatest.push(number);
+          actualNumber = number;
+        }
+      } else {
+        allLatest = [];
+      }
+      return number;
+    },
+    newNumber() {
+      const amountOfGroups = elements.image_groups.length - 1;
+      const number = Math.floor(Math.random() * amountOfGroups) + 1;
+      if(allLatest.indexOf(number) == -1) {
+        return number;
+      } else {
+        const number = Math.floor(Math.random() * amountOfGroups) + 1;
+        return number;
+      }
+    }
   }
 
   const eventListeners = {
@@ -109,7 +132,6 @@
       clearInterval(imageInterval);
       images.changeImage();
       imageInterval = setInterval(images.changeImage, 5000);
-      console.log('click');
     },
   }
 
