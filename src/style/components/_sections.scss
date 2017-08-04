@@ -7,6 +7,7 @@ section {
       }
     }
   }
+<<<<<<< HEAD
   &.__about {
     .__about_title {
       transition: 1s;
@@ -26,6 +27,8 @@ section {
       }
     }
   }
+=======
+>>>>>>> parent of 182dac2... Test
   &.__info {
     position: absolute;
     top: 0;
@@ -64,7 +67,7 @@ section {
       }
       span {
         display: block;
-        margin-left: 1.5em;
+        margin-left: 2em;
         @include bp-medium {
           margin-left: 1em;
         }
@@ -93,7 +96,7 @@ section {
       transition: 1s;
       max-width: 29em;
       position: absolute;
-      top: 18em;
+      top: 20em;
       left: 5em;
       margin-bottom: .25em;
       line-height: 1.2em;
@@ -101,13 +104,6 @@ section {
         left: 2.5em;
         max-width: 25em;
         padding-right: 1em;
-      }
-      h2 {
-        font-size: 1.2em;
-        margin-bottom: 1em;
-      }
-      p {
-        margin-left: 1.5em;
       }
     }
     .__copyright {

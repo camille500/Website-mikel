@@ -11,6 +11,7 @@
     left: 0;
     opacity: 0;
     @include bp-medium {
+<<<<<<< HEAD
       margin-top: 36.5vh;
     }
     @include bp-horizon {
@@ -20,6 +21,10 @@
       -ms-transform: translate(1.5, 1.5); /* IE 9 */
       -webkit-transform: translate(1.5); /* Safari */
       transform: scale(1.5);
+=======
+      margin-top: 37.5vh;
+      transform: scale(1.75);
+>>>>>>> parent of 182dac2... Test
     }
     &.__normal {
       z-index: 1;

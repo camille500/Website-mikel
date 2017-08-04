@@ -47,7 +47,7 @@
       images.startInterval(number)
     },
     startInterval() {
-      imageInterval = setInterval(images.changeImage, 5000);
+      imageInterval = setInterval(images.changeImage, 4000);
     },
     pauzeInterval() {
       clearInterval(imageInterval);
@@ -110,20 +110,31 @@
     },
     openInfo() {
       clearInterval(imageInterval);
+<<<<<<< HEAD
       negativeInterval = setInterval(images.negativeInterval, 5000);
       console.log(actualNumber)
       elements.image_groups[latestNumber].childNodes[1].style.display = 'none';
       elements.image_groups[latestNumber].childNodes[3].style.opacity = 1;
       elements.about.style.display = 'none';
       elements.title.style.display = 'none';
+=======
+      negativeInterval = setInterval(images.negativeInterval, 4000);
+      elements.image_groups[actualNumber].childNodes[1].style.opacity = 0;
+      elements.image_groups[actualNumber].childNodes[3].style.opacity = 1;
+>>>>>>> parent of 182dac2... Test
       elements.info.style.opacity = 1;
       elements.info.style.zIndex = 100000;
       // document.body.style.backgroundColor = 'white';
     },
     closeInfo() {
       clearInterval(negativeInterval);
+<<<<<<< HEAD
       imageInterval = setInterval(images.changeImage, 5000);
       elements.image_groups[latestNumber].childNodes[1].style.opacity = 1;
+=======
+      imageInterval = setInterval(images.changeImage, 4000);
+      elements.image_groups[actualNumber].childNodes[1].style.opacity = 1;
+>>>>>>> parent of 182dac2... Test
       elements.image_groups[actualNumber].childNodes[3].style.opacity = 0;
       elements.info.style.opacity = 0;
       elements.info.style.zIndex = -100000;
@@ -134,7 +145,12 @@
     goToNext() {
       clearInterval(imageInterval);
       images.changeImage();
+<<<<<<< HEAD
       imageInterval = setInterval(images.changeImage, 5000);
+=======
+      imageInterval = setInterval(images.changeImage, 4000);
+      console.log('click');
+>>>>>>> parent of 182dac2... Test
     },
   }
 
