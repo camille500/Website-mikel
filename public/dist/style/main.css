@@ -52,6 +52,14 @@ section.__head .__title {
   section.__head .__title:hover {
     cursor: pointer; }
 
+section.__about {
+  z-index: 100000;
+  position: absolute;
+  right: 2em;
+  top: 3em; }
+  section.__about.__title {
+    color: white; }
+
 section.__info {
   position: absolute;
   top: 0;
@@ -85,7 +93,7 @@ section.__info {
       margin-bottom: 1em; }
     section.__info .__contact span {
       display: block;
-      margin-left: 2em; }
+      margin-left: 1.5em; }
       @media only screen and (max-width: 50em) {
         section.__info .__contact span {
           margin-left: 1em; } }
@@ -107,7 +115,7 @@ section.__info {
   section.__info .__text {
     max-width: 29em;
     position: absolute;
-    top: 20em;
+    top: 18em;
     left: 5em;
     margin-bottom: .25em;
     line-height: 1.2em; }
@@ -116,6 +124,11 @@ section.__info {
         left: 1.5em;
         max-width: 25em;
         padding-right: 1em; } }
+    section.__info .__text h2 {
+      font-size: 1.2em;
+      margin-bottom: 1em; }
+    section.__info .__text p {
+      margin-left: 1.5em; }
   section.__info .__copyright {
     position: absolute;
     bottom: 2em;
@@ -159,8 +172,7 @@ section.__info {
     left: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        margin-top: 37.5vh;
-        transform: scale(1.75); } }
+        margin-top: 37.5vh; } }
     .__image_wrapper img.__normal {
       z-index: 1;
       opacity: 1;
