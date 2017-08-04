@@ -13,6 +13,9 @@
       margin-top: 37.5vh;
       // transform: scale(1.75);
     }
+    &.__horizontal {
+      margin-top: 5vh;
+    }
     &.__normal {
       z-index: 1;
       opacity: 1;

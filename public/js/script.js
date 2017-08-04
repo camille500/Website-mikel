@@ -2,6 +2,7 @@
 
   const elements = {
     image_groups: document.querySelectorAll('.__image_wrapper'),
+    image: document.querySelectorAll('.__image'),
     info: document.querySelector('.__info'),
     close: document.querySelector('#close'),
     title: document.querySelector('.__title'),
@@ -70,6 +71,7 @@
       elements.image.forEach(function(image){
         image.addEventListener("click", eventListeners.goToNext);
       })
+      window.addEventListener("resize", eventListeners.resize);
     },
     openInfo() {
       clearInterval(imageInterval);
@@ -95,6 +97,11 @@
       imageInterval = setInterval(images.changeImage, 5000);
       console.log('click');
     },
+    resize() {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        elements.image.style.display = 'none';
+      }
+    }
   }
 
   app.init();

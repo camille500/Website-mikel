@@ -173,6 +173,8 @@ section.__info {
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
         margin-top: 37.5vh; } }
+    .__image_wrapper img.__horizontal {
+      margin-top: 5vh; }
     .__image_wrapper img.__normal {
       z-index: 1;
       opacity: 1;
