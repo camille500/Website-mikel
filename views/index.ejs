@@ -37,10 +37,10 @@
       <% } %>
       <% count++ %>
       <% if(count === 2)  { %>
+        <img src="/dist/images/<%= image %>" class="__negative" />
         <section class="__image_info">
           <p class="__description">Hier komt de beschrijving bij de foto. Voor nu is dit de maximale text lengte. Moet dat langer?</p>
         </section>
-        <img src="/dist/images/<%= image %>" class="__negative" />
         </section>
         <% count = 0; %>
       <% } %>
