@@ -17,9 +17,9 @@
       margin-top: 2.5vh;
     }
     @include bp-portrait {
-      -ms-transform: translate(1.5, 1.5); /* IE 9 */
-      -webkit-transform: translate(1.5); /* Safari */
-      transform: scale(1.5);
+      // -ms-transform: translate(1.5, 1.5); /* IE 9 */
+      // -webkit-transform: translate(1.5); /* Safari */
+      // transform: scale(1.5);
     }
     &.__normal {
       z-index: 1;
