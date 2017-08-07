@@ -59,7 +59,9 @@
       const amountOfGroups = elements.image_groups.length - 1;
       let number = Math.floor(Math.random() * amountOfGroups) + 1;
       actualNumber = number;
-      this.changeImage();
+      setTimeout(function() {
+        images.changeImage();
+      }, 500)
       images.startInterval()
     },
     startInterval() {
