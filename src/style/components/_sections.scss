@@ -165,9 +165,9 @@ section {
   right: 5em;
   color: #00FF24;
   @include bp-medium {
-    bottom: 4em;
+    bottom: 1.5em;
     max-width: 25em;
-    right: 5em;
+    left: 1em;
   }
   p {
     display: inline-block;

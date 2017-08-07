@@ -189,9 +189,9 @@ section.__info {
   color: #00FF24; }
   @media only screen and (max-width: 50em) {
     .__image_info {
-      bottom: 4em;
+      bottom: 1.5em;
       max-width: 25em;
-      right: 5em; } }
+      left: 1em; } }
   .__image_info p {
     display: inline-block; }
 
