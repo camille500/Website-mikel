@@ -282,3 +282,31 @@ section {
     .__image_wrapper_next img.__negative {
       opacity: 0;
       transition: opacity 0s linear; }
+
+.__image_wrapper_next {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  transition: opacity 1.5s linear;
+  -webkit-transition: opacity .25s linear;
+  opacity: 0; }
+  .__image_wrapper_next img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0; }
+    @media only screen and (max-width: 50em) {
+      .__image_wrapper_next img {
+        margin-top: 30vh; } }
+    @media (max-width: 50em) and (orientation: landscape) {
+      .__image_wrapper_next img {
+        margin-top: 2.5vh; } }
+    .__image_wrapper_next img.__normal {
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 0s linear; }
+    .__image_wrapper_next img.__negative {
+      opacity: 0;
+      transition: opacity 0s linear; }

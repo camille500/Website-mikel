@@ -77,3 +77,35 @@
     }
   }
 }
+
+.__image_wrapper_next {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  transition: opacity 1.5s linear;
+  -webkit-transition: opacity .25s linear;
+  opacity: 0;
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    @include bp-medium {
+      margin-top: 30vh;
+    }
+    @include bp-horizon {
+      margin-top: 2.5vh;
+    }
+    &.__normal {
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 0s linear;
+    }
+    &.__negative {
+      opacity: 0;
+      transition: opacity 0s linear;
+    }
+  }
+}
