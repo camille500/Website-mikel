@@ -6,12 +6,14 @@ const session = require('express-session');
 const compression = require('compression');
 const bodyParser = require('body-parser');
 const mongodb = require('mongodb');
+const cors = require('cors');
 
 /* DEPENDENCIES CONFIGURATION
 ----------------------------------------- */
 const app = express();
 const http = require('http').Server(app);
 require('dotenv').config();
+app.use(cors());
 
 /* SESSIONS CONFIGURATION
 ----------------------------------------- */

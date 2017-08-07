@@ -66,10 +66,15 @@
       setTimeout(function(){
         elements.image_groups.style.opacity = 1;
       }, 500)
+      config.imageArray = imageArray;
       this.startInterval();
     },
     startInterval() {
-
+      imageInterval = setInterval(images.changeImage, 5000);
+    },
+    changeImage() {
+      console.log(config.actualNumber)
+      console.log(config.imageArray);
     }
   }
 
