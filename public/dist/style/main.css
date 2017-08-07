@@ -26,6 +26,10 @@
   letter-spacing: 0.02em;
   user-select: none; }
 
+body, html {
+  overflow-x: hidden;
+  overflow: hidden; }
+
 body {
   transition: 1s;
   overflow: hidden;
@@ -225,7 +229,7 @@ section {
     opacity: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        margin-top: 33.5vh; } }
+        margin-top: 30vh; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
         margin-top: 2.5vh; } }

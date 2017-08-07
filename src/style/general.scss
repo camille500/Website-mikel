@@ -28,6 +28,11 @@
 	user-select: none;
 }
 
+body, html {
+	overflow-x: hidden;
+	overflow: hidden;
+}
+
 body {
 	transition: 1s;
 	overflow: hidden;
