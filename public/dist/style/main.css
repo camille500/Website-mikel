@@ -229,7 +229,7 @@ section {
     opacity: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        margin-top: 29vh; } }
+        margin-top: 30vh; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
         margin-top: 2.5vh; } }
