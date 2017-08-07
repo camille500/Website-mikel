@@ -112,14 +112,14 @@
       if(config.actualImage < config.imageArray.length) {
         if(elements.image_groups.style.opacity == 0) {
           config.actualImage ++;
-          images.replaceNext();
           elements.image_groups.style.opacity = 1;
           elements.image_groups_next.style.opacity = 0;
+          images.replaceNext();
         } else if(elements.image_groups.style.opacity == 1) {
           config.actualImage ++;
-          images.replaceActual();
           elements.image_groups.style.opacity = 0;
           elements.image_groups_next.style.opacity = 1;
+          images.replaceActual();
         }
       } else {
         config.actualImage = 1;
