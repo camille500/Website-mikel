@@ -175,12 +175,25 @@ section.__info {
     .__title, .__title_dark {
       left: 1.5em; } }
   .__title:hover, .__title_dark:hover {
-    cursor: pointer;
-    transition: 1s;
-    transform: scale(1.2); }
+    cursor: pointer; }
   .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
     transition: opacity 1s linear;
     opacity: 0; }
+
+.__image_info {
+  font-size: .8em;
+  z-index: 100000000;
+  position: absolute;
+  bottom: .5em;
+  right: 5em;
+  color: #00FF24; }
+  @media only screen and (max-width: 50em) {
+    .__image_info {
+      bottom: 4em;
+      max-width: 25em;
+      right: 5em; } }
+  .__image_info p {
+    display: inline-block; }
 
 .__image_wrapper {
   width: 100%;

@@ -11,6 +11,7 @@
     title_one: document.querySelector('.one'),
     title_two: document.querySelector('.two'),
     title_three: document.querySelector('.three'),
+    image_info: document.querySelectorAll('.__image_info')
   }
 
   let imageInterval = false;
@@ -108,6 +109,9 @@
       elements.title.forEach(function(title) {
         title.style.opacity = 0;
       })
+      elements.image_info.forEach(function(info) {
+        info.style.opacity = 0;
+      })
       elements.info.style.opacity = 1;
       elements.info.style.zIndex = 100000;
       document.body.style.backgroundColor = 'white';
@@ -118,9 +122,11 @@
       elements.image_groups[actualNumber].childNodes[1].style.opacity = 1;
       elements.image_groups[actualNumber].childNodes[3].style.opacity = 0;
       elements.info.style.opacity = 0;
+      elements.image_info.forEach(function(info) {
+        info.style.opacity = 1;
+      })
       elements.info.style.zIndex = -100000;
       document.body.style.backgroundColor = 'black';
-      elements.title.style.display = 'block';
     },
     goToNext() {
       clearInterval(imageInterval);

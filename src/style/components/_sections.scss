@@ -150,11 +150,26 @@ section {
   }
   &:hover {
     cursor: pointer;
-    transition: 1s;
-    transform: scale(1.2);
   }
   &.one, &.two, &.three {
     transition: opacity 1s linear;
     opacity: 0;
+  }
+}
+
+.__image_info {
+  font-size: .8em;
+  z-index: 100000000;
+  position: absolute;
+  bottom: .5em;
+  right: 5em;
+  color: #00FF24;
+  @include bp-medium {
+    bottom: 4em;
+    max-width: 25em;
+    right: 5em;
+  }
+  p {
+    display: inline-block;
   }
 }
