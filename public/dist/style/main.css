@@ -53,7 +53,6 @@ section.__head .__title {
   section.__head .__title:hover {
     cursor: pointer; }
 
-<<<<<<< HEAD
 section.__about .__about_title {
   transition: 1s;
   font-size: 1.15em;
@@ -70,8 +69,6 @@ section.__about .__about_title {
     transition: 1s;
     transform: scale(1.2); }
 
-=======
->>>>>>> parent of 182dac2... Test
 section.__info {
   position: absolute;
   top: 0;
@@ -99,17 +96,20 @@ section.__info {
   section.__info .__contact {
     transition: 1s;
     position: absolute;
-    top: 6em;
+    top: 27.5em;
     left: 5em; }
+    @media only screen and (max-width: 50em) {
+      section.__info .__contact {
+        top: 32.5em; } }
     section.__info .__contact h2 {
       font-size: 1.2em;
       margin-bottom: 1em; }
     section.__info .__contact span {
       display: block;
-      margin-left: 2em; }
+      margin-left: 1.5em; }
       @media only screen and (max-width: 50em) {
         section.__info .__contact span {
-          margin-left: 1em; } }
+          margin-left: .5em; } }
       section.__info .__contact span p {
         margin: 0;
         margin-bottom: .25em; }
@@ -129,7 +129,7 @@ section.__info {
     transition: 1s;
     max-width: 29em;
     position: absolute;
-    top: 20em;
+    top: 5em;
     left: 5em;
     margin-bottom: .25em;
     line-height: 1.2em; }
@@ -138,6 +138,14 @@ section.__info {
         left: 2.5em;
         max-width: 25em;
         padding-right: 1em; } }
+    section.__info .__text h2 {
+      font-size: 1.2em;
+      margin-bottom: 1em; }
+    section.__info .__text p {
+      margin-left: 1.5em; }
+      @media only screen and (max-width: 50em) {
+        section.__info .__text p {
+          margin-left: .5em; } }
   section.__info .__copyright {
     position: absolute;
     bottom: 2em;
@@ -160,7 +168,9 @@ section.__info {
   font-size: 1.15em;
   top: 2em;
   left: 2.55em;
-  z-index: 1000; }
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s linear; }
   @media only screen and (max-width: 50em) {
     .__title, .__title_dark {
       left: 1.5em; } }
@@ -168,6 +178,9 @@ section.__info {
     cursor: pointer;
     transition: 1s;
     transform: scale(1.2); }
+  .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
+    transition: opacity 1s linear;
+    opacity: 0; }
 
 .__image_wrapper {
   width: 100%;
@@ -183,7 +196,6 @@ section.__info {
     opacity: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-<<<<<<< HEAD
         margin-top: 36.5vh; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
@@ -195,10 +207,6 @@ section.__info {
         -webkit-transform: translate(1.5);
         /* Safari */
         transform: scale(1.5); } }
-=======
-        margin-top: 37.5vh;
-        transform: scale(1.75); } }
->>>>>>> parent of 182dac2... Test
     .__image_wrapper img.__normal {
       z-index: 1;
       opacity: 1;

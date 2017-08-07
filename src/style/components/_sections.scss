@@ -7,7 +7,6 @@ section {
       }
     }
   }
-<<<<<<< HEAD
   &.__about {
     .__about_title {
       transition: 1s;
@@ -27,8 +26,6 @@ section {
       }
     }
   }
-=======
->>>>>>> parent of 182dac2... Test
   &.__info {
     position: absolute;
     top: 0;
@@ -59,17 +56,20 @@ section {
     .__contact {
       transition: 1s;
       position: absolute;
-      top: 6em;
+      top: 27.5em;
       left: 5em;
+      @include bp-medium {
+        top: 32.5em;
+      }
       h2 {
         font-size: 1.2em;
         margin-bottom: 1em;
       }
       span {
         display: block;
-        margin-left: 2em;
+        margin-left: 1.5em;
         @include bp-medium {
-          margin-left: 1em;
+          margin-left: .5em;
         }
         p {
           margin: 0;
@@ -96,7 +96,7 @@ section {
       transition: 1s;
       max-width: 29em;
       position: absolute;
-      top: 20em;
+      top: 5em;
       left: 5em;
       margin-bottom: .25em;
       line-height: 1.2em;
@@ -104,6 +104,16 @@ section {
         left: 2.5em;
         max-width: 25em;
         padding-right: 1em;
+      }
+      h2 {
+        font-size: 1.2em;
+        margin-bottom: 1em;
+      }
+      p {
+        margin-left: 1.5em;
+        @include bp-medium {
+          margin-left: .5em;
+        }
       }
     }
     .__copyright {
@@ -133,6 +143,8 @@ section {
   top: 2em;
   left: 2.55em;
   z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s linear;
   @include bp-medium {
     left: 1.5em;
   }
@@ -140,5 +152,9 @@ section {
     cursor: pointer;
     transition: 1s;
     transform: scale(1.2);
+  }
+  &.one, &.two, &.three {
+    transition: opacity 1s linear;
+    opacity: 0;
   }
 }
