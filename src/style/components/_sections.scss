@@ -130,6 +130,9 @@ section {
       position: absolute;
       bottom: 2em;
       left: 3em;
+      @include bp-small {
+        display: none;
+      }
     }
     .__copyright_text {
       position: absolute;

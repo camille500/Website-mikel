@@ -26,8 +26,13 @@
   letter-spacing: 0.02em;
   user-select: none; }
 
+body, html {
+  overflow-x: hidden;
+  overflow: hidden; }
+
 body {
   transition: 1s;
+  overflow: hidden;
   margin: 0;
   padding: 0;
   font-family: 'Fruitiger-Bold', sans-serif;
@@ -157,6 +162,9 @@ section {
       position: absolute;
       bottom: 2em;
       left: 3em; }
+      @media only screen and (max-width: 40em) {
+        section.__info .__copyright {
+          display: none; } }
     section.__info .__copyright_text {
       position: absolute;
       right: 3em;
@@ -221,17 +229,10 @@ section {
     opacity: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        margin-top: 35.5vh; } }
+        margin-top: 29vh; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
         margin-top: 2.5vh; } }
-    @media (max-width: 50em) and (orientation: portrait) {
-      .__image_wrapper img {
-        -ms-transform: translate(1.5, 1.5);
-        /* IE 9 */
-        -webkit-transform: translate(1.5);
-        /* Safari */
-        transform: scale(1.5); } }
     .__image_wrapper img.__normal {
       z-index: 1;
       opacity: 1;
