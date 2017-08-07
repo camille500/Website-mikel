@@ -169,6 +169,9 @@ section {
     max-width: 25em;
     left: 1em;
   }
+  @include bp-horizon {
+    right: 1em;
+  }
   p {
     display: inline-block;
   }

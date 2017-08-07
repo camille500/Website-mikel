@@ -192,6 +192,9 @@ section.__info {
       bottom: 1.5em;
       max-width: 25em;
       left: 1em; } }
+  @media (max-width: 50em) and (orientation: landscape) {
+    .__image_info {
+      right: 1em; } }
   .__image_info p {
     display: inline-block; }
 
@@ -209,7 +212,7 @@ section.__info {
     opacity: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        margin-top: 36.5vh; } }
+        margin-top: 35.5vh; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
         margin-top: 2.5vh; } }
