@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
     files.forEach(file => {
       req.session.images.push(file);
     });
-    request('http://localhost:3000/data/data.json', function (error, response, body) {
+    request('https://site-mikel.herokuapp.com/data/data.json', function (error, response, body) {
       const data = JSON.parse(body);
       res.locals.descr = data;
       res.locals.images = req.session.images;
