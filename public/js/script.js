@@ -13,11 +13,7 @@
     title_three: document.querySelector('.three'),
     image_info: document.querySelectorAll('.__image_info')
   }
-
-  elements.image.forEach(function(image) {
-    console.log(image);
-  })
-
+  
   let imageInterval = false;
   let negativeInterval = false;
   let actualNumber = false;
