@@ -28,11 +28,11 @@
 
 body {
   transition: 1s;
-  overflow: hidden;
   margin: 0;
   padding: 0;
   font-family: 'Fruitiger-Bold', sans-serif;
-  background-color: black; }
+  background-color: black;
+  color: white; }
   body.__white {
     transition: 1s;
     background-color: white; }
@@ -48,119 +48,119 @@ p {
   font-family: 'Fruitiger-Light', sans-serif;
   font-weight: 700; }
 
-section.__head .__title {
-  color: white; }
-  section.__head .__title:hover {
-    cursor: pointer; }
-
-section.__about .__about_title {
-  transition: 1s;
-  font-size: 1.15em;
-  z-index: 1000000;
-  position: absolute;
-  right: 2em;
-  top: 2em;
-  color: white; }
-  @media only screen and (max-width: 50em) {
-    section.__about .__about_title {
-      right: 1.5em; } }
-  section.__about .__about_title:hover {
-    cursor: pointer;
-    transition: 1s;
-    transform: scale(1.2); }
-
-section.__info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.6);
-  opacity: 0;
-  transition: opacity 0s linear; }
-  section.__info .__title_dark {
-    color: black; }
-  section.__info .__close {
-    color: black;
-    position: absolute;
-    top: 2em;
-    right: 3em;
-    font-size: 1.15em; }
-    section.__info .__close:hover {
+section {
+  color: black; }
+  section.__head .__title {
+    color: white; }
+    section.__head .__title:hover {
       cursor: pointer; }
-    @media only screen and (max-width: 50em) {
-      section.__info .__close {
-        right: 2.5em; } }
-  section.__info .__contact {
+  section.__about .__about_title {
     transition: 1s;
+    font-size: 1.15em;
+    z-index: 1000000;
     position: absolute;
-    top: 27.5em;
-    left: 5em; }
+    right: 2em;
+    top: 2em;
+    color: white; }
     @media only screen and (max-width: 50em) {
-      section.__info .__contact {
-        top: 32.5em; } }
-    section.__info .__contact h2 {
-      font-size: 1.2em;
-      margin-bottom: 1em; }
-    section.__info .__contact span {
-      display: block;
-      margin-left: 1.5em; }
+      section.__about .__about_title {
+        right: 1.5em; } }
+    section.__about .__about_title:hover {
+      cursor: pointer;
+      transition: 1s;
+      transform: scale(1.2); }
+  section.__info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    transition: opacity 0s linear; }
+    section.__info .__title_dark {
+      color: black; }
+    section.__info .__close {
+      color: black;
+      position: absolute;
+      top: 2em;
+      right: 3em;
+      font-size: 1.15em; }
+      section.__info .__close:hover {
+        cursor: pointer; }
       @media only screen and (max-width: 50em) {
-        section.__info .__contact span {
-          margin-left: .5em; } }
-      section.__info .__contact span p {
-        margin: 0;
-        margin-bottom: .25em; }
-        section.__info .__contact span p:last-of-type {
-          margin-bottom: 1.5em; }
-        section.__info .__contact span p a {
-          transition: 1s;
-          text-decoration: none;
-          color: black; }
-          section.__info .__contact span p a:hover {
+        section.__info .__close {
+          right: 2.5em; } }
+    section.__info .__contact {
+      transition: 1s;
+      position: absolute;
+      top: 27.5em;
+      left: 5em; }
+      @media only screen and (max-width: 50em) {
+        section.__info .__contact {
+          top: 32.5em; } }
+      section.__info .__contact h2 {
+        font-size: 1.2em;
+        margin-bottom: 1em; }
+      section.__info .__contact span {
+        display: block;
+        margin-left: 1.5em; }
+        @media only screen and (max-width: 50em) {
+          section.__info .__contact span {
+            margin-left: .5em; } }
+        section.__info .__contact span p {
+          margin: 0;
+          margin-bottom: .25em; }
+          section.__info .__contact span p:last-of-type {
+            margin-bottom: 1.5em; }
+          section.__info .__contact span p a {
             transition: 1s;
-            color: #00FF24; }
-    @media only screen and (max-width: 50em) {
-      section.__info .__contact {
-        left: 2.5em; } }
-  section.__info .__text {
-    transition: 1s;
-    max-width: 29em;
-    position: absolute;
-    top: 5em;
-    left: 5em;
-    margin-bottom: .25em;
-    line-height: 1.2em; }
-    @media only screen and (max-width: 50em) {
-      section.__info .__text {
-        left: 2.5em;
-        max-width: 25em;
-        padding-right: 1em; } }
-    section.__info .__text h2 {
-      font-size: 1.2em;
-      margin-bottom: 1em; }
-    section.__info .__text p {
-      margin-left: 1.5em; }
+            text-decoration: none;
+            color: black; }
+            section.__info .__contact span p a:hover {
+              transition: 1s;
+              color: #00FF24; }
       @media only screen and (max-width: 50em) {
-        section.__info .__text p {
-          margin-left: .5em; } }
-  section.__info .__copyright {
-    position: absolute;
-    bottom: 2em;
-    left: 3em; }
-  section.__info .__copyright_text {
-    position: absolute;
-    right: 3em;
-    bottom: 2em;
-    max-width: 27.5em;
-    text-align: right;
-    margin-bottom: .15em;
-    line-height: 1.2em; }
-    @media only screen and (max-width: 50em) {
-      section.__info .__copyright_text {
-        display: none; } }
+        section.__info .__contact {
+          left: 2.5em; } }
+    section.__info .__text {
+      transition: 1s;
+      max-width: 29em;
+      position: absolute;
+      top: 5em;
+      left: 5em;
+      margin-bottom: .25em;
+      line-height: 1.2em; }
+      @media only screen and (max-width: 50em) {
+        section.__info .__text {
+          left: 2.5em;
+          max-width: 25em;
+          padding-right: 1em; } }
+      section.__info .__text h2 {
+        font-size: 1.2em;
+        margin-bottom: 1em; }
+      section.__info .__text p {
+        margin-left: 1.5em; }
+        @media only screen and (max-width: 50em) {
+          section.__info .__text p {
+            margin-left: .5em; } }
+    section.__info .__copyright {
+      position: absolute;
+      bottom: 2em;
+      left: 3em; }
+    section.__info .__copyright_text {
+      position: absolute;
+      right: 3em;
+      bottom: 2em;
+      max-width: 27.5em;
+      text-align: right;
+      margin-bottom: .15em;
+      line-height: 1.2em; }
+      @media only screen and (max-width: 50em) {
+        section.__info .__copyright_text {
+          display: none; } }
 
 .__title, .__title_dark {
   transition: 1s;
@@ -230,3 +230,14 @@ section.__info {
     .__image_wrapper img.__negative {
       opacity: 0;
       transition: opacity 0s linear; }
+
+.__image_cap {
+  display: flex;
+  flex-wrap: wrap; }
+  .__image_cap .__overview_image {
+    max-width: 25vw; }
+    .__image_cap .__overview_image img {
+      width: 25vw !important; }
+
+.small {
+  width: 50vw; }

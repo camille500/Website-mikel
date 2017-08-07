@@ -5,6 +5,7 @@ const path = require('path');
 const session = require('express-session');
 const compression = require('compression');
 const bodyParser = require('body-parser');
+const mongodb = require('mongodb');
 
 /* DEPENDENCIES CONFIGURATION
 ----------------------------------------- */
@@ -19,6 +20,17 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+/* MONGODB CONFIGURATION
+----------------------------------------- */
+const MongoClient = mongodb.MongoClient;
+const dbConfig = process.env.MONGODB_URI;
+
+MongoClient.connect(dbConfig, (err, database) => {
+  if (err)
+    return console.log(err)
+  db = database;
+});
 
 /* SET PORT FOR HEROKU
 ----------------------------------------- */

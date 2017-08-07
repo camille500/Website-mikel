@@ -1,0 +1,15 @@
+<%- include('../partials/head.ejs') %>
+
+  <h1>Overview</h1>
+
+  <section class="__image_cap">
+    <% images.forEach(function(image) { %>
+    <a href="/admin/edit/<%= image %>">
+      <section class="__overview_image">
+        <img src="/dist/images/<%= image %>" />
+      </section>
+    </a>
+    <% }) %>
+  </section>
+
+<%- include('../partials/foot.ejs') %>

@@ -13,7 +13,38 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  console.log(req.body);
+  let username = req.body.username;
+  let password = req.body.password;
+  if(username === process.env.USERNAME && password === process.env.PASSWORD) {
+    req.session.images = [];
+    const imageFolder = 'public/dist/images'
+    fs.readdir(imageFolder, (err, files) => {
+      files.forEach(file => {
+        if(file.charAt(3) == 1) {
+          req.session.images.push(file);
+        }
+      });
+      res.locals.images = req.session.images;
+      res.render('admin/overview');
+    });
+  }
+});
+
+router.get('/edit/:image', function(req, res) {
+  res.locals.image = req.params.image
+  res.render('admin/edit')
+});
+
+router.get('/delete/:image', function(req, res) {
+  let image = req.params.image;
+  let negative = image.replace("1", "2");
+  const imagePaths = [`public/dist/images/${image}`, `public/dist/images/${negative}`]
+  imagePaths.forEach(function(image) {
+    fs.unlink(image, function(error) {
+    if (error) { throw error; }
+     
+    });
+  })
 })
 
 /* EXPORT ROUTER
