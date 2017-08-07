@@ -1,157 +1,79 @@
 (function () {
 
   const elements = {
-    image_groups: document.querySelectorAll('.__image_wrapper'),
-    image: document.querySelectorAll('.__image'),
-    info: document.querySelector('.__info'),
-    close: document.querySelector('#close'),
-    title: document.querySelectorAll('.__title'),
-    copyright: document.querySelector('#copy_date'),
-    image: document.querySelectorAll('.__clickable'),
-    title_one: document.querySelector('.one'),
-    title_two: document.querySelector('.two'),
-    title_three: document.querySelector('.three'),
-    image_info: document.querySelectorAll('.__image_info')
+    image_groups: document.querySelector('.__image_wrapper'),
+    image_groups_next: document.querySelector('.__image_wrapper_next'),
+    actual_normal: document.getElementById('actual_normal'),
+    actual_negative: document.getElementById('actual_negative'),
+    next_normal: document.getElementById('next_normal'),
+    next_negative: document.getElementById('next_negative'),
   }
-  
-  let imageInterval = false;
-  let negativeInterval = false;
-  let actualNumber = false;
-  let allLatest = [];
-  let latestTitle = false;
+
+  const config = {
+    allData: {},
+    imageArray: [],
+    actualImage: 1,
+  };
 
   const app = {
     init() {
-      images.init();
-      eventListeners.init();
-      this.setCopyright();
-      app.changeTitle();
-      titleInterval = setInterval(app.changeTitle, 750);
+      data.get();
     },
-    setCopyright() {
-      const date = new Date();
-      const year = date.getFullYear();
-      elements.copyright.textContent = year;
+    enhance() {
+
+    }
+  }
+
+  const data = {
+    get() {
+      const request = new XMLHttpRequest();
+      request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+         let data = JSON.parse(request.responseText);
+         config.allData = data;
+        }
+        data.makeArray();
+      };
+      request.open("GET", "http://localhost:3000/images", true);
+      request.send();
     },
-    changeTitle() {
-      if(latestTitle === false) {
-        latestTitle = 'one';
-        elements.title_three.style.opacity = 0;
-        elements.title_one.style.opacity = 1;
-      } else if(latestTitle === 'one') {
-        latestTitle = 'two';
-        elements.title_one.style.opacity = 0;
-        setTimeout(function() {
-          elements.title_two.style.opacity = 1;
-        }, 50)
-      } else {
-        latestTitle = false;
-        elements.title_two.style.opacity = 0;
-        setTimeout(function() {
-          elements.title_three.style.opacity = 1;
-        }, 50)
+    makeArray() {
+      for(let key in config.allData.images) {
+        config.imageArray.push(key);
+      }
+      this.shuffleArray(config.imageArray);
+    },
+    shuffleArray(array) {
+      array.forEach(function(image, index) {
+        let j = Math.floor(Math.random() * index);
+        [array[index], array[j]] = [array[j], array[index]];
+      });
+      if(array.length) {
+        images.init(array);
       }
     }
   }
 
-  const images = {
-    init() {
-      const amountOfGroups = elements.image_groups.length - 1;
-      let number = Math.floor(Math.random() * amountOfGroups) + 1;
-      actualNumber = number;
-      setTimeout(function() {
-        images.changeImage();
-      }, 750)
-      images.startInterval()
+  images = {
+    init(imageArray) {
+      console.log('Fired')
+      let negative = imageArray[config.actualImage].replace('.1', '.2');
+      elements.actual_normal.src = `/dist/images/${imageArray[config.actualImage]}`;
+      elements.actual_negative.src = negative;
+      config.actualImage ++;
+      negative = imageArray[config.actualImage].replace('.1', '.2');
+      elements.next_normal.src = `/dist/images/${imageArray[config.actualImage]}`;
+      elements.next_negative.src = negative;
+      setTimeout(function(){
+        elements.image_groups.style.opacity = 1;
+      }, 500)
+      this.startInterval();
     },
     startInterval() {
-      imageInterval = setInterval(images.changeImage, 5000);
-    },
-    pauzeInterval() {
-      clearInterval(imageInterval);
-    },
-    negativeInterval() {
-      const amountOfGroups = elements.image_groups.length - 1;
-      let number = Math.floor(Math.random() * amountOfGroups) + 1;
-      actualNumber = number;
-      if(allLatest.indexOf(number) > -1) {
-        const amountOfGroups = elements.image_groups.length - 1;
-        let number = Math.floor(Math.random() * amountOfGroups) + 1;
-        actualNumber = number;
-        allLatest.push(number)
-      } else {
-        allLatest.push(number)
-      }
-      elements.image_groups.forEach(function(group) {
-        group.style.opacity = 0;
-      });
-      elements.image_groups[number].childNodes[1].style.opacity = 0;
-      elements.image_groups[number].childNodes[3].style.opacity = 1;
-      elements.image_groups[number].style.opacity = 1;
-    },
-    changeImage() {
-      const amountOfGroups = elements.image_groups.length - 1;
-      let number = Math.floor(Math.random() * amountOfGroups) + 1;
-      actualNumber = number;
-      if(allLatest.indexOf(number) > -1) {
-        const amountOfGroups = elements.image_groups.length - 1;
-        let number = Math.floor(Math.random() * amountOfGroups) + 1;
-        actualNumber = number;
-        allLatest.push(number)
-      } else {
-        allLatest.push(number)
-      }
-      elements.image_groups.forEach(function(group) {
-        group.style.opacity = 0;
-      });
-      elements.image_groups[number].childNodes[1].style.opacity = 1;
-      elements.image_groups[number].style.opacity = 1;
-    },
+
+    }
   }
 
-  const eventListeners = {
-    init() {
-      elements.title.forEach(function(title){
-        title.addEventListener("click", eventListeners.openInfo);
-      })
-      elements.close.addEventListener("click", eventListeners.closeInfo);
-      elements.image.forEach(function(image){
-        image.addEventListener("click", eventListeners.goToNext);
-      })
-    },
-    openInfo() {
-      clearInterval(imageInterval);
-      negativeInterval = setInterval(images.negativeInterval, 5000);
-      elements.image_groups[actualNumber].childNodes[1].style.opacity = 0;
-      elements.image_groups[actualNumber].childNodes[3].style.opacity = 1;
-      elements.title.forEach(function(title) {
-        title.style.opacity = 0;
-      })
-      elements.image_info.forEach(function(info) {
-        info.style.opacity = 0;
-      })
-      elements.info.style.opacity = 1;
-      elements.info.style.zIndex = 100000;
-      document.body.style.backgroundColor = 'white';
-    },
-    closeInfo() {
-      clearInterval(negativeInterval);
-      imageInterval = setInterval(images.changeImage, 5000);
-      elements.image_groups[actualNumber].childNodes[1].style.opacity = 1;
-      elements.image_groups[actualNumber].childNodes[3].style.opacity = 0;
-      elements.info.style.opacity = 0;
-      elements.image_info.forEach(function(info) {
-        info.style.opacity = 1;
-      })
-      elements.info.style.zIndex = -100000;
-      document.body.style.backgroundColor = 'black';
-    },
-    goToNext() {
-      clearInterval(imageInterval);
-      images.changeImage();
-      imageInterval = setInterval(images.changeImage, 5000);
-    },
-  }
 
   app.init();
 

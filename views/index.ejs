@@ -29,29 +29,16 @@
     <h1 class="__title two">Info</h1>
     <h1 class="__title three">Contact</h1>
   </section>
-  <% let count = 0; let lastImage = false; %>
-    <% images.forEach(function(image) { %>
-      <% if(count === 0)  { %>
-        <section class="__image_wrapper">
-        <img src="/dist/images/<%= image %>" class="__image __normal __clickable" />
-      <% } %>
-      <% count++ %>
-      <% if(count === 1)  { %>
-        <% lastImage = image %>
-      <% } %>
-      <% if(count === 2)  { %>
-        <img src="/dist/images/<%= image %>" class="__negative" />
-      <% } %>
-      <% if(count === 2)  { %>
-        <section class="__image_info">
-          <p class="__description"><%=descr.images[lastImage]%></p>
-        </section>
-        </section>
-      <% } %>
-      <% if(count === 2)  { %>
-        <% count = 0; %>
-      <% } %>
-    <% }) %>
+
+  <section class="__image_wrapper">
+    <img id="actual_normal" class="__image __normal __clickable" />
+    <img id="actual_negative" class="__negative" />
+  </section>
+
+  <section class="__image_wrapper_next">
+    <img id="next_normal" class="__image __normal __clickable" />
+    <img id="next_negative" class="__negative" />
+  </section>
 
 
 <%- include('./partials/foot.ejs') %>

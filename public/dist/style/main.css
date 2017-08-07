@@ -251,3 +251,6 @@ section {
 
 .small {
   width: 50vw; }
+
+.__image_wrapper_next {
+  opacity: 0; }

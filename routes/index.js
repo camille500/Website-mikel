@@ -10,6 +10,10 @@ const request = require('request');
 /* INDEX ROUTE
 ----------------------------------------- */
 router.get('/', function(req, res) {
+  res.render('index');
+});
+
+router.get('/images', function(req, res) {
   const collection = db.collection('info');
   req.session.images = [];
   const imageFolder = 'public/dist/images'
@@ -19,12 +23,10 @@ router.get('/', function(req, res) {
     });
     request('https://site-mikel.herokuapp.com/data/data.json', function (error, response, body) {
       const data = JSON.parse(body);
-      res.locals.descr = data;
-      res.locals.images = req.session.images;
-      res.render('index');
+      res.send(data);
     });
   });
-});
+})
 
 /* EXPORT ROUTER
 ----------------------------------------- */
