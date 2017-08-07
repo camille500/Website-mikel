@@ -48,15 +48,12 @@
         let j = Math.floor(Math.random() * index);
         [array[index], array[j]] = [array[j], array[index]];
       });
-      if(array.length) {
-        images.init(array);
-      }
+      images.init(array);
     }
   }
 
   images = {
     init(imageArray) {
-      console.log('Fired')
       let negative = imageArray[config.actualImage].replace('.1', '.2');
       elements.actual_normal.src = `/dist/images/${imageArray[config.actualImage]}`;
       elements.actual_negative.src = negative;
