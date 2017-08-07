@@ -199,7 +199,8 @@ section {
     .__image_info {
       bottom: 1.5em;
       max-width: 25em;
-      left: 1em; } }
+      left: 1em;
+      font-size: .75em; } }
   @media (max-width: 50em) and (orientation: landscape) {
     .__image_info {
       right: 1em; } }

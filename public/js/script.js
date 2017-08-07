@@ -78,6 +78,14 @@
       const amountOfGroups = elements.image_groups.length - 1;
       let number = Math.floor(Math.random() * amountOfGroups) + 1;
       actualNumber = number;
+      if(allLatest.indexOf(number) > -1) {
+        const amountOfGroups = elements.image_groups.length - 1;
+        let number = Math.floor(Math.random() * amountOfGroups) + 1;
+        actualNumber = number;
+        allLatest.push(number)
+      } else {
+        allLatest.push(number)
+      }
       elements.image_groups.forEach(function(group) {
         group.style.opacity = 0;
       });
@@ -89,6 +97,14 @@
       const amountOfGroups = elements.image_groups.length - 1;
       let number = Math.floor(Math.random() * amountOfGroups) + 1;
       actualNumber = number;
+      if(allLatest.indexOf(number) > -1) {
+        const amountOfGroups = elements.image_groups.length - 1;
+        let number = Math.floor(Math.random() * amountOfGroups) + 1;
+        actualNumber = number;
+        allLatest.push(number)
+      } else {
+        allLatest.push(number)
+      }
       elements.image_groups.forEach(function(group) {
         group.style.opacity = 0;
       });
