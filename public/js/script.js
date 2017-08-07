@@ -26,7 +26,7 @@
       eventListeners.init();
       this.setCopyright();
       app.changeTitle();
-      titleInterval = setInterval(app.changeTitle, 3000);
+      titleInterval = setInterval(app.changeTitle, 750);
     },
     setCopyright() {
       const date = new Date();
@@ -43,13 +43,13 @@
         elements.title_one.style.opacity = 0;
         setTimeout(function() {
           elements.title_two.style.opacity = 1;
-        }, 1000)
+        }, 50)
       } else {
         latestTitle = false;
         elements.title_two.style.opacity = 0;
         setTimeout(function() {
           elements.title_three.style.opacity = 1;
-        }, 1000)
+        }, 50)
       }
     }
   }

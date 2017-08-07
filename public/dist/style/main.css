@@ -177,7 +177,7 @@ section {
   .__title:hover, .__title_dark:hover {
     cursor: pointer; }
   .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
-    transition: opacity 1s linear;
+    transition: opacity .25s linear;
     opacity: 0; }
 
 .__image_info {
