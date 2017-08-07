@@ -6,9 +6,16 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
+const jsonfile = require('jsonfile')
+
+var file = 'public/data/data.json'
+
 /* INDEX ROUTE
 ----------------------------------------- */
-router.get('/', function(req, res) {
+router.get('/', getDescriptions, function(req, res) {
+  jsonfile.writeFile(file, req.session.data, function (err) {
+    console.error(err);
+  })
   res.render('admin/index');
 });
 
@@ -44,7 +51,10 @@ router.get('/overview', function(req, res) {
   });
 })
 
-router.get('/edit/:image', function(req, res) {
+router.get('/edit/:image', getDescriptions, function(req, res) {
+  jsonfile.writeFile(file, req.session.data, function (err) {
+    console.error(err);
+  })
   res.locals.image = req.params.image
   res.render('admin/edit')
 });
@@ -56,9 +66,27 @@ router.get('/delete/:image', function(req, res) {
   imagePaths.forEach(function(image) {
     fs.unlink(image, function(error) {
     });
-    res.redirect('/admin/overview');
-  })
-})
+  });
+  res.redirect('/admin/overview');
+});
+
+router.get('/api', function(req, res) {
+   res.send(req.session.data);
+});
+
+function getDescriptions(req, res, next) {
+  req.session.data = {
+    images: {},
+  };
+  const collection = db.collection('info');
+  const data = collection.find({});
+  data.forEach(function(d) {
+    req.session.data.images[d.image_id] = d.description;
+  });
+  setTimeout(function(){
+    next();
+  }, 3000)
+}
 
 /* EXPORT ROUTER
 ----------------------------------------- */

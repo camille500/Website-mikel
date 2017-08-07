@@ -9,7 +9,7 @@
 ------------------------------- */
 @font-face {
   font-family: 'Frutiger-Light';
-  src: local("Frutiger LT Std 45 Light"), local("FrutigerLTStd-Light"), url("font/FrutigerLTStd-Light.woff2") format("woff2"), url("font/FrutigerLTStd-Light.woff") format("woff"), url("font/FrutigerLTStd-Light.ttf") format("truetype");
+  src: url("FrutigerLTStd-Light.woff2") format("woff2"), url("FrutigerLTStd-Light.woff") format("woff"), url("FrutigerLTStd-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal; }
 
@@ -46,7 +46,7 @@ img {
 
 p {
   font-family: 'Fruitiger-Light', sans-serif;
-  font-weight: 700; }
+  font-weight: 300; }
 
 section {
   color: black; }
@@ -96,7 +96,7 @@ section {
     section.__info .__contact {
       transition: 1s;
       position: absolute;
-      top: 27.5em;
+      top: 26em;
       left: 5em; }
       @media only screen and (max-width: 50em) {
         section.__info .__contact {
@@ -143,6 +143,13 @@ section {
         margin-bottom: 1em; }
       section.__info .__text p {
         margin-left: 1.5em; }
+        section.__info .__text p a {
+          transition: 1s;
+          text-decoration: none;
+          color: black; }
+          section.__info .__text p a:hover {
+            transition: 1s;
+            color: #00FF24; }
         @media only screen and (max-width: 50em) {
           section.__info .__text p {
             margin-left: .5em; } }
@@ -184,9 +191,10 @@ section {
   font-size: .8em;
   z-index: 100000000;
   position: absolute;
-  bottom: .5em;
-  right: 5em;
-  color: #00FF24; }
+  bottom: 2em;
+  right: 3em;
+  color: #00FF24;
+  text-align: right; }
   @media only screen and (max-width: 50em) {
     .__image_info {
       bottom: 1.5em;

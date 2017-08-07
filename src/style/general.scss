@@ -2,13 +2,13 @@
 ------------------------------- */
 @font-face {
 	font-family: 'Frutiger-Light';
-	src: local('Frutiger LT Std 45 Light'), local('FrutigerLTStd-Light'),
-		url('font/FrutigerLTStd-Light.woff2') format('woff2'),
-		url('font/FrutigerLTStd-Light.woff') format('woff'),
-		url('font/FrutigerLTStd-Light.ttf') format('truetype');
+	src: url('FrutigerLTStd-Light.woff2') format('woff2'),
+		url('FrutigerLTStd-Light.woff') format('woff'),
+		url('FrutigerLTStd-Light.ttf') format('truetype');
 	font-weight: 300;
 	font-style: normal;
 }
+
 
 @font-face {
 	font-family: 'Frutiger-Bold';
@@ -53,5 +53,5 @@ img {
 
 p {
 	font-family: 'Fruitiger-Light', sans-serif;
-	font-weight: 700;
+	font-weight: 300;
 }

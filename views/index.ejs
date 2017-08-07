@@ -1,7 +1,7 @@
 <%- include('./partials/head.ejs') %>
   <section class="__info">
     <h1 class="__title_dark">Orphée</h1>
-    <h1 class="__close uppercase" id="close">Close</h1>
+    <h1 class="__close" id="close">Close</h1>
     <div class="__contact">
       <h2>Contact</h2>
       <span>
@@ -15,7 +15,7 @@
       <p>Orphée is a graphic design studio that’s mainly focussing on the cultural field(s). My expertise varies from printed matter to type design.</p>
       <p>Every design will be executed concept–based and quality is a priority (paper, print, lithography and type).</p>
       <p>Are you interested in a (artist) monograph, catalogue, business card, typeface, etcetera? Please don’t hesitate to drop a line for further inquiries…</p>
-      <p>p.s.: Portfolio showcase can be asked on request via: mikel[at]studio-orphee.eu. Further works on this website display most–recent projects and not a overall retrospective of my works.</p>
+      <p>p.s.: Portfolio showcase can be asked on request via: <a class="mail" href="mailto:mikel@studio-orphee.eu">mikel[at]studio-orphee.eu</a>. Further works on this website display most–recent projects and not a overall retrospective of my works.</p>
     </div>
     <div class="__copyright">
       <p>&copy Orphée <span id="copy_date"></span></p>
@@ -29,19 +29,26 @@
     <h1 class="__title two">Info</h1>
     <h1 class="__title three">Contact</h1>
   </section>
-  <% let count = 0; %>
+  <% let count = 0; let lastImage = false; %>
     <% images.forEach(function(image) { %>
       <% if(count === 0)  { %>
         <section class="__image_wrapper">
         <img src="/dist/images/<%= image %>" class="__image __normal __clickable" />
       <% } %>
       <% count++ %>
+      <% if(count === 1)  { %>
+        <% lastImage = image %>
+      <% } %>
       <% if(count === 2)  { %>
         <img src="/dist/images/<%= image %>" class="__negative" />
+      <% } %>
+      <% if(count === 2)  { %>
         <section class="__image_info">
-          <p class="__description">Hier komt de beschrijving bij de foto. Voor nu is dit de maximale text lengte. Moet dat langer?</p>
+          <p class="__description"><%=descr.images[lastImage]%></p>
         </section>
         </section>
+      <% } %>
+      <% if(count === 2)  { %>
         <% count = 0; %>
       <% } %>
     <% }) %>
