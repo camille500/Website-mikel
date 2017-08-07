@@ -124,6 +124,9 @@ section {
         @include bp-medium {
           margin-left: .5em;
         }
+        @include bp-small {
+          display: none;
+        }
       }
     }
     .__copyright {

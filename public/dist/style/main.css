@@ -154,6 +154,9 @@ section {
         @media only screen and (max-width: 50em) {
           section.__info .__text p {
             margin-left: .5em; } }
+        @media only screen and (max-width: 40em) {
+          section.__info .__text p {
+            display: none; } }
     section.__info .__copyright {
       position: absolute;
       bottom: 2em;
@@ -222,7 +225,7 @@ section {
     opacity: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        margin-top: 35.5vh; } }
+        margin-top: 33.5vh; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
         margin-top: 2.5vh; } }
