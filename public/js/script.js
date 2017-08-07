@@ -48,7 +48,9 @@
         let j = Math.floor(Math.random() * index);
         [array[index], array[j]] = [array[j], array[index]];
       });
-      images.init(array);
+      if(array.length) {
+        images.init(array);
+      }
     }
   }
 
