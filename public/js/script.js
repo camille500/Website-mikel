@@ -34,7 +34,7 @@
         }
         data.makeArray();
       };
-      request.open("GET", "http://site-mikel.herokuapp.com/images", true);
+      request.open("GET", "https://site-mikel.herokuapp.com/images", true);
       request.send();
     },
     makeArray() {
