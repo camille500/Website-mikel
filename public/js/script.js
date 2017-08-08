@@ -23,7 +23,7 @@
     actualImage: 0,
     interval: 5000,
     imageUrl: 'http://localhost:3000/dist/images/',
-    oldUrl: 'https://site-mikel.herokuapp.com/dist/images/'
+    oldUrl: 'https://site-mikel.herokuapp.com/dist/images/',
     replaceCount: 0,
   };
 
@@ -78,7 +78,7 @@
   const images = {
     init(imageArray) {
       elements.image_holders.forEach(function(image, index) {
-        image.src = `${config.imageUrl}${imageArray[index]}`;
+        image.src = `${config.oldUrl}${imageArray[index]}`;
         config.atImage ++;
       });
       elements.image_groups[0].style.opacity = 1;
@@ -117,7 +117,7 @@
       elements.image_holders.forEach(function(image, index) {
         if(index < 2) {
           let actualIndex = index + config.atImage;
-          image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
+          image.src = `${config.oldUrl}${config.imageArray[actualIndex]}`;
           config.atImage ++;
         }
       });
@@ -126,7 +126,7 @@
       elements.image_holders.forEach(function(image, index) {
         if(index >= 2) {
           let actualIndex = index + config.atImage;
-          image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
+          image.src = `${config.oldUrl}${config.imageArray[actualIndex]}`;
           config.atImage ++;
         }
       });
