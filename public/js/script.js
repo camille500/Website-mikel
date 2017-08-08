@@ -17,6 +17,8 @@
   const config = {
     allData: {},
     imageArray: [],
+    negativeArray: [],
+    normalArray: [],
     atImage: 0,
     actualImage: 0,
     interval: 5000,
@@ -59,8 +61,16 @@
         [array[index], array[j]] = [array[j], array[index]];
       });
       if (array.length) {
+        config.normalArray = array;
+        data.makeNegativeArray(array);
         images.init(array);
       }
+    },
+    makeNegativeArray(array) {
+      array.forEach(function(item) {
+        item = item.replace('.1', '.2');
+        config.negativeArray.push(item);
+      })
     }
   }
 
@@ -157,12 +167,23 @@
     init() {
       elements.image.forEach(function(image) {
         image.addEventListener("click", eventListeners.goToNext);
-      })
+      });
+      elements.title.forEach(function(title){
+        title.addEventListener("click", eventListeners.openInfo);
+      });
     },
     goToNext() {
       clearInterval(imageInterval);
       images.crossFadeImage();
       imageInterval = setInterval(images.crossFadeImage, config.interval);
+    },
+    openInfo() {
+      elements.image_holders.forEach(function(image, index) {
+        image.src = image.src.replace('.1', '.2');
+        console.log(image.src);
+        // image.src = `${config.imageUrl}${imageArray[index]}`;
+      });
+      config.imageArray = config.negativeArray;
     }
   }
 
