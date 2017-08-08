@@ -180,10 +180,11 @@
     openInfo() {
       elements.image_holders.forEach(function(image, index) {
         image.src = image.src.replace('.1', '.2');
-        console.log(image.src);
-        // image.src = `${config.imageUrl}${imageArray[index]}`;
       });
       config.imageArray = config.negativeArray;
+      elements.info.style.display = 'block';
+      elements.info.style.zIndex = 100000;
+      document.body.style.backgroundColor = 'white';
     }
   }
 
