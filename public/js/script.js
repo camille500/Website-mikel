@@ -23,6 +23,7 @@
     actualImage: 0,
     interval: 5000,
     imageUrl: 'http://localhost:3000/dist/images/',
+    oldUrl: 'https://site-mikel.herokuapp.com/dist/images/'
     replaceCount: 0,
   };
 

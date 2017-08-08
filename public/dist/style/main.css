@@ -223,6 +223,7 @@ section {
     display: inline-block; }
 
 .__image_wrapper {
+  visibility: visible;
   z-index: 10000;
   opacity: 0;
   transition: opacity 1.5s linear;
