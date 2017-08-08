@@ -171,6 +171,7 @@
       elements.title.forEach(function(title){
         title.addEventListener("click", eventListeners.openInfo);
       });
+      elements.close.addEventListener("click", eventListeners.closeInfo);
     },
     goToNext() {
       clearInterval(imageInterval);
@@ -185,6 +186,15 @@
       elements.info.style.display = 'block';
       elements.info.style.zIndex = 100000;
       document.body.style.backgroundColor = 'white';
+    },
+    closeInfo() {
+      elements.image_holders.forEach(function(image, index) {
+        image.src = image.src.replace('.2', '.1');
+      });
+      config.imageArray = config.normalArray;
+      elements.info.style.display = 'none';
+      elements.info.style.zIndex = -100000;
+      document.body.style.backgroundColor = 'black';
     }
   }
 
