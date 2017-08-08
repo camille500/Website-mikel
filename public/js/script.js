@@ -12,6 +12,7 @@
     info: document.querySelector('.__info'),
     close: document.querySelector('#close'),
     title: document.querySelectorAll('.__title'),
+    description: document.querySelector('.__description'),
   }
 
   const config = {
@@ -23,8 +24,9 @@
     actualImage: 0,
     interval: 5000,
     imageUrl: 'http://localhost:3000/dist/images/',
-    oldUrl: 'https://site-mikel.herokuapp.com/dist/images/',
+    oldUrl: '/dist/images/',
     replaceCount: 0,
+    actualShown: false
   };
 
   let imageInterval = false;
@@ -82,6 +84,10 @@
         config.atImage ++;
       });
       elements.image_groups[0].style.opacity = 1;
+      const source = elements.image_groups[0].childNodes[1].src
+      const source_length = source.length;
+      const description = source.substr(source_length - 8, source_length);
+      elements.description.textContent = config.allData.images[description];
       config.imageArray = imageArray;
       this.startInterval();
     },
@@ -105,12 +111,20 @@
         config.actualImage = 0;
         elements.image_groups[actual].style.opacity = 0;
         elements.image_groups[config.actualImage].style.opacity = 1;
+        const source = elements.image_groups[config.actualImage].childNodes[1].src
+        const source_length = source.length;
+        const description = source.substr(source_length - 8, source_length);
+        elements.description.textContent = config.allData.images[description];
       } else {
         if(config.actualImage > 2) {
           images.changeFirstThree();
         }
         elements.image_groups[actual].style.opacity = 0;
         elements.image_groups[next].style.opacity = 1;
+        const source = elements.image_groups[config.actualImage].childNodes[1].src
+        const source_length = source.length;
+        const description = source.substr(source_length - 8, source_length);
+        elements.description.textContent = config.allData.images[description];
       }
     },
     changeFirstThree() {

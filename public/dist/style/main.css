@@ -220,15 +220,18 @@ section {
     .__image_info {
       right: 1em; } }
   .__image_info p {
+    font-family: 'Frutiger-Light', sans-serif;
+    font-weight: 300;
     display: inline-block; }
 
 .__image_wrapper {
   visibility: visible;
   z-index: 10000;
   opacity: 0;
-  transition: opacity 1.5s linear;
   -webkit-transition: opacity 1.5s linear;
+  -ms-transition: opacity 1.5s linear;
   -webkit-backface-visibility: hidden;
+  transition: opacity 1.5s linear;
   display: block;
   width: 100%;
   height: 100%; }
