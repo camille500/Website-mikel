@@ -22,7 +22,7 @@
     normalArray: [],
     atImage: 0,
     actualImage: 0,
-    interval: 5000,
+    interval: 6000,
     imageUrl: 'http://localhost:3000/dist/images/',
     oldUrl: '/dist/images/',
     replaceCount: 0,
