@@ -50,8 +50,7 @@ img {
   text-transform: uppercase; }
 
 p {
-  font-family: 'Fruitiger-Light', sans-serif;
-  font-weight: 300; }
+  font-weight: 700; }
 
 section {
   color: black; }
@@ -173,9 +172,16 @@ section {
       text-align: right;
       margin-bottom: .15em;
       line-height: 1.2em; }
+      section.__info .__copyright_text p {
+        font-family: 'Frutiger-Light', sans-serif;
+        font-weight: 300; }
       @media only screen and (max-width: 50em) {
         section.__info .__copyright_text {
           display: none; } }
+
+.__title_dark {
+  font-family: 'Frutiger-Bold', sans-serif;
+  font-weight: 700; }
 
 .__title, .__title_dark {
   transition: 1s;
@@ -185,7 +191,8 @@ section {
   left: 2.55em;
   z-index: 1000;
   opacity: 1;
-  transition: opacity 1s linear; }
+  transition: opacity 1s linear;
+  font-weight: 300; }
   @media only screen and (max-width: 50em) {
     .__title, .__title_dark {
       left: 1.5em; } }

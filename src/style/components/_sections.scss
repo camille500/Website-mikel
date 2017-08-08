@@ -142,11 +142,20 @@ section {
       text-align: right;
       margin-bottom: .15em;
       line-height: 1.2em;
+      p {
+        font-family: 'Frutiger-Light', sans-serif;
+        font-weight: 300;
+      }
       @include bp-medium {
         display: none;
       }
     }
   }
+}
+
+.__title_dark {
+  font-family: 'Frutiger-Bold', sans-serif;
+  font-weight: 700;
 }
 
 .__title, .__title_dark {
@@ -158,6 +167,7 @@ section {
   z-index: 1000;
   opacity: 1;
   transition: opacity 1s linear;
+  font-weight: 300;
   @include bp-medium {
     left: 1.5em;
   }
