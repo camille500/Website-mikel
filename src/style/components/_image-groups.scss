@@ -16,10 +16,11 @@
     bottom: 0;
     left: 0;
     @include bp-medium {
-      top: 12em;
+      transform: scale(1.1);
+      top: 11em;
     }
     @include bp-horizon {
-      top: 2.5em;
+      top: 1em;
     }
   }
 }
