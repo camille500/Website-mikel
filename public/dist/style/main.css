@@ -33,11 +33,8 @@
   user-select: none; }
 
 body {
-  overflow-x: hidden;
-  overflow: hidden; }
-
-body {
   transition: 1s;
+  overflow-x: hidden;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -255,10 +252,12 @@ section {
     left: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
+        overflow: hidden;
         transform: scale(1.4);
         top: 11em; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
+        transform: scale(1.1);
         top: 1em; } }
 
 .__image_cap {
