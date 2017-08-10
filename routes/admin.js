@@ -55,8 +55,27 @@ router.get('/edit/:image', getDescriptions, function(req, res) {
   jsonfile.writeFile(file, req.session.data, function (err) {
     console.error(err);
   })
-  res.locals.image = req.params.image
+  console.log(req.session.data);
+  res.locals.data = req.session.data;
+  res.locals.image = req.params.image;
   res.render('admin/edit')
+});
+
+router.post('/edit/:image', function(req, res) {
+  const image = req.params.image;
+  const description = req.body.description;
+  const collection = db.collection('info');
+  // collection.findOne({
+  //     image_id: image
+  //   }, function(err, image) {
+  //     const update_data = {
+  //       image_id: image,
+  //       description: description,
+  //     };
+  //     collection.update( { "image_id": image },
+  //      { "description": description },
+  //      { upsert: true } )
+  //   });
 });
 
 router.get('/delete/:image', function(req, res) {

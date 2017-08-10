@@ -57,6 +57,9 @@ img {
 p {
   font-weight: 700; }
 
+.white {
+  color: white; }
+
 section {
   color: black; }
   section.__head .__title {

@@ -6,8 +6,9 @@
   <a href="/admin/delete/<%= image %>">Verwijder</a>
   <a href="/admin/description/<%= image %>">Pas omschrijving aan</a>
 
-  <!-- <form method="post">
-
-  </form> -->
+  <form method="post">
+    <input type="text" name="description" value="<%= data.images[image] %>" />
+    <input type="submit" value="Verstuur" />
+  </form>
 
 <%- include('../partials/foot.ejs') %>
