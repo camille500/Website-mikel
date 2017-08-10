@@ -24,7 +24,8 @@
     atImage: 0,
     actualImage: 0,
     interval: 6000,
-    imageUrl: 'http://localhost:3000/dist/images/',
+    // imageUrl: 'http://localhost:3000/dist/images/',
+    imageUrl: 'https://site-mikel.herokuapp.com/dist/images/',
     oldUrl: '/dist/images/',
     replaceCount: 0,
     actualShown: false
@@ -51,7 +52,8 @@
         }
         data.makeArray();
       };
-      request.open("GET", "http://localhost:3000/images", true);
+      // request.open("GET", "http://localhost:3000/images", true);
+      request.open("GET", "https://site-mikel.herokuapp.com/images", true);
       request.send();
     },
     makeArray() {
