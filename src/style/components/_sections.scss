@@ -175,14 +175,14 @@ section {
     cursor: pointer;
   }
   &.one, &.two, &.three {
-    font-family: 'Frutiger-Roman', sans-serif;
+    font-family: 'Frutiger-Bold', sans-serif;
     transition: opacity .25s linear;
     opacity: 0;
   }
 }
 
 .one, .two, .three {
-  font-family: 'Frutiger-Roman', sans
+  font-family: 'Frutiger-Bold', sans-serif;
 }
 
 .__image_info {

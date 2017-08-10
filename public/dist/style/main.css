@@ -207,12 +207,12 @@ section {
   .__title:hover, .__title_dark:hover {
     cursor: pointer; }
   .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
-    font-family: 'Frutiger-Roman', sans-serif;
+    font-family: 'Frutiger-Bold', sans-serif;
     transition: opacity .25s linear;
     opacity: 0; }
 
 .one, .two, .three {
-  font-family: 'Frutiger-Roman', sans; }
+  font-family: 'Frutiger-Bold', sans-serif; }
 
 .__image_info {
   font-size: .8em;
@@ -255,7 +255,7 @@ section {
     left: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        transform: scale(1.1);
+        transform: scale(1.4);
         top: 11em; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
