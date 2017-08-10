@@ -13,6 +13,7 @@
     close: document.querySelector('#close'),
     title: document.querySelectorAll('.__title'),
     description: document.querySelector('.__description'),
+    title: document.querySelectorAll('.__title'),
   }
 
   const config = {
@@ -44,12 +45,13 @@
       const request = new XMLHttpRequest();
       request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+          console.log(request.responseText);
           let data = JSON.parse(request.responseText);
           config.allData = data;
         }
         data.makeArray();
       };
-      request.open("GET", "https://site-mikel.herokuapp.com/images", true);
+      request.open("GET", "http://localhost:3000/images", true);
       request.send();
     },
     makeArray() {
@@ -197,6 +199,9 @@
       elements.image_holders.forEach(function(image, index) {
         image.src = image.src.replace('.1', '.2');
       });
+      elements.title.forEach(function(title) {
+        title.style.display = 'none';
+      });
       config.imageArray = config.negativeArray;
       elements.info.style.display = 'block';
       elements.info.style.zIndex = 100000;
@@ -205,6 +210,9 @@
     closeInfo() {
       elements.image_holders.forEach(function(image, index) {
         image.src = image.src.replace('.2', '.1');
+      });
+      elements.title.forEach(function(title) {
+        title.style.display = 'block';
       });
       config.imageArray = config.normalArray;
       elements.info.style.display = 'none';

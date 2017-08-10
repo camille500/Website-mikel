@@ -19,6 +19,12 @@
   font-weight: bold;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Frutiger-Roman';
+  src: url("FrutigerLTStd-Roman.woff2") format("woff2"), url("FrutigerLTStd-Roman.woff") format("woff"), url("FrutigerLTStd-Roman.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 /* GENERAL
 ------------------------------- */
 * {
@@ -173,8 +179,8 @@ section {
       margin-bottom: .15em;
       line-height: 1.2em; }
       section.__info .__copyright_text p {
-        font-family: 'Frutiger-Light', sans-serif;
-        font-weight: 300; }
+        font-family: 'Frutiger-Bold', sans-serif;
+        font-weight: 700; }
       @media only screen and (max-width: 50em) {
         section.__info .__copyright_text {
           display: none; } }
@@ -202,17 +208,20 @@ section {
     transition: opacity .25s linear;
     opacity: 0; }
 
+.one, .two, .three {
+  font-family: 'Frutiger-Roman', sans-serif; }
+
 .__image_info {
   font-size: .8em;
   z-index: 100000000;
   position: absolute;
-  bottom: 2em;
+  bottom: 3em;
   right: 3em;
   color: #00FF24;
   text-align: right; }
   @media only screen and (max-width: 50em) {
     .__image_info {
-      bottom: 1.5em;
+      bottom: 3em;
       max-width: 25em;
       left: 1em;
       font-size: .75em; } }
@@ -241,6 +250,9 @@ section {
     right: 0;
     bottom: 0;
     left: 0; }
+    @media only screen and (max-width: 50em) {
+      .__image_wrapper img {
+        top: 15.5em; } }
 
 .__image_cap {
   display: flex;
