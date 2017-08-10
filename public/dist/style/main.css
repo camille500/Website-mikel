@@ -180,7 +180,7 @@ section {
       line-height: 1.2em; }
       section.__info .__copyright_text p {
         font-family: 'Frutiger-Bold', sans-serif;
-        font-weight: 700; }
+        font-weight: 300; }
       @media only screen and (max-width: 50em) {
         section.__info .__copyright_text {
           display: none; } }
@@ -205,23 +205,24 @@ section {
   .__title:hover, .__title_dark:hover {
     cursor: pointer; }
   .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
+    font-family: 'Frutiger-Roman', sans-serif;
     transition: opacity .25s linear;
     opacity: 0; }
 
 .one, .two, .three {
-  font-family: 'Frutiger-Roman', sans-serif; }
+  font-family: 'Frutiger-Roman', sans; }
 
 .__image_info {
   font-size: .8em;
   z-index: 100000000;
   position: absolute;
   bottom: 3em;
-  right: 3em;
+  right: 4em;
   color: #00FF24;
   text-align: right; }
   @media only screen and (max-width: 50em) {
     .__image_info {
-      bottom: 3em;
+      bottom: 1.5em;
       max-width: 25em;
       left: 1em;
       font-size: .75em; } }
@@ -237,9 +238,9 @@ section {
   visibility: visible;
   z-index: 10000;
   opacity: 0;
-  -webkit-transition: opacity .5s linear;
   -ms-transition: opacity 1.5s linear;
   -webkit-backface-visibility: hidden;
+  -webkit-transition: opacity .5s linear;
   transition: opacity 1.5s linear;
   display: block;
   width: 100%;

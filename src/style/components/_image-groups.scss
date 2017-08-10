@@ -2,9 +2,9 @@
   visibility: visible;
   z-index: 10000;
   opacity: 0;
-  -webkit-transition: opacity .5s linear;
   -ms-transition: opacity 1.5s linear;
   -webkit-backface-visibility: hidden;
+  -webkit-transition: opacity .5s linear;
   transition: opacity 1.5s linear;
   display: block;
   width: 100%;

@@ -204,6 +204,7 @@
       elements.title.forEach(function(title) {
         title.style.display = 'none';
       });
+      elements.image_info[0].style.display = 'none';
       config.imageArray = config.negativeArray;
       elements.info.style.display = 'block';
       elements.info.style.zIndex = 100000;
@@ -217,6 +218,7 @@
         title.style.display = 'block';
       });
       config.imageArray = config.normalArray;
+      elements.image_info[0].style.display = 'block';
       elements.info.style.display = 'none';
       elements.info.style.zIndex = -100000;
       document.body.style.backgroundColor = 'black';
