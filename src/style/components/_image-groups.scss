@@ -16,13 +16,12 @@
     bottom: 0;
     left: 0;
     @include bp-medium {
-      overflow: hidden;
-      transform: scale(1.4);
+      transform: scale(1.25);
       top: 11em;
     }
     @include bp-horizon {
-      transform: scale(1.1);
-      top: 1em;
+      transform: scale(1);
+      top: .5em;
     }
   }
 }

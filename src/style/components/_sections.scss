@@ -178,6 +178,9 @@ section {
     font-family: 'Frutiger-Bold', sans-serif;
     transition: opacity .25s linear;
     opacity: 0;
+    @include bp-medium {
+      font-family: 'Frutiger-Bold', sans-serif;
+    }
   }
 }
 
