@@ -194,9 +194,9 @@ section {
   color: #00FF24;
   text-align: right;
   @include bp-medium {
-    bottom: 1.5em;
+    bottom: 3em;
     max-width: 25em;
-    left: 1em;
+    left: 2em;
     font-size: .75em;
   }
   @include bp-horizon {

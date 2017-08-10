@@ -32,7 +32,7 @@
   letter-spacing: 0.02em;
   user-select: none; }
 
-body, html {
+body {
   overflow-x: hidden;
   overflow: hidden; }
 
@@ -44,6 +44,8 @@ body {
   font-family: 'Fruitiger-Bold', sans-serif;
   background-color: black;
   color: white; }
+  body.__no_overflow {
+    overflow: auto !important; }
   body.__white {
     transition: 1s;
     background-color: white; }
@@ -222,9 +224,9 @@ section {
   text-align: right; }
   @media only screen and (max-width: 50em) {
     .__image_info {
-      bottom: 1.5em;
+      bottom: 3em;
       max-width: 25em;
-      left: 1em;
+      left: 2em;
       font-size: .75em; } }
   @media (max-width: 50em) and (orientation: landscape) {
     .__image_info {
@@ -254,6 +256,9 @@ section {
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
         top: 12em; } }
+    @media (max-width: 50em) and (orientation: landscape) {
+      .__image_wrapper img {
+        top: 2.5em; } }
 
 .__image_cap {
   display: flex;

@@ -18,6 +18,9 @@
     @include bp-medium {
       top: 12em;
     }
+    @include bp-horizon {
+      top: 2.5em;
+    }
   }
 }
 

@@ -38,7 +38,7 @@
 	user-select: none;
 }
 
-body, html {
+body {
 	overflow-x: hidden;
 	overflow: hidden;
 }
@@ -51,6 +51,9 @@ body {
   font-family: 'Fruitiger-Bold', sans-serif;
 	background-color: black;
 	color: white;
+	&.__no_overflow {
+		overflow: auto!important;
+	}
 	&.__white {
 		transition: 1s;
 		background-color: white;
