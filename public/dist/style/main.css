@@ -237,7 +237,7 @@ section {
   visibility: visible;
   z-index: 10000;
   opacity: 0;
-  -webkit-transition: opacity 1.5s linear;
+  -webkit-transition: opacity .5s linear;
   -ms-transition: opacity 1.5s linear;
   -webkit-backface-visibility: hidden;
   transition: opacity 1.5s linear;
@@ -252,7 +252,7 @@ section {
     left: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        top: 15.5em; } }
+        top: 12em; } }
 
 .__image_cap {
   display: flex;
