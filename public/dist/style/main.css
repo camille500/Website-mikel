@@ -179,7 +179,7 @@ section {
       line-height: 1.2em; }
       section.__info .__copyright_text p {
         font-family: 'Frutiger-Bold', sans-serif;
-        font-weight: 300; }
+        font-weight: 700; }
       @media only screen and (max-width: 50em) {
         section.__info .__copyright_text {
           display: none; } }
@@ -212,7 +212,8 @@ section {
         font-family: 'Frutiger-Bold', sans-serif; } }
 
 .one, .two, .three {
-  font-family: 'Frutiger-Bold', sans-serif; }
+  font-family: 'Frutiger-Bold', sans-serif;
+  font-weight: 700; }
 
 .__image_info {
   font-size: .8em;
@@ -255,11 +256,9 @@ section {
     left: 0; }
     @media only screen and (max-width: 50em) {
       .__image_wrapper img {
-        transform: scale(1.25);
         top: 11em; } }
     @media (max-width: 50em) and (orientation: landscape) {
       .__image_wrapper img {
-        transform: scale(1);
         top: .5em; } }
 
 .__image_cap {
