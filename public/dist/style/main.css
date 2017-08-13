@@ -168,6 +168,9 @@ section {
             transition: 1s;
             text-decoration: none;
             color: black; }
+            @media only screen and (max-width: 50em) {
+              section.__info .__contact span p a {
+                color: white; } }
             section.__info .__contact span p a:hover {
               transition: 1s;
               color: #00FF24; }
@@ -183,10 +186,11 @@ section {
         section.__info .__text {
           left: 2.5em;
           max-width: 17.5em;
-          padding-right: 1em; } }
-      @media only screen and (max-width: 50em) {
-        section.__info .__text {
+          padding-right: 1em;
           color: white; } }
+      @media only screen and (max-width: 20.313em) {
+        section.__info .__text {
+          max-width: 17.5em; } }
       section.__info .__text h2 {
         font-size: 1.2em;
         margin-bottom: 1em; }
