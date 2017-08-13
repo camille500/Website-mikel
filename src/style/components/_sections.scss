@@ -214,14 +214,17 @@ section {
   @include bp-medium {
     bottom: 3em;
     max-width: 25em;
-    left: 2em;
+    right: 1em;
     font-size: .75em;
   }
   @include bp-portrait {
     display: none;
   }
   @include bp-horizon {
-    right: .5em!important;
+    bottom: 3em;
+    max-width: 25em;
+    right: 1em;
+    font-size: .75em;
   }
   p {
     font-family: 'Frutiger-Light', sans-serif;

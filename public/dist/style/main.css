@@ -247,14 +247,17 @@ section {
     .__image_info {
       bottom: 3em;
       max-width: 25em;
-      left: 2em;
+      right: 1em;
       font-size: .75em; } }
   @media (max-width: 50em) and (orientation: portrait) {
     .__image_info {
       display: none; } }
   @media (max-width: 50em) and (orientation: landscape) {
     .__image_info {
-      right: 0.5em !important; } }
+      bottom: 3em;
+      max-width: 25em;
+      right: 1em;
+      font-size: .75em; } }
   .__image_info p {
     font-family: 'Frutiger-Light', sans-serif;
     font-weight: 300;
