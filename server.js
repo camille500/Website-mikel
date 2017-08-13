@@ -36,7 +36,7 @@ MongoClient.connect(dbConfig, (err, database) => {
 
 /* SET PORT FOR HEROKU
 ----------------------------------------- */
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
 /* ENABLE CACHE AND COMPRESSION
 ----------------------------------------- */

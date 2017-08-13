@@ -14,6 +14,7 @@
     title: document.querySelectorAll('.__title'),
     description: document.querySelector('.__description'),
     title: document.querySelectorAll('.__title'),
+    rotate: document.querySelector('.__title_rotate'),
   }
 
   const config = {
@@ -152,7 +153,9 @@
 
   const layout = {
     init() {
+      elements.rotate.style.color = 'black';
       this.changeTitle();
+      this.rotateTitle();
       titleInterval = setInterval(layout.changeTitle, 750);
     },
     setCopyright() {
@@ -179,6 +182,15 @@
         }, 50)
       }
     },
+    rotateTitle() {
+      setInterval(function() {
+        if(elements.rotate.style.color == 'black') {
+          elements.rotate.style.color = 'green';
+        } else {
+          elements.rotate.style.color == 'black';
+        }
+      }, 50);    
+    }
   }
 
   eventListeners = {

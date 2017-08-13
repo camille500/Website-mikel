@@ -109,7 +109,7 @@ section {
         display: block; } }
     @media only screen and (max-width: 20.313em) {
       section.__info {
-        height: 170vh; } }
+        height: 175vh; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -197,6 +197,10 @@ section {
       @media only screen and (max-width: 40em) {
         section.__info .__copyright {
           display: none; } }
+      @media only screen and (max-width: 20.313em) {
+        section.__info .__copyright {
+          display: block;
+          bottom: 1.5em; } }
     section.__info .__copyright_text {
       position: absolute;
       right: 3em;
@@ -214,12 +218,18 @@ section {
           text-align: right;
           right: 7%;
           max-width: 19.5em !important; } }
+      @media only screen and (max-width: 20.313em) {
+        section.__info .__copyright_text {
+          top: 46em;
+          left: 3em;
+          max-width: 15.5em;
+          text-align: left; } }
 
 .__title_dark {
   font-family: 'Frutiger-Bold', sans-serif;
   font-weight: 700; }
 
-.__title, .__title_dark {
+.__title, .__title_dark, .__title_rotate {
   transition: 1s;
   position: absolute;
   font-size: 1.15em;
@@ -230,32 +240,41 @@ section {
   transition: opacity 1s linear;
   font-weight: 300; }
   @media only screen and (max-width: 50em) {
-    .__title, .__title_dark {
+    .__title, .__title_dark, .__title_rotate {
       top: 1.5em;
       left: 1.5em; } }
-  .__title:hover, .__title_dark:hover {
+  .__title:hover, .__title_dark:hover, .__title_rotate:hover {
     cursor: pointer; }
-  .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
+  .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three, .__title_rotate.one, .__title_rotate.two, .__title_rotate.three {
     font-family: 'Frutiger-Bold', sans-serif;
     transition: opacity .25s linear;
     opacity: 0; }
     @media (max-width: 50em) and (orientation: portrait) {
-      .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
+      .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three, .__title_rotate.one, .__title_rotate.two, .__title_rotate.three {
         display: none; } }
     @media only screen and (max-width: 50em) {
-      .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
+      .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three, .__title_rotate.one, .__title_rotate.two, .__title_rotate.three {
         display: none;
         font-family: 'Frutiger-Bold', sans-serif; } }
-  .__title.mobile, .__title_dark.mobile {
+  .__title.mobile, .__title_dark.mobile, .__title_rotate.mobile {
     display: none; }
     @media only screen and (max-width: 50em) {
-      .__title.mobile, .__title_dark.mobile {
+      .__title.mobile, .__title_dark.mobile, .__title_rotate.mobile {
         display: block; } }
     @media (max-width: 50em) and (orientation: portrait) {
-      .__title.mobile, .__title_dark.mobile {
+      .__title.mobile, .__title_dark.mobile, .__title_rotate.mobile {
         display: none; } }
 
-.one, .two, .three, .mobile {
+.__title_rotate {
+  color: black;
+  display: none; }
+  @media only screen and (max-width: 50em) {
+    .__title_rotate {
+      display: block;
+      right: 1.5em !important;
+      text-align: right; } }
+
+.one, .two, .three, .mobile, .__title_rotate {
   font-family: 'Frutiger-Bold', sans-serif;
   font-weight: 700; }
 
