@@ -39,9 +39,13 @@ section {
     display: none;
     transition: opacity 0s linear;
     @include bp-portrait {
+      background-color: rgba(255, 255, 255, 1);
+      z-index: 1000;
       display: block;
     }
     .__title_dark {
+      font-family: 'Frutiger-Bold', sans-serif;
+      font-weight: 700;
       color: black;
     }
     .__close {
@@ -50,6 +54,9 @@ section {
       top: 2em;
       right: 3em;
       font-size: $basic-font;
+      @include bp-portrait {
+        display: none;
+      }
       &:hover {
         cursor: pointer;
       }

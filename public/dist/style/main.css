@@ -94,8 +94,12 @@ section {
     transition: opacity 0s linear; }
     @media (max-width: 50em) and (orientation: portrait) {
       section.__info {
+        background-color: white;
+        z-index: 1000;
         display: block; } }
     section.__info .__title_dark {
+      font-family: 'Frutiger-Bold', sans-serif;
+      font-weight: 700;
       color: black; }
     section.__info .__close {
       color: black;
@@ -103,6 +107,9 @@ section {
       top: 2em;
       right: 3em;
       font-size: 1.15em; }
+      @media (max-width: 50em) and (orientation: portrait) {
+        section.__info .__close {
+          display: none; } }
       section.__info .__close:hover {
         cursor: pointer; }
       @media only screen and (max-width: 50em) {
