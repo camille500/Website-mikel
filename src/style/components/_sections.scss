@@ -218,10 +218,10 @@ section {
     font-size: .75em;
   }
   @include bp-portrait {
-    right: 1em;
+    display: none;
   }
   @include bp-horizon {
-    right: 1em;
+    right: 1em!important;
   }
   p {
     font-family: 'Frutiger-Light', sans-serif;
