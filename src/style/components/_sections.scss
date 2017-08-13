@@ -206,12 +206,13 @@ section {
   &.mobile {
     display: none;
     @include bp-medium {
+
       display: block;
     }
   }
 }
 
-.one, .two, .three {
+.one, .two, .three, .mobile {
   font-family: 'Frutiger-Bold', sans-serif;
   font-weight: 700;
 }

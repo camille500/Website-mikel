@@ -249,7 +249,7 @@ section {
       .__title.mobile, .__title_dark.mobile {
         display: block; } }
 
-.one, .two, .three {
+.one, .two, .three, .mobile {
   font-family: 'Frutiger-Bold', sans-serif;
   font-weight: 700; }
 
