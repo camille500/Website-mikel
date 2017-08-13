@@ -99,6 +99,7 @@ section {
       section.__info {
         background-color: white;
         z-index: 1000;
+        height: 120vh;
         display: block; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
