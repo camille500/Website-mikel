@@ -74,7 +74,7 @@ section {
       top: 26em;
       left: 5em;
       @include bp-medium {
-        left: 5%;
+        right: 5%!important;
         text-align: right;
         top: 32.5em;
       }
@@ -107,9 +107,6 @@ section {
             }
           }
         }
-      }
-      @include bp-medium {
-        left: 2.5em;
       }
     }
     .__text {
