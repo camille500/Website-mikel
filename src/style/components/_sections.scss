@@ -74,7 +74,7 @@ section {
       top: 26em;
       left: 5em;
       @include bp-medium {
-        right: 7%!important;
+        right: 8%!important;
         text-align: right;
         top: 32.5em;
       }
@@ -163,7 +163,7 @@ section {
         font-weight: 700;
       }
       @include bp-medium {
-        
+        top: 32.5em;
       }
     }
   }
