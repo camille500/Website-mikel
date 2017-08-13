@@ -41,6 +41,9 @@ body {
   font-family: 'Fruitiger-Bold', sans-serif;
   background-color: black;
   color: white; }
+  @media (max-width: 50em) and (orientation: portrait) {
+    body {
+      overflow: auto !important; } }
   body.__no_overflow {
     overflow: auto !important; }
   body.__white {
@@ -220,6 +223,9 @@ section {
     font-family: 'Frutiger-Bold', sans-serif;
     transition: opacity .25s linear;
     opacity: 0; }
+    @media (max-width: 50em) and (orientation: portrait) {
+      .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
+        display: none; } }
     @media only screen and (max-width: 50em) {
       .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
         font-family: 'Frutiger-Bold', sans-serif; } }
