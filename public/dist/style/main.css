@@ -220,6 +220,7 @@ section {
   font-weight: 300; }
   @media only screen and (max-width: 50em) {
     .__title, .__title_dark {
+      top: 1.75em;
       left: 1.5em; } }
   .__title:hover, .__title_dark:hover {
     cursor: pointer; }

@@ -183,6 +183,7 @@ section {
   transition: opacity 1s linear;
   font-weight: 300;
   @include bp-medium {
+    top: 1.75em;
     left: 1.5em;
   }
   &:hover {
