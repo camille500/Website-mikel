@@ -135,7 +135,7 @@ section {
       left: 5em; }
       @media only screen and (max-width: 50em) {
         section.__info .__contact {
-          right: 5% !important;
+          right: 7% !important;
           text-align: right;
           top: 32.5em; } }
       @media only screen and (max-width: 20.313em) {
@@ -208,9 +208,6 @@ section {
       section.__info .__copyright_text p {
         font-family: 'Frutiger-Bold', sans-serif;
         font-weight: 700; }
-      @media only screen and (max-width: 50em) {
-        section.__info .__copyright_text {
-          display: none; } }
 
 .__title_dark {
   font-family: 'Frutiger-Bold', sans-serif;
@@ -241,7 +238,13 @@ section {
         display: none; } }
     @media only screen and (max-width: 50em) {
       .__title.one, .__title.two, .__title.three, .__title_dark.one, .__title_dark.two, .__title_dark.three {
+        display: none;
         font-family: 'Frutiger-Bold', sans-serif; } }
+  .__title.mobile, .__title_dark.mobile {
+    display: none; }
+    @media only screen and (max-width: 50em) {
+      .__title.mobile, .__title_dark.mobile {
+        display: block; } }
 
 .one, .two, .three {
   font-family: 'Frutiger-Bold', sans-serif;

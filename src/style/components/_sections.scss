@@ -74,7 +74,7 @@ section {
       top: 26em;
       left: 5em;
       @include bp-medium {
-        right: 5%!important;
+        right: 7%!important;
         text-align: right;
         top: 32.5em;
       }
@@ -163,7 +163,7 @@ section {
         font-weight: 700;
       }
       @include bp-medium {
-        display: none;
+        
       }
     }
   }
@@ -199,7 +199,14 @@ section {
       display: none;
     }
     @include bp-medium {
+      display: none;
       font-family: 'Frutiger-Bold', sans-serif;
+    }
+  }
+  &.mobile {
+    display: none;
+    @include bp-medium {
+      display: block;
     }
   }
 }
