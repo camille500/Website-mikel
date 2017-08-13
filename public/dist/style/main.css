@@ -135,7 +135,7 @@ section {
       left: 5em; }
       @media only screen and (max-width: 50em) {
         section.__info .__contact {
-          left: 9.5em;
+          left: 5%;
           text-align: right;
           top: 32.5em; } }
       @media only screen and (max-width: 20.313em) {
