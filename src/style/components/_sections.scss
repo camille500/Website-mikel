@@ -39,13 +39,14 @@ section {
     display: none;
     transition: opacity 0s linear;
     @include bp-portrait {
-      background-color: rgba(255, 255, 255, 1);
+      background-color: rgba(0, 0, 0, 1);
+      color: white;
       z-index: 1000;
       height: 125vh;
       display: block;
     }
     @include bp-iphone5 {
-      height: 175vh;
+      height: 180vh;
     }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
@@ -119,8 +120,11 @@ section {
       line-height: 1.2em;
       @include bp-medium {
         left: 2.5em;
-        max-width: 25em;
+        max-width: 20em;
         padding-right: 1em;
+      }
+      @include bp-medium {
+        color: white;
       }
       h2 {
         font-size: 1.2em;
@@ -146,6 +150,8 @@ section {
       position: absolute;
       bottom: 2em;
       left: 3em;
+      font-family: 'Frutiger-Bold', sans-serif;
+      font-weight: 700;
       @include bp-small {
         display: none;
       }
@@ -185,6 +191,9 @@ section {
 .__title_dark {
   font-family: 'Frutiger-Bold', sans-serif;
   font-weight: 700;
+  @include bp-medium {
+    color: white;
+  }
 }
 
 .__title, .__title_dark, .__title_rotate {

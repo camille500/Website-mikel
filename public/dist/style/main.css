@@ -103,13 +103,14 @@ section {
     transition: opacity 0s linear; }
     @media (max-width: 50em) and (orientation: portrait) {
       section.__info {
-        background-color: white;
+        background-color: black;
+        color: white;
         z-index: 1000;
         height: 125vh;
         display: block; } }
     @media only screen and (max-width: 20.313em) {
       section.__info {
-        height: 175vh; } }
+        height: 180vh; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -173,8 +174,11 @@ section {
       @media only screen and (max-width: 50em) {
         section.__info .__text {
           left: 2.5em;
-          max-width: 25em;
+          max-width: 20em;
           padding-right: 1em; } }
+      @media only screen and (max-width: 50em) {
+        section.__info .__text {
+          color: white; } }
       section.__info .__text h2 {
         font-size: 1.2em;
         margin-bottom: 1em; }
@@ -193,7 +197,9 @@ section {
     section.__info .__copyright {
       position: absolute;
       bottom: 2em;
-      left: 3em; }
+      left: 3em;
+      font-family: 'Frutiger-Bold', sans-serif;
+      font-weight: 700; }
       @media only screen and (max-width: 40em) {
         section.__info .__copyright {
           display: none; } }
@@ -228,6 +234,9 @@ section {
 .__title_dark {
   font-family: 'Frutiger-Bold', sans-serif;
   font-weight: 700; }
+  @media only screen and (max-width: 50em) {
+    .__title_dark {
+      color: white; } }
 
 .__title, .__title_dark, .__title_rotate {
   transition: 1s;
