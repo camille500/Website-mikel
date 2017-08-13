@@ -135,6 +135,8 @@ section {
       left: 5em; }
       @media only screen and (max-width: 50em) {
         section.__info .__contact {
+          left: 7.5em;
+          text-align: right;
           top: 32.5em; } }
       @media only screen and (max-width: 20.313em) {
         section.__info .__contact {
@@ -229,7 +231,7 @@ section {
   font-weight: 300; }
   @media only screen and (max-width: 50em) {
     .__title, .__title_dark {
-      top: 1.75em;
+      top: 1.5em;
       left: 1.5em; } }
   .__title:hover, .__title_dark:hover {
     cursor: pointer; }
@@ -267,7 +269,7 @@ section {
       display: none; } }
   @media (max-width: 50em) and (orientation: landscape) {
     .__image_info {
-      bottom: 2em;
+      bottom: 1.5em;
       max-width: 25em;
       right: 4em;
       font-size: .75em; } }

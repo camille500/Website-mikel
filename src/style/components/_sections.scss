@@ -74,6 +74,8 @@ section {
       top: 26em;
       left: 5em;
       @include bp-medium {
+        left: 7.5em;
+        text-align: right;
         top: 32.5em;
       }
       @include bp-iphone5 {
@@ -186,7 +188,7 @@ section {
   transition: opacity 1s linear;
   font-weight: 300;
   @include bp-medium {
-    top: 1.75em;
+    top: 1.5em;
     left: 1.5em;
   }
   &:hover {
@@ -228,7 +230,7 @@ section {
     display: none;
   }
   @include bp-horizon {
-    bottom: 2em;
+    bottom: 1.5em;
     max-width: 25em;
     right: 4em;
     font-size: .75em;
