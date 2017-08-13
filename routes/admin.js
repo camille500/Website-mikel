@@ -20,6 +20,7 @@ router.get('/', getDescriptions, function(req, res) {
 router.post('/', function(req, res) {
   let username = req.body.username;
   let password = req.body.password;
+  console.log(username === process.env.USERNAME);
   if(username === process.env.USERNAME && password === process.env.PASSWORD) {
     req.session.auth = true;
     req.session.images = [];
@@ -95,6 +96,10 @@ router.get('/delete/:image', checkForSession, function(req, res) {
 router.get('/api', function(req, res) {
    res.send(req.session.data);
 });
+
+router.get('/upload', function(req, res) {
+  res.render('admin/upload');
+})
 
 function getDescriptions(req, res, next) {
   req.session.data = {

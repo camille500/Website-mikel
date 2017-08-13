@@ -1,0 +1,11 @@
+<%- include('../partials/head_2.ejs') %>
+
+  <h1>Upload</h1>
+
+
+  <form method="post">
+    <input type="file" name="description" value="<%= data.images[image] %>" />
+    <input type="submit" value="Verstuur" />
+  </form>
+
+<%- include('../partials/foot.ejs') %>

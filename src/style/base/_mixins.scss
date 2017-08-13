@@ -32,6 +32,12 @@
   }
 }
 
+@mixin bp-iphone5 {
+  @media only screen and (max-width: 20.313em) {
+    @content;
+  }
+}
+
 @mixin bp-horizon {
   @media (max-width: 50em) and (orientation: landscape) {
     @content;

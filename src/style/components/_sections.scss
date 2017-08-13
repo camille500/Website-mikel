@@ -44,6 +44,9 @@ section {
       height: 120vh;
       display: block;
     }
+    @include bp-iphone5 {
+      height: 150vh;
+    }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -221,9 +224,9 @@ section {
     display: none;
   }
   @include bp-horizon {
-    bottom: 3em;
+    bottom: 2em;
     max-width: 25em;
-    right: 1em;
+    right: 4em;
     font-size: .75em;
   }
   p {

@@ -101,6 +101,9 @@ section {
         z-index: 1000;
         height: 120vh;
         display: block; } }
+    @media only screen and (max-width: 20.313em) {
+      section.__info {
+        height: 150vh; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -254,9 +257,9 @@ section {
       display: none; } }
   @media (max-width: 50em) and (orientation: landscape) {
     .__image_info {
-      bottom: 3em;
+      bottom: 2em;
       max-width: 25em;
-      right: 1em;
+      right: 4em;
       font-size: .75em; } }
   .__image_info p {
     font-family: 'Frutiger-Light', sans-serif;
