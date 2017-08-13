@@ -41,11 +41,11 @@ section {
     @include bp-portrait {
       background-color: rgba(255, 255, 255, 1);
       z-index: 1000;
-      height: 120vh;
+      height: 125vh;
       display: block;
     }
     @include bp-iphone5 {
-      height: 160vh;
+      height: 170vh;
     }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
@@ -163,7 +163,10 @@ section {
         font-weight: 700;
       }
       @include bp-medium {
-        top: 32.5em;
+        top: 41em;
+        text-align: right;
+        right: 7%;
+        max-width: 19.5em!important;
       }
     }
   }
@@ -206,8 +209,10 @@ section {
   &.mobile {
     display: none;
     @include bp-medium {
-
       display: block;
+    }
+    @include bp-portrait {
+      display: none;
     }
   }
 }
