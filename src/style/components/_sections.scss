@@ -46,12 +46,15 @@ section {
       display: block;
     }
     @include bp-iphone5 {
-      height: 180vh;
+      height: 182.5vh;
     }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
       color: black;
+      @include bp-medium {
+        color: white;
+      }
     }
     .__close {
       color: black;
@@ -78,6 +81,7 @@ section {
         right: 8%!important;
         text-align: right;
         top: 32.5em;
+        color: white;
       }
       @include bp-iphone5 {
         top: 37.5em;
@@ -91,10 +95,14 @@ section {
         margin-left: 1.5em;
         @include bp-medium {
           margin-left: .5em;
+          color: white;
         }
         p {
           margin: 0;
           margin-bottom: .25em;
+          @include bp-medium {
+            color: white;
+          }
           &:last-of-type {
             margin-bottom: 1.5em;
           }
@@ -120,7 +128,7 @@ section {
       line-height: 1.2em;
       @include bp-medium {
         left: 2.5em;
-        max-width: 20em;
+        max-width: 17.5em;
         padding-right: 1em;
       }
       @include bp-medium {

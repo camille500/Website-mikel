@@ -110,11 +110,14 @@ section {
         display: block; } }
     @media only screen and (max-width: 20.313em) {
       section.__info {
-        height: 180vh; } }
+        height: 182.5vh; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
       color: black; }
+      @media only screen and (max-width: 50em) {
+        section.__info .__title_dark {
+          color: white; } }
     section.__info .__close {
       color: black;
       position: absolute;
@@ -138,7 +141,8 @@ section {
         section.__info .__contact {
           right: 8% !important;
           text-align: right;
-          top: 32.5em; } }
+          top: 32.5em;
+          color: white; } }
       @media only screen and (max-width: 20.313em) {
         section.__info .__contact {
           top: 37.5em; } }
@@ -150,10 +154,14 @@ section {
         margin-left: 1.5em; }
         @media only screen and (max-width: 50em) {
           section.__info .__contact span {
-            margin-left: .5em; } }
+            margin-left: .5em;
+            color: white; } }
         section.__info .__contact span p {
           margin: 0;
           margin-bottom: .25em; }
+          @media only screen and (max-width: 50em) {
+            section.__info .__contact span p {
+              color: white; } }
           section.__info .__contact span p:last-of-type {
             margin-bottom: 1.5em; }
           section.__info .__contact span p a {
@@ -174,7 +182,7 @@ section {
       @media only screen and (max-width: 50em) {
         section.__info .__text {
           left: 2.5em;
-          max-width: 20em;
+          max-width: 17.5em;
           padding-right: 1em; } }
       @media only screen and (max-width: 50em) {
         section.__info .__text {
