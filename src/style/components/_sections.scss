@@ -217,6 +217,9 @@ section {
     left: 2em;
     font-size: .75em;
   }
+  @include bp-portrait {
+    right: 1em;
+  }
   @include bp-horizon {
     right: 1em;
   }
