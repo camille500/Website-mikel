@@ -254,7 +254,7 @@ section {
       display: none; } }
   @media (max-width: 50em) and (orientation: landscape) {
     .__image_info {
-      right: 1em !important; } }
+      right: 0.5em !important; } }
   .__image_info p {
     font-family: 'Frutiger-Light', sans-serif;
     font-weight: 300;

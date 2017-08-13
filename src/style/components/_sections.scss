@@ -221,7 +221,7 @@ section {
     display: none;
   }
   @include bp-horizon {
-    right: 1em!important;
+    right: .5em!important;
   }
   p {
     font-family: 'Frutiger-Light', sans-serif;
