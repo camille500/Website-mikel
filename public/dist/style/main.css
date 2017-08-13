@@ -92,6 +92,9 @@ section {
     background-color: rgba(255, 255, 255, 0.6);
     display: none;
     transition: opacity 0s linear; }
+    @media (max-width: 50em) and (orientation: portrait) {
+      section.__info {
+        display: block; } }
     section.__info .__title_dark {
       color: black; }
     section.__info .__close {
@@ -251,7 +254,7 @@ section {
   display: block;
   width: 100%;
   height: 100%; }
-  @media (max-width: 50em) and (orientation: landscape) {
+  @media (max-width: 50em) and (orientation: portrait) {
     .__image_wrapper {
       display: none; } }
   .__image_wrapper img {
