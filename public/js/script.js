@@ -39,6 +39,9 @@
       data.get();
       eventListeners.init();
       layout.init();
+      setTimeout(function() {
+        elements.info.style.opacity = 1;
+      }, 50)
     }
   }
 
@@ -155,7 +158,7 @@
     init() {
       elements.rotate.style.color = 'black';
       this.changeTitle();
-      this.rotateTitle();
+      rotateInterval = setInterval(layout.rotateTitle, 750);
       titleInterval = setInterval(layout.changeTitle, 750);
     },
     setCopyright() {
@@ -183,13 +186,16 @@
       }
     },
     rotateTitle() {
-      setInterval(function() {
-        if(elements.rotate.style.color == 'black') {
-          elements.rotate.style.color = 'green';
-        } else {
-          elements.rotate.style.color == 'black';
-        }
-      }, 50);    
+      if(elements.rotate.style.color == 'black') {
+        elements.rotate.style.opacity = 0;
+        elements.rotate.style.color = '#00FF24';
+        setTimeout(function() {
+          elements.rotate.style.opacity = 1;
+        }, 50)
+      } else {
+        console.log('allah aqbar');
+        elements.rotate.style.color = 'black';
+      }
     }
   }
 
