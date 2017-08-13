@@ -13,9 +13,7 @@ var file = 'public/data/data.json'
 /* INDEX ROUTE
 ----------------------------------------- */
 router.get('/', getDescriptions, function(req, res) {
-  jsonfile.writeFile(file, req.session.data, function (err) {
-    console.error(err);
-  })
+  jsonfile.writeFile(file, req.session.data, function (err) {  })
   res.render('admin/index');
 });
 
@@ -23,6 +21,7 @@ router.post('/', function(req, res) {
   let username = req.body.username;
   let password = req.body.password;
   if(username === process.env.USERNAME && password === process.env.PASSWORD) {
+    req.session.auth = true;
     req.session.images = [];
     const imageFolder = 'public/dist/images'
     fs.readdir(imageFolder, (err, files) => {
@@ -37,7 +36,7 @@ router.post('/', function(req, res) {
   }
 });
 
-router.get('/overview', function(req, res) {
+router.get('/overview', checkForSession, function(req, res) {
   req.session.images = [];
   const imageFolder = 'public/dist/images'
   fs.readdir(imageFolder, (err, files) => {
@@ -51,34 +50,38 @@ router.get('/overview', function(req, res) {
   });
 })
 
-router.get('/edit/:image', getDescriptions, function(req, res) {
+router.get('/edit/:image', checkForSession, getDescriptions, function(req, res) {
   jsonfile.writeFile(file, req.session.data, function (err) {
     console.error(err);
   })
-  console.log(req.session.data);
   res.locals.data = req.session.data;
   res.locals.image = req.params.image;
   res.render('admin/edit')
 });
 
-router.post('/edit/:image', function(req, res) {
-  const image = req.params.image;
+router.post('/edit/:image', checkForSession, function(req, res) {
+  const imageID = req.params.image;
   const description = req.body.description;
   const collection = db.collection('info');
-  // collection.findOne({
-  //     image_id: image
-  //   }, function(err, image) {
-  //     const update_data = {
-  //       image_id: image,
-  //       description: description,
-  //     };
-  //     collection.update( { "image_id": image },
-  //      { "description": description },
-  //      { upsert: true } )
-  //   });
+  const new_data = {
+    image_id: imageID,
+    description: description,
+  }
+  collection.findOne({
+      image_id: imageID
+    }, function(err, image) {
+      collection.update({
+         image_id: imageID
+       }, new_data, {
+         upsert: false
+       }, function(err, doc) {
+         if (err) return res.send(500, { error: err });
+         res.redirect('/admin/overview')
+       });
+    });
 });
 
-router.get('/delete/:image', function(req, res) {
+router.get('/delete/:image', checkForSession, function(req, res) {
   let image = req.params.image;
   let negative = image.replace("1", "2");
   const imagePaths = [`public/dist/images/${image}`, `public/dist/images/${negative}`]
@@ -105,6 +108,14 @@ function getDescriptions(req, res, next) {
   setTimeout(function(){
     next();
   }, 3000)
+}
+
+function checkForSession(req, res, next) {
+  if(req.session.auth === true) {
+    next();
+  } else {
+    res.redirect('/admin');
+  }
 }
 
 /* EXPORT ROUTER
