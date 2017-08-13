@@ -44,6 +44,12 @@ body {
   @media (max-width: 50em) and (orientation: portrait) {
     body {
       overflow: auto !important; } }
+  @media only screen and (max-width: 20.313em) {
+    body {
+      background-color: white; } }
+  @media (max-width: 50em) and (orientation: landscape) {
+    body {
+      background-color: black; } }
   body.__no_overflow {
     overflow: auto !important; }
   body.__white {
@@ -103,7 +109,7 @@ section {
         display: block; } }
     @media only screen and (max-width: 20.313em) {
       section.__info {
-        height: 150vh; } }
+        height: 160vh; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -130,6 +136,9 @@ section {
       @media only screen and (max-width: 50em) {
         section.__info .__contact {
           top: 32.5em; } }
+      @media only screen and (max-width: 20.313em) {
+        section.__info .__contact {
+          top: 37.5em; } }
       section.__info .__contact h2 {
         font-size: 1.2em;
         margin-bottom: 1em; }

@@ -50,6 +50,12 @@ body {
 	@include bp-portrait {
 		overflow: auto!important;
 	}
+	@include bp-iphone5 {
+		background-color: white;
+	}
+	@include bp-horizon {
+		background-color: black;
+	}
 	&.__no_overflow {
 		overflow: auto!important;
 	}
