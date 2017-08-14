@@ -47,7 +47,7 @@ section {
       display: block;
     }
     @include bp-iphone5 {
-      height: 182.5vh;
+      height: 185.5vh;
     }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
@@ -85,7 +85,7 @@ section {
         color: white;
       }
       @include bp-iphone5 {
-        top: 37.5em;
+        top: 39.5em;
       }
       h2 {
         font-size: 1.2em;
@@ -123,6 +123,7 @@ section {
       }
     }
     .__text {
+      text-align: left;
       transition: 1s;
       max-width: 29em;
       position: absolute;
@@ -192,7 +193,7 @@ section {
         max-width: 19.5em!important;
       }
       @include bp-iphone5 {
-        top: 46em;
+        top: 48em;
         left: 3em;
         max-width: 15.5em;
         text-align: left;
@@ -220,7 +221,7 @@ section {
   transition: opacity 1s linear;
   font-weight: 300;
   @include bp-medium {
-    top: 1.25em;
+    top: 1em;
     left: 1.5em;
   }
   &:hover {
@@ -293,5 +294,12 @@ section {
     font-family: 'Frutiger-Light', sans-serif;
     font-weight: 300;
     display: inline-block;
+  }
+}
+
+.hide_desktop {
+  display: none;
+  @include bp-medium {
+    display: block;
   }
 }

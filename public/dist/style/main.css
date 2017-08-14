@@ -111,7 +111,7 @@ section {
         display: block; } }
     @media only screen and (max-width: 20.313em) {
       section.__info {
-        height: 182.5vh; } }
+        height: 185.5vh; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -146,7 +146,7 @@ section {
           color: white; } }
       @media only screen and (max-width: 20.313em) {
         section.__info .__contact {
-          top: 37.5em; } }
+          top: 39.5em; } }
       section.__info .__contact h2 {
         font-size: 1.2em;
         margin-bottom: 1em; }
@@ -176,6 +176,7 @@ section {
               transition: 1s;
               color: #00FF24; }
     section.__info .__text {
+      text-align: left;
       transition: 1s;
       max-width: 29em;
       position: absolute;
@@ -239,7 +240,7 @@ section {
           max-width: 19.5em !important; } }
       @media only screen and (max-width: 20.313em) {
         section.__info .__copyright_text {
-          top: 46em;
+          top: 48em;
           left: 3em;
           max-width: 15.5em;
           text-align: left; } }
@@ -263,7 +264,7 @@ section {
   font-weight: 300; }
   @media only screen and (max-width: 50em) {
     .__title, .__title_dark, .__title_rotate {
-      top: 1.25em;
+      top: 1em;
       left: 1.5em; } }
   .__title:hover, .__title_dark:hover, .__title_rotate:hover {
     cursor: pointer; }
@@ -329,6 +330,12 @@ section {
     font-family: 'Frutiger-Light', sans-serif;
     font-weight: 300;
     display: inline-block; }
+
+.hide_desktop {
+  display: none; }
+  @media only screen and (max-width: 50em) {
+    .hide_desktop {
+      display: block; } }
 
 .__image_wrapper {
   visibility: visible;
