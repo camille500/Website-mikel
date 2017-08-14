@@ -136,7 +136,7 @@ section {
     section.__info .__contact {
       transition: 1s;
       position: absolute;
-      top: 26em;
+      top: 29em;
       left: 5em; }
       @media only screen and (max-width: 50em) {
         section.__info .__contact {
