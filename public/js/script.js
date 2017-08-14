@@ -26,7 +26,7 @@
     actualImage: 0,
     interval: 6000,
     // imageUrl: 'http://localhost:3000/dist/images/',
-    imageUrl: 'https://site-mikel.herokuapp.com/dist/images/',
+    imageUrl: 'http://188.226.161.38/dist/images/',
     oldUrl: '/dist/images/',
     replaceCount: 0,
     actualShown: false
