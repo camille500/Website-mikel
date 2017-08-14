@@ -210,7 +210,7 @@ section {
   }
 }
 
-.__title, .__title_dark, .__title_rotate {
+.__title, .__title_dark, .__title_rotate, .__title_noclick {
   transition: 1s;
   position: absolute;
   font-size: $basic-font;
@@ -295,6 +295,10 @@ section {
     font-weight: 300;
     display: inline-block;
   }
+}
+
+.__title_noclick {
+  color: white;
 }
 
 .hide_desktop {

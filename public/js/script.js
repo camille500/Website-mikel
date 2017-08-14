@@ -193,7 +193,6 @@
           elements.rotate.style.opacity = 1;
         }, 50)
       } else {
-        console.log('allah aqbar');
         elements.rotate.style.color = 'black';
       }
     }
