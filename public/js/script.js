@@ -15,6 +15,7 @@
     description: document.querySelector('.__description'),
     title: document.querySelectorAll('.__title'),
     rotate: document.querySelector('.__title_rotate'),
+    blink_mail: document.querySelectorAll('.blink_mail')
   }
 
   const config = {
@@ -157,7 +158,11 @@
   const layout = {
     init() {
       elements.rotate.style.color = 'black';
+      elements.blink_mail.forEach(function(blink) {
+        blink.style.color = 'black';
+      })
       this.changeTitle();
+      blinkInterval = setInterval(layout.blinkMail, 750);
       rotateInterval = setInterval(layout.rotateTitle, 750);
       titleInterval = setInterval(layout.changeTitle, 750);
     },
@@ -195,6 +200,15 @@
       } else {
         elements.rotate.style.color = 'black';
       }
+    },
+    blinkMail() {
+      elements.blink_mail.forEach(function(blink) {
+        if(blink.style.color == 'black') {
+          blink.style.color = '#00FF24';
+        } else {
+          blink.style.color = 'black';
+        }
+      })
     }
   }
 

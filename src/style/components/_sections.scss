@@ -304,6 +304,20 @@ section {
 .hide_desktop {
   display: none;
   @include bp-medium {
+    display: inline-block;
+  }
+}
+
+.mail {
+  display: inline-block;
+  @include bp-medium {
+    display: none;
+  }
+}
+
+.blink_mail {
+  display: none;
+  @include bp-medium {
     display: block;
   }
 }

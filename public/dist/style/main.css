@@ -338,6 +338,18 @@ section {
   display: none; }
   @media only screen and (max-width: 50em) {
     .hide_desktop {
+      display: inline-block; } }
+
+.mail {
+  display: inline-block; }
+  @media only screen and (max-width: 50em) {
+    .mail {
+      display: none; } }
+
+.blink_mail {
+  display: none; }
+  @media only screen and (max-width: 50em) {
+    .blink_mail {
       display: block; } }
 
 .__image_wrapper {
