@@ -27,7 +27,7 @@
     actualImage: 0,
     interval: 6000,
     // imageUrl: 'http://localhost:3000/dist/images/',
-    imageUrl: 'http://188.226.161.38/dist/images/',
+    imageUrl: '/dist/images/',
     oldUrl: '/dist/images/',
     replaceCount: 0,
     actualShown: false
