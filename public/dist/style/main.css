@@ -152,7 +152,7 @@ section {
           top: 39.5em; } }
       @media only screen and (max-width: 25em) {
         section.__info .__contact {
-          top: 37.5em; } }
+          top: 39.5em; } }
       section.__info .__contact h2 {
         font-size: 1.2em;
         margin-bottom: 1em; }
@@ -257,7 +257,7 @@ section {
           text-align: left; } }
       @media only screen and (max-width: 25em) {
         section.__info .__copyright_text {
-          top: 47.5em; } }
+          top: 49.5em; } }
 
 .__title_dark {
   font-family: 'Frutiger-Bold', sans-serif;
