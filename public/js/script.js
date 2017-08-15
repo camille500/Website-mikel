@@ -47,6 +47,7 @@
     },
     IsSafari() {
       var ua = navigator.userAgent.toLowerCase();
+      console.log(ua);
       if (ua.indexOf('safari') != -1) {
         if (ua.indexOf('chrome') > -1) {
           config.timeOut = 0;
