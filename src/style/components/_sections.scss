@@ -62,10 +62,10 @@ section {
       display: block;
     }
     @include bp-iphone5 {
-      height: 190vh;
+      height: 195vh;
     }
     @include bp-android {
-      height: 180vh;
+      height: 185vh;
     }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
@@ -103,6 +103,7 @@ section {
         color: white;
       }
       @include bp-iphone5 {
+        right: 12%!important;
         top: 39.5em;
       }
       @include bp-android {
@@ -132,6 +133,7 @@ section {
             transition: 1s;
             text-decoration: none;
             color: black;
+            font-size: .95em;
             @include bp-medium {
               color: white;
             }

@@ -118,10 +118,10 @@ section {
         display: block; } }
     @media only screen and (max-width: 20.313em) {
       section.__info {
-        height: 190vh; } }
+        height: 195vh; } }
     @media only screen and (max-width: 25em) {
       section.__info {
-        height: 180vh; } }
+        height: 185vh; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -156,6 +156,7 @@ section {
           color: white; } }
       @media only screen and (max-width: 20.313em) {
         section.__info .__contact {
+          right: 12% !important;
           top: 39.5em; } }
       @media only screen and (max-width: 25em) {
         section.__info .__contact {
@@ -181,7 +182,8 @@ section {
           section.__info .__contact span p a {
             transition: 1s;
             text-decoration: none;
-            color: black; }
+            color: black;
+            font-size: .95em; }
             @media only screen and (max-width: 50em) {
               section.__info .__contact span p a {
                 color: white; } }
