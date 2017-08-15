@@ -90,6 +90,8 @@ router.get('/delete/:image', checkForSession, function(req, res) {
     fs.unlink(image, function(error) {
     });
   });
+  const collection = db.collection('info');
+  collection.deleteOne({ image_id: image })
   res.redirect('/admin/overview');
 });
 
