@@ -54,6 +54,8 @@
         } else {
           console.log(ua.indexOf('mobile'))
           if(ua.indexOf('mobile') != -1) {
+            elements.safari.style.display = 'none';
+          } else {
             elements.safari.style.display = 'block';
             config.timeOut = 1200;
           }
