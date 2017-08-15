@@ -26,7 +26,6 @@
     actualImage: 0,
     interval: 6000,
     imageUrl: '/dist/images/',
-    oldUrl: '/dist/images/',
     replaceCount: 0,
     actualShown: false
   };
@@ -79,12 +78,12 @@
     init() {
       const imageArray = config.imageArray;
       elements.image_holders.forEach(function(image, index) {
-        image.src = `${config.oldUrl}${imageArray[index]}`;
+        image.src = `${config.imageUrl}${imageArray[index]}`;
         config.atImage ++;
       });
       elements.negative.forEach(function(image, index) {
         const source = imageArray[index].replace('.1', '.2');
-        image.src = `${config.oldUrl}${source}`;
+        image.src = `${config.imageUrl}${source}`;
       })
       elements.image_groups[0].style.opacity = 1;
       const source = elements.image_groups[0].childNodes[1].src
@@ -135,7 +134,7 @@
       elements.image_holders.forEach(function(image, index) {
         if(index < 2) {
           let actualIndex = index + config.atImage;
-          image.src = `${config.oldUrl}${config.imageArray[actualIndex]}`;
+          image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
           config.atImage ++;
         }
       });
@@ -145,7 +144,7 @@
           let actualIndex = index + config.atImage;
           if(config.imageArray[actualIndex]) {
             const source = config.imageArray[actualIndex].replace('.1', '.2');
-            image.src = `${config.oldUrl}${source}`;
+            image.src = `${config.imageUrl}${source}`;
             config.atImage ++;
           }
         }
@@ -156,7 +155,7 @@
       elements.image_holders.forEach(function(image, index) {
         if(index >= 2) {
           let actualIndex = index + config.atImage;
-          image.src = `${config.oldUrl}${config.imageArray[actualIndex]}`;
+          image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
           config.atImage ++;
         }
       });
@@ -166,7 +165,7 @@
           let actualIndex = index + config.atImage;
           if(config.imageArray[actualIndex]) {
             const source = config.imageArray[actualIndex].replace('.1', '.2');
-            image.src = `${config.oldUrl}${source}`;
+            image.src = `${config.imageUrl}${source}`;
             config.atImage ++;
           }
         }
