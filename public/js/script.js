@@ -47,7 +47,6 @@
     },
     IsSafari() {
       var ua = navigator.userAgent.toLowerCase();
-      console.log(ua);
       if (ua.indexOf('safari') != -1) {
         if (ua.indexOf('chrome') > -1) {
           config.timeOut = 0;
@@ -208,6 +207,7 @@
         blink.style.color = 'black';
       })
       this.changeTitle();
+      this.setCopyright();
       blinkInterval = setInterval(layout.blinkMail, 750);
       rotateInterval = setInterval(layout.rotateTitle, 750);
       titleInterval = setInterval(layout.changeTitle, 750);
