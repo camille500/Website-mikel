@@ -33,7 +33,6 @@
   user-select: none; }
 
 body {
-  transition: 1s;
   overflow-x: hidden;
   overflow: hidden;
   margin: 0;
@@ -72,6 +71,7 @@ p {
 section {
   color: black; }
   section.__safari_layer {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -382,7 +382,9 @@ section {
 
 .__image_wrapper {
   opacity: 0;
+  -ms-transition: opacity 1.5s linear;
   -webkit-backface-visibility: hidden;
+  -webkit-transition: opacity 1.5s linear;
   transition: opacity 1.5s linear;
   display: block;
   width: 100%;

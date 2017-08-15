@@ -1,10 +1,8 @@
 .__image_wrapper {
-  // visibility: hidden;
-  // z-index: 10000;
   opacity: 0;
-  // -ms-transition: opacity 1.5s linear;
+  -ms-transition: opacity 1.5s linear;
   -webkit-backface-visibility: hidden;
-  // -webkit-transition: opacity .5s linear;
+  -webkit-transition: opacity 1.5s linear;
   transition: opacity 1.5s linear;
   display: block;
   width: 100%;

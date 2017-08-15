@@ -28,7 +28,9 @@
     interval: 6000,
     imageUrl: '/dist/images/',
     replaceCount: 0,
-    actualShown: false
+    actualShown: false,
+    safari_check: false,
+    timeOut: 0
   };
 
   let imageInterval = false;
@@ -38,11 +40,24 @@
       data.get();
       eventListeners.init();
       layout.init();
+      this.IsSafari();
       setTimeout(function() {
         elements.info.style.opacity = 1;
       }, 50)
+    },
+    IsSafari() {
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('safari') != -1) {
+        if (ua.indexOf('chrome') > -1) {
+          config.timeOut = 0;
+        } else {
+          elements.safari.style.display = 'block';
+          config.timeOut = 1200;
+        }
+      }
     }
   }
+
 
   const data = {
     get() {
@@ -97,7 +112,7 @@
       setTimeout(function() {
         elements.image_groups[0].style.opacity = 1;
         elements.safari.style.display = 'none';
-      }, 1200)
+      }, config.timeOut)
       elements.image.forEach(function(image) {
         image.style.opacity = 1;
       })
@@ -264,7 +279,7 @@
       });
       elements.image_info[0].style.display = 'none';
       elements.info.style.display = 'block';
-      elements.info.style.zIndex = 100000;
+      elements.info.style.zIndex = 10000000000;
       document.body.style.backgroundColor = 'white';
     },
     closeInfo() {
