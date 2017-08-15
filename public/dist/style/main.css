@@ -8,12 +8,6 @@
 /* TYPO
 ------------------------------- */
 @font-face {
-  font-family: 'Frutiger-Light';
-  src: url("FrutigerLTStd-Light.woff2") format("woff2"), url("FrutigerLTStd-Light.woff") format("woff"), url("FrutigerLTStd-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal; }
-
-@font-face {
   font-family: 'Frutiger-Bold';
   src: local("Frutiger LT Std 65 Bold"), local("FrutigerLTStd-Bold"), url("font/FrutigerLTStd-Bold.woff2") format("woff2"), url("font/FrutigerLTStd-Bold.woff") format("woff"), url("font/FrutigerLTStd-Bold.ttf") format("truetype");
   font-weight: bold;
