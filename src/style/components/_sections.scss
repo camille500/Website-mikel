@@ -49,6 +49,9 @@ section {
     @include bp-iphone5 {
       height: 190vh;
     }
+    @include bp-android {
+      height: 190vh;
+    }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -86,6 +89,9 @@ section {
       }
       @include bp-iphone5 {
         top: 39.5em;
+      }
+      @include bp-android {
+        top: 37.5em;
       }
       h2 {
         font-size: 1.2em;
@@ -146,7 +152,7 @@ section {
       .show_on_mobile {
         display: none;
         @include bp-iphone5 {
-          display: block;
+          display: inline;
         }
       }
       p {
@@ -203,6 +209,9 @@ section {
         left: 3em;
         max-width: 15.5em;
         text-align: left;
+      }
+      @include bp-android {
+        top: 47.5em;
       }
     }
   }

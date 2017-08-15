@@ -112,6 +112,9 @@ section {
     @media only screen and (max-width: 20.313em) {
       section.__info {
         height: 190vh; } }
+    @media only screen and (max-width: 25em) {
+      section.__info {
+        height: 190vh; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -147,6 +150,9 @@ section {
       @media only screen and (max-width: 20.313em) {
         section.__info .__contact {
           top: 39.5em; } }
+      @media only screen and (max-width: 25em) {
+        section.__info .__contact {
+          top: 37.5em; } }
       section.__info .__contact h2 {
         font-size: 1.2em;
         margin-bottom: 1em; }
@@ -199,7 +205,7 @@ section {
         display: none; }
         @media only screen and (max-width: 20.313em) {
           section.__info .__text .show_on_mobile {
-            display: block; } }
+            display: inline; } }
       section.__info .__text p {
         margin-left: 1.5em;
         width: 90%; }
@@ -249,6 +255,9 @@ section {
           left: 3em;
           max-width: 15.5em;
           text-align: left; } }
+      @media only screen and (max-width: 25em) {
+        section.__info .__copyright_text {
+          top: 47.5em; } }
 
 .__title_dark {
   font-family: 'Frutiger-Bold', sans-serif;
