@@ -52,8 +52,10 @@
         if (ua.indexOf('chrome') > -1) {
           config.timeOut = 0;
         } else {
-          elements.safari.style.display = 'block';
-          config.timeOut = 1200;
+          if(ua.indexOf('mobile') != -1) {
+            elements.safari.style.display = 'block';
+            config.timeOut = 1200;
+          }
         }
       }
     }
