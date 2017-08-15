@@ -393,6 +393,9 @@ section {
       .__image_wrapper img {
         top: .5em; } }
 
+.__negative {
+  display: none; }
+
 .__image_cap {
   display: flex;
   flex-wrap: wrap; }

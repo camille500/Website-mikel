@@ -15,18 +15,16 @@
     description: document.querySelector('.__description'),
     title: document.querySelectorAll('.__title'),
     rotate: document.querySelector('.__title_rotate'),
-    blink_mail: document.querySelectorAll('.blink_mail')
+    blink_mail: document.querySelectorAll('.blink_mail'),
+    negative: document.querySelectorAll('.__negative'),
   }
 
   const config = {
     allData: {},
     imageArray: [],
-    negativeArray: [],
-    normalArray: [],
     atImage: 0,
     actualImage: 0,
     interval: 6000,
-    // imageUrl: 'http://localhost:3000/dist/images/',
     imageUrl: '/dist/images/',
     oldUrl: '/dist/images/',
     replaceCount: 0,
@@ -56,7 +54,6 @@
         }
         data.makeArray();
       };
-      // request.open("GET", "http://localhost:3000/images", true);
       request.open("GET", "http://studio-orphee.eu/images", true);
       request.send();
     },
@@ -72,25 +69,23 @@
         [array[index], array[j]] = [array[j], array[index]];
       });
       if (array.length) {
-        config.normalArray = array;
-        data.makeNegativeArray(array);
-        images.init(array);
+        config.imageArray = array;
+        images.init();
       }
-    },
-    makeNegativeArray(array) {
-      array.forEach(function(item) {
-        item = item.replace('.1', '.2');
-        config.negativeArray.push(item);
-      })
     }
   }
 
   const images = {
-    init(imageArray) {
+    init() {
+      const imageArray = config.imageArray;
       elements.image_holders.forEach(function(image, index) {
         image.src = `${config.oldUrl}${imageArray[index]}`;
         config.atImage ++;
       });
+      elements.negative.forEach(function(image, index) {
+        const source = imageArray[index].replace('.1', '.2');
+        image.src = `${config.oldUrl}${source}`;
+      })
       elements.image_groups[0].style.opacity = 1;
       const source = elements.image_groups[0].childNodes[1].src
       const source_length = source.length;
@@ -136,6 +131,7 @@
       }
     },
     changeFirstThree() {
+      const atImage = config.atImage;
       elements.image_holders.forEach(function(image, index) {
         if(index < 2) {
           let actualIndex = index + config.atImage;
@@ -143,13 +139,36 @@
           config.atImage ++;
         }
       });
+      config.atImage = atImage;
+      elements.negative.forEach(function(image, index) {
+        if(index < 2) {
+          let actualIndex = index + config.atImage;
+          if(config.imageArray[actualIndex]) {
+            const source = config.imageArray[actualIndex].replace('.1', '.2');
+            image.src = `${config.oldUrl}${source}`;
+            config.atImage ++;
+          }
+        }
+      });
     },
     changeRest() {
+      let atImage = config.atImage;
       elements.image_holders.forEach(function(image, index) {
         if(index >= 2) {
           let actualIndex = index + config.atImage;
           image.src = `${config.oldUrl}${config.imageArray[actualIndex]}`;
           config.atImage ++;
+        }
+      });
+      config.atImage = atImage;
+      elements.negative.forEach(function(image, index) {
+        if(index >= 2) {
+          let actualIndex = index + config.atImage;
+          if(config.imageArray[actualIndex]) {
+            const source = config.imageArray[actualIndex].replace('.1', '.2');
+            image.src = `${config.oldUrl}${source}`;
+            config.atImage ++;
+          }
         }
       });
     }
@@ -229,26 +248,29 @@
     },
     openInfo() {
       elements.image_holders.forEach(function(image, index) {
-        image.src = image.src.replace('.1', '.2');
-        console.log(image.src)
+        image.style.display = 'none';
+      });
+      elements.negative.forEach(function(image, index) {
+        image.style.display = 'block';
       });
       elements.title.forEach(function(title) {
         title.style.display = 'none';
       });
       elements.image_info[0].style.display = 'none';
-      config.imageArray = config.negativeArray;
       elements.info.style.display = 'block';
       elements.info.style.zIndex = 100000;
       document.body.style.backgroundColor = 'white';
     },
     closeInfo() {
       elements.image_holders.forEach(function(image, index) {
-        image.src = image.src.replace('.2', '.1');
+        image.style.display = 'block';
+      });
+      elements.negative.forEach(function(image, index) {
+        image.style.display = 'none';
       });
       elements.title.forEach(function(title) {
         title.style.display = 'block';
       });
-      config.imageArray = config.normalArray;
       elements.image_info[0].style.display = 'block';
       elements.info.style.display = 'none';
       elements.info.style.zIndex = -100000;
