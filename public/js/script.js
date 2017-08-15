@@ -17,6 +17,7 @@
     rotate: document.querySelector('.__title_rotate'),
     blink_mail: document.querySelectorAll('.blink_mail'),
     negative: document.querySelectorAll('.__negative'),
+    safari: document.querySelector('.__safari_layer')
   }
 
   const config = {
@@ -84,8 +85,7 @@
       elements.negative.forEach(function(image, index) {
         const source = imageArray[index].replace('.1', '.2');
         image.src = `${config.imageUrl}${source}`;
-      })
-      elements.image_groups[0].style.opacity = 1;
+      });
       const source = elements.image_groups[0].childNodes[1].src
       const source_length = source.length;
       const description = source.substr(source_length - 8, source_length);
@@ -94,6 +94,13 @@
       this.startInterval();
     },
     startInterval() {
+      setTimeout(function() {
+        elements.image_groups[0].style.opacity = 1;
+        elements.safari.style.display = 'none';
+      }, 1200)
+      elements.image.forEach(function(image) {
+        image.style.opacity = 1;
+      })
       clearInterval(imageInterval);
       imageInterval = setInterval(images.crossFadeImage, config.interval);
     },

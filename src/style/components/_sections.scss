@@ -1,5 +1,19 @@
 section {
   color: black;
+  &.__safari_layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000000;
+    @include bp-medium {
+      display: none;
+    }
+  }
   &.__head {
     .__title {
       color: white;
@@ -278,6 +292,7 @@ section {
 }
 
 .one, .two, .three, .mobile, .__title_rotate {
+  z-index: 100000000;
   font-family: 'Frutiger-Bold', sans-serif;
   font-weight: 700;
 }
