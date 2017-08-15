@@ -108,6 +108,7 @@ function getDescriptions(req, res, next) {
   const collection = db.collection('info');
   const data = collection.find({});
   data.forEach(function(d) {
+    console.log(d);
     req.session.data.images[d.image_id] = d.description;
   });
   setTimeout(function(){

@@ -21,7 +21,7 @@ router.get('/images', function(req, res) {
     files.forEach(file => {
       req.session.images.push(file);
     });
-    request('https://site-mikel.herokuapp.com/data/data.json', function (error, response, body) {
+    request('http://studio-orphee.com/data/data.json', function (error, response, body) {
       const data = JSON.parse(body);
       res.send(data);
     });
