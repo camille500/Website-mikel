@@ -136,7 +136,7 @@ section {
     section.__info .__contact {
       transition: 1s;
       position: absolute;
-      top: 29em;
+      top: 29.3em;
       left: 5em; }
       @media only screen and (max-width: 50em) {
         section.__info .__contact {
@@ -180,7 +180,7 @@ section {
       transition: 1s;
       max-width: 29em;
       position: absolute;
-      top: 5em;
+      top: 6.2em;
       left: 5em;
       margin-bottom: .25em;
       line-height: 1.2em; }
@@ -195,6 +195,11 @@ section {
       section.__info .__text h2 {
         font-size: 1.2em;
         margin-bottom: 1em; }
+      section.__info .__text .show_on_mobile {
+        display: none; }
+        @media only screen and (max-width: 20.313em) {
+          section.__info .__text .show_on_mobile {
+            display: block; } }
       section.__info .__text p {
         margin-left: 1.5em;
         width: 90%; }

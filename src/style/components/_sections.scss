@@ -76,7 +76,7 @@ section {
     .__contact {
       transition: 1s;
       position: absolute;
-      top: 29em;
+      top: 29.3em;
       left: 5em;
       @include bp-medium {
         right: 12%!important;
@@ -127,7 +127,7 @@ section {
       transition: 1s;
       max-width: 29em;
       position: absolute;
-      top: 5em;
+      top: 6.2em;
       left: 5em;
       margin-bottom: .25em;
       line-height: 1.2em;
@@ -142,6 +142,12 @@ section {
       h2 {
         font-size: 1.2em;
         margin-bottom: 1em;
+      }
+      .show_on_mobile {
+        display: none;
+        @include bp-iphone5 {
+          display: block;
+        }
       }
       p {
         margin-left: 1.5em;
