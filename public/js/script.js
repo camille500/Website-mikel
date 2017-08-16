@@ -136,7 +136,7 @@
         images.init();
       }
       config.actualImage ++;
-      if(config.actualImage > 3) {
+      if(config.actualImage > 4) {
         config.actualImage = 0;
         elements.image_groups[actual].style.opacity = 0;
         elements.image_groups[config.actualImage].style.opacity = 1;
