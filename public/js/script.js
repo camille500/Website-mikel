@@ -161,7 +161,11 @@
       elements.image_holders.forEach(function(image, index) {
         if(index < 2) {
           let actualIndex = index + config.atImage;
-          image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
+          if(config.imageArray[actualIndex] != undefined) {
+            image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
+          } else {
+            image.src = `${config.imageUrl}06.1.jpg`;
+          }
           config.atImage ++;
         }
       });
@@ -182,7 +186,11 @@
       elements.image_holders.forEach(function(image, index) {
         if(index >= 2) {
           let actualIndex = index + config.atImage;
-          image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
+          if(config.imageArray[actualIndex] != undefined) {
+            image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
+          } else {
+            image.src = `${config.imageUrl}08.1.jpg`;
+          }
           config.atImage ++;
         }
       });
