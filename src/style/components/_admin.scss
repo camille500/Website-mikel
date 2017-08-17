@@ -2,6 +2,7 @@
   text-align: center;
   img {
     width: 50%;
+    margin-bottom: 2.5em;
   }
   input[type="text"] {
     padding: .5em;
@@ -21,6 +22,39 @@
   }
   input[type="submit"] {
     display: inline-block;
+    border: none;
+    padding: .5em;
+    font-size: 1.1em;
+    margin-left: .5em;
+    background-color: rgb(14, 84, 35);
+    color: white;
+    border-radius: .25em;
+  }
+}
+
+.overview_title, .admin_title {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.login {
+  margin-top: 2.5em;
+  text-align: center;
+  input[type="text"],
+  input[type="password"]  {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    padding: .5em;
+    font-size: 1em;
+    width: 25%;
+  }
+  input[type="text"] {
+    margin-bottom: 1.5em;
+  }
+  input[type="submit"] {
+    display: inline-block;
+    margin: 2em auto 0;
     border: none;
     padding: .5em;
     font-size: 1.1em;

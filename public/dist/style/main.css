@@ -416,7 +416,8 @@ section {
 .edit_admin {
   text-align: center; }
   .edit_admin img {
-    width: 50%; }
+    width: 50%;
+    margin-bottom: 2.5em; }
   .edit_admin input[type="text"] {
     padding: .5em;
     font-size: 1em;
@@ -433,6 +434,34 @@ section {
     border-radius: .25em; }
   .edit_admin input[type="submit"] {
     display: inline-block;
+    border: none;
+    padding: .5em;
+    font-size: 1.1em;
+    margin-left: .5em;
+    background-color: #0e5423;
+    color: white;
+    border-radius: .25em; }
+
+.overview_title, .admin_title {
+  text-align: center;
+  margin-top: 2em; }
+
+.login {
+  margin-top: 2.5em;
+  text-align: center; }
+  .login input[type="text"],
+  .login input[type="password"] {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    padding: .5em;
+    font-size: 1em;
+    width: 25%; }
+  .login input[type="text"] {
+    margin-bottom: 1.5em; }
+  .login input[type="submit"] {
+    display: inline-block;
+    margin: 2em auto 0;
     border: none;
     padding: .5em;
     font-size: 1.1em;
