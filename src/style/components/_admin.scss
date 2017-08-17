@@ -1,0 +1,32 @@
+.edit_admin {
+  text-align: center;
+  img {
+    width: 50%;
+  }
+  input[type="text"] {
+    padding: .5em;
+    font-size: 1em;
+    width: 55%;
+  }
+  .delete {
+    position: absolute;
+    top: 7em;
+    right: 10em;
+    font-size: 1.25em;
+    background-color: rgb(203, 61, 61);
+    padding: .75em;
+    color: white;
+    text-decoration: none;
+    border-radius: .25em;
+  }
+  input[type="submit"] {
+    display: inline-block;
+    border: none;
+    padding: .5em;
+    font-size: 1.1em;
+    margin-left: .5em;
+    background-color: rgb(14, 84, 35);
+    color: white;
+    border-radius: .25em;
+  }
+}

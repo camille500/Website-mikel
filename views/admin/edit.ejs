@@ -1,13 +1,17 @@
 <%- include('../partials/head_2.ejs') %>
 
+<section class="edit_admin">
+
   <h1>Edit</h1>
 
   <img class="small" src="/dist/images/<%= image %>">
-  <a href="/admin/delete/<%= image %>">Verwijder</a>
+  <a class="delete" href="/admin/delete/<%= image %>">Verwijder</a>
 
   <form method="post">
     <input type="text" name="description" value="<%= data.images[image] %>" />
-    <input type="submit" value="Verstuur" />
+    <input type="submit" value="Opslaan" />
   </form>
+
+</section>
 
 <%- include('../partials/foot.ejs') %>

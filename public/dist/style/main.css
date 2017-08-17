@@ -412,3 +412,31 @@ section {
     max-width: 25vw; }
     .__image_cap .__overview_image img {
       width: 25vw !important; }
+
+.edit_admin {
+  text-align: center; }
+  .edit_admin img {
+    width: 50%; }
+  .edit_admin input[type="text"] {
+    padding: .5em;
+    font-size: 1em;
+    width: 55%; }
+  .edit_admin .delete {
+    position: absolute;
+    top: 7em;
+    right: 10em;
+    font-size: 1.25em;
+    background-color: #cb3d3d;
+    padding: .75em;
+    color: white;
+    text-decoration: none;
+    border-radius: .25em; }
+  .edit_admin input[type="submit"] {
+    display: inline-block;
+    border: none;
+    padding: .5em;
+    font-size: 1.1em;
+    margin-left: .5em;
+    background-color: #0e5423;
+    color: white;
+    border-radius: .25em; }
