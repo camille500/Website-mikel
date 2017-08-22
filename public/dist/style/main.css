@@ -469,3 +469,29 @@ section {
     background-color: #0e5423;
     color: white;
     border-radius: .25em; }
+
+.padding {
+  padding: 2em;
+  color: white; }
+  .padding h1 {
+    font-size: 2em;
+    margin-bottom: 1.5em; }
+  .padding input[type="submit"] {
+    border: none;
+    padding: .5em;
+    font-size: 1.1em;
+    background-color: #cccccc;
+    color: black;
+    border-radius: .25em; }
+
+.upload {
+  font-size: 1.2em;
+  background-color: #9aae74;
+  padding: 1em;
+  color: white;
+  text-decoration: none;
+  border-radius: .25em;
+  margin: 0;
+  position: absolute;
+  top: 3em;
+  right: 4em; }

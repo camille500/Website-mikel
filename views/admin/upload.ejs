@@ -1,11 +1,14 @@
 <%- include('../partials/head_2.ejs') %>
 
-  <h1>Upload</h1>
-
-
-  <form method="post">
-    <input type="file" name="description" value="<%= data.images[image] %>" />
-    <input type="submit" value="Verstuur" />
-  </form>
+  <section class="padding">
+    <h1>Upload</h1>
+    <form method="post" enctype="multipart/form-data">
+      <h2>Positieve afbeelding</h2>
+      <input type="file" name="images" required /> <br/><br/>
+      <h2>Negatieve afbeelding</h2>
+      <input type="file" name="images" required /> <br/><br/><br/>
+      <input type="submit" value="Uploaden" />
+    </form>
+  </section>
 
 <%- include('../partials/foot.ejs') %>

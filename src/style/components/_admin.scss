@@ -64,3 +64,33 @@
     border-radius: .25em;
   }
 }
+
+.padding {
+  padding: 2em;
+  color: white;
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+  }
+  input[type="submit"] {
+    border: none;
+    padding: .5em;
+    font-size: 1.1em;
+    background-color: rgb(204, 204, 204);
+    color: black;
+    border-radius: .25em;
+  }
+}
+
+.upload {
+  font-size: 1.2em;
+  background-color: rgb(154, 174, 116);
+  padding: 1em;
+  color: white;
+  text-decoration: none;
+  border-radius: .25em;
+  margin: 0;
+  position: absolute;
+  top: 3em;
+  right: 4em;
+}
