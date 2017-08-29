@@ -101,10 +101,10 @@
         elements.image_holders[i].src = '' + config.imageUrl + imageArray[i];
         config.atImage++;
       }
-      elements.negative.forEach(function (image, index) {
-        var source = imageArray[index].replace('.1', '.2');
-        image.src = '' + config.imageUrl + source;
-      });
+      for(var i = 0; i < elements.negative.length; i++) {
+        var source = imageArray[i].replace('.1', '.2');
+        elements.negative[i].src = '' + config.imageUrl + source;
+      }
       var source = elements.image_groups[0].childNodes[1].src;
       var source_length = source.length;
       var description = source.substr(source_length - 8, source_length);
@@ -270,9 +270,9 @@ var eventListeners = {
       for(var i = 0; i < elements.image.length; i++) {
         elements.image[i].addEventListener("click", eventListeners.goToNext);
       }
-      elements.title.forEach(function (title) {
-        title.addEventListener("click", eventListeners.openInfo);
-      });
+      for(var i = 0; i < elements.title.length; i++) {
+        elements.title[i].addEventListener("click", eventListeners.openInfo);
+      }
       elements.close.addEventListener("click", eventListeners.closeInfo);
     },
     goToNext: function goToNext() {
