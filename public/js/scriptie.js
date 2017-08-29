@@ -98,21 +98,30 @@ function initializeImages() {
   var imageArray = config.imageArray;
   for(var i = 0; i < image_holders.length; i++) {
     image_holders[i].src = config.imageUrl + imageArray[i];
-    console.log(config.imageUrl + imageArray[i])
-    console.log(image_holders[i])
     config.atImage ++;
   }
+  for(var i = 0; i < negative.length; i++) {
+    var source = imageArray[i].replace('.1', '.2');
+    negative[i].src = config.imageUrl + source;
+    console.log(negative[i]);
+  }
+  var source = image_groups[0].childNodes[1].src;
+  var source_length = source.length;
+  var description = source.substr(source_length - 8, source_length);
+  description.textContent = config.allData.images[description];
+  config.imageArray = imageArray;
+  console.log(description)
+  console.log(source);
+  console.log(config.allData.images[description])
+  startImageInterval();
 }
 
-// elements.negative.forEach(function(image, index) {
-//   const source = imageArray[index].replace('.1', '.2');
-//   image.src = `${config.imageUrl}${source}`;
-// });
-// const source = elements.image_groups[0].childNodes[1].src
-// const source_length = source.length;
-// const description = source.substr(source_length - 8, source_length);
-// elements.description.textContent = config.allData.images[description];
-// config.imageArray = imageArray;
+function startImageInterval() {
+  console.log('start image interval')
+}
+
+
+
 // this.startInterval();
 
 initApplication();
