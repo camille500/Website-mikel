@@ -66,10 +66,32 @@ function getData() {
       var data = JSON.parse(request.responseText);
       config.allData = data;
     }
-    console.log(data.images);
+    makeDataArray();
   };
   request.open("GET", "http://studio-orphee.eu/images", true);
   request.send();
 }
+
+function makeDataArray() {
+  for (var key in config.allData.images) {
+    config.imageArray.push(key);
+  }
+  shuffleDataArray(config.imageArray);
+}
+
+function shuffleDataArray(array) {
+  array.forEach(function(image, index) {
+    var j = Math.floor(Math.random() * index);
+    [array[index], array[j]] = [array[j], array[index]];
+  });
+  if (array.length) {
+    config.imageArray = array;
+    // images.init();
+    console.log(array);
+  }
+}
+
+
+
 
 initApplication();
