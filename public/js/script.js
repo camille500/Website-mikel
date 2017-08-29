@@ -1,6 +1,6 @@
 (function() {
 
-  var elements = {
+  const elements = {
     image_groups: document.querySelectorAll('.__image_wrapper'),
     image_holders: document.querySelectorAll('.__cross-fade'),
     image: document.querySelectorAll('.__image'),
@@ -20,7 +20,7 @@
     safari: document.querySelector('.__safari_layer')
   }
 
-  var config = {
+  const config = {
     allData: {},
     imageArray: [],
     atImage: 0,
@@ -35,7 +35,7 @@
 
   let imageInterval = false;
 
-  var app = {
+  const app = {
     init() {
       data.get();
       eventListeners.init();
@@ -64,9 +64,9 @@
   }
 
 
-  var data = {
+  const data = {
     get() {
-      var request = new XMLHttpRequest();
+      const request = new XMLHttpRequest();
       request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           let data = JSON.parse(request.responseText);
@@ -95,20 +95,20 @@
     }
   }
 
-  var images = {
+  const images = {
     init() {
-      var imageArray = config.imageArray;
+      const imageArray = config.imageArray;
       elements.image_holders.forEach(function(image, index) {
         image.src = `${config.imageUrl}${imageArray[index]}`;
         config.atImage ++;
       });
       elements.negative.forEach(function(image, index) {
-        var source = imageArray[index].replace('.1', '.2');
+        const source = imageArray[index].replace('.1', '.2');
         image.src = `${config.imageUrl}${source}`;
       });
-      var source = elements.image_groups[0].childNodes[1].src
-      var source_length = source.length;
-      var description = source.substr(source_length - 8, source_length);
+      const source = elements.image_groups[0].childNodes[1].src
+      const source_length = source.length;
+      const description = source.substr(source_length - 8, source_length);
       elements.description.textContent = config.allData.images[description];
       config.imageArray = imageArray;
       this.startInterval();
@@ -125,8 +125,8 @@
       imageInterval = setInterval(images.crossFadeImage, config.interval);
     },
     crossFadeImage() {
-      var actual = config.actualImage;
-      var next = actual + 1;
+      const actual = config.actualImage;
+      const next = actual + 1;
       if(config.actualImage === 0) {
         images.changeRest();
       }
@@ -140,9 +140,9 @@
         config.actualImage = 0;
         elements.image_groups[actual].style.opacity = 0;
         elements.image_groups[config.actualImage].style.opacity = 1;
-        var source = elements.image_groups[config.actualImage].childNodes[1].src
-        var source_length = source.length;
-        var description = source.substr(source_length - 8, source_length);
+        const source = elements.image_groups[config.actualImage].childNodes[1].src
+        const source_length = source.length;
+        const description = source.substr(source_length - 8, source_length);
         elements.description.textContent = config.allData.images[description];
       } else {
         if(config.actualImage > 2) {
@@ -150,14 +150,14 @@
         }
         elements.image_groups[actual].style.opacity = 0;
         elements.image_groups[next].style.opacity = 1;
-        var source = elements.image_groups[config.actualImage].childNodes[1].src
-        var source_length = source.length;
-        var description = source.substr(source_length - 8, source_length);
+        const source = elements.image_groups[config.actualImage].childNodes[1].src
+        const source_length = source.length;
+        const description = source.substr(source_length - 8, source_length);
         elements.description.textContent = config.allData.images[description];
       }
     },
     changeFirstThree() {
-      var atImage = config.atImage;
+      const atImage = config.atImage;
       elements.image_holders.forEach(function(image, index) {
         if(index < 2) {
           let actualIndex = index + config.atImage;
@@ -174,7 +174,7 @@
         if(index < 2) {
           let actualIndex = index + config.atImage;
           if(config.imageArray[actualIndex]) {
-            var source = config.imageArray[actualIndex].replace('.1', '.2');
+            const source = config.imageArray[actualIndex].replace('.1', '.2');
             image.src = `${config.imageUrl}${source}`;
             config.atImage ++;
           }
@@ -199,7 +199,7 @@
         if(index >= 2) {
           let actualIndex = index + config.atImage;
           if(config.imageArray[actualIndex]) {
-            var source = config.imageArray[actualIndex].replace('.1', '.2');
+            const source = config.imageArray[actualIndex].replace('.1', '.2');
             image.src = `${config.imageUrl}${source}`;
             config.atImage ++;
           }
@@ -208,7 +208,7 @@
     }
   };
 
-  var layout = {
+  const layout = {
     init() {
       elements.rotate.style.color = 'black';
       elements.blink_mail.forEach(function(blink) {
@@ -221,8 +221,8 @@
       titleInterval = setInterval(layout.changeTitle, 750);
     },
     setCopyright() {
-      var date = new Date();
-      var year = date.getFullYear();
+      const date = new Date();
+      const year = date.getFullYear();
       elements.copyright.textContent = year;
     },
     changeTitle() {
