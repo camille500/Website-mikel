@@ -98,6 +98,8 @@ function initializeImages() {
   var imageArray = config.imageArray;
   for(var i = 0; i < image_holders.length; i++) {
     image_holders[i].src = config.imageUrl + imageArray[i];
+    console.log(config.imageUrl + imageArray[i])
+    console.log(image_holders[i])
     config.atImage ++;
   }
 }
