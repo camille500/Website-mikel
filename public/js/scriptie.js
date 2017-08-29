@@ -66,7 +66,7 @@ function getData() {
       var data = JSON.parse(request.responseText);
       config.allData = data;
     }
-    console.log(data);
+    console.log(data.images);
   };
   request.open("GET", "http://studio-orphee.eu/images", true);
   request.send();
