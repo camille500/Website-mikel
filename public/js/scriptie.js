@@ -82,16 +82,35 @@ function makeDataArray() {
 function shuffleDataArray(array) {
   array.forEach(function(image, index) {
     var j = Math.floor(Math.random() * index);
-    [array[index], array[j]] = [array[j], array[index]];
+    var _ref = [array[j], array[index]];
+    array[index] = _ref[0];
+    array[j] = _ref[1];
+    _ref;
   });
   if (array.length) {
+    console.log(array)
     config.imageArray = array;
-    // images.init();
-    console.log(array);
+    initializeImages();
   }
 }
 
+function initializeImages() {
+  var imageArray = config.imageArray;
+  for(var i = 0; i < image_holders.length; i++) {
+    image_holders[i].src = config.imageUrl + imageArray[i];
+    config.atImage ++;
+  }
+}
 
-
+// elements.negative.forEach(function(image, index) {
+//   const source = imageArray[index].replace('.1', '.2');
+//   image.src = `${config.imageUrl}${source}`;
+// });
+// const source = elements.image_groups[0].childNodes[1].src
+// const source_length = source.length;
+// const description = source.substr(source_length - 8, source_length);
+// elements.description.textContent = config.allData.images[description];
+// config.imageArray = imageArray;
+// this.startInterval();
 
 initApplication();
