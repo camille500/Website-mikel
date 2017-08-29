@@ -13,7 +13,7 @@ var image_groups = document.getElementsByClassName('__image_wrapper'),
     description = document.getElementsByClassName('__description')[0],
     rotate = document.getElementsByClassName('__title_rotate')[0],
     blink_mail = document.getElementsByClassName('blink_mail'),
-    negative = document.getElementsByClassName('negative'),
+    negative = document.getElementsByClassName('__negative'),
     safari = document.getElementsByClassName('__safari_layer')[0];
 
 var config = {
@@ -103,16 +103,12 @@ function initializeImages() {
   for(var i = 0; i < negative.length; i++) {
     var source = imageArray[i].replace('.1', '.2');
     negative[i].src = config.imageUrl + source;
-    console.log(negative[i]);
   }
   var source = image_groups[0].childNodes[1].src;
   var source_length = source.length;
   var description = source.substr(source_length - 8, source_length);
   description.textContent = config.allData.images[description];
   config.imageArray = imageArray;
-  console.log(description)
-  console.log(source);
-  console.log(config.allData.images[description])
   startImageInterval();
 }
 
@@ -124,10 +120,50 @@ function startImageInterval() {
   for(var i = 0; i < image.length; i++) {
     image[i].style.opacity = 1;
   }
-  // clearInterval(imageInterval);
-  // imageInterval = setInterval(images.crossFadeImage, config.interval);
+  clearInterval(imageInterval);
+  imageInterval = setInterval(crossFadeImages, config.interval);
 }
 
+function crossFadeImages() {
+  var actual = config.actualImage;
+  var next = actual + 1;
+  if(config.actualImage === 0) {
+    changeRestOfImages();
+  }
+  if(config.atImage >= (config.imageArray.length - 1)) {
+    clearInterval(imageInterval);
+    config.atImage = 1;
+    initializeImages();
+  }
+  config.actualImage ++;
+  if(config.actualImage > 4) {
+    config.actualImage = 0;
+    image_groups[actual].style.opacity = 0;
+    image_groups[config.actualImage].style.opacity = 1;
+    var source = image_groups[config.actualImage].childNodes[1].src
+    var source_length = source.length;
+    var description = source.substr(source_length - 8, source_length);
+    description.textContent = config.allData.images[description];
+  } else {
+    if(config.actualImage > 2) {
+      changeFirstThreeImages();
+    }
+    image_groups[actual].style.opacity = 0;
+    image_groups[next].style.opacity = 1;
+    var source = image_groups[config.actualImage].childNodes[1].src
+    var source_length = source.length;
+    var description = source.substr(source_length - 8, source_length);
+    description.textContent = config.allData.images[description];
+  }
+}
+
+function changeFirstThreeImages() {
+  // KOMT NOG
+}
+
+function changeRestOfImages() {
+  // KOMT NOG
+}
 
 
 
