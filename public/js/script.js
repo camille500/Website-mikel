@@ -97,10 +97,10 @@
   var images = {
     init: function init() {
       var imageArray = config.imageArray;
-      elements.image_holders.forEach(function (image, index) {
-        image.src = '' + config.imageUrl + imageArray[index];
+      for(var i = 0; i < elements.image_holders.length; i++) {
+        elements.image_holders[i].src = '' + config.imageUrl + imageArray[i];
         config.atImage++;
-      });
+      }
       elements.negative.forEach(function (image, index) {
         var source = imageArray[index].replace('.1', '.2');
         image.src = '' + config.imageUrl + source;
@@ -267,9 +267,9 @@
 
 var eventListeners = {
     init: function init() {
-      elements.image.forEach(function (image) {
-        image.addEventListener("click", eventListeners.goToNext);
-      });
+      for(var i = 0; i < elements.image.length; i++) {
+        elements.image[i].addEventListener("click", eventListeners.goToNext);
+      }
       elements.title.forEach(function (title) {
         title.addEventListener("click", eventListeners.openInfo);
       });
