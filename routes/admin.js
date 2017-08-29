@@ -38,7 +38,7 @@ router.post('/', function(req, res) {
     const imageFolder = 'public/dist/images'
     fs.readdir(imageFolder, (err, files) => {
       files.forEach(file => {
-        if (file.charAt(3) == 1) {
+        if (file.charAt(3) == 1 || file.charAt(4) == 1) {
           req.session.images.push(file);
         }
       });
@@ -53,7 +53,7 @@ router.get('/overview', checkForSession, function(req, res) {
   const imageFolder = 'public/dist/images'
   fs.readdir(imageFolder, (err, files) => {
     files.forEach(file => {
-      if (file.charAt(3) == 1) {
+      if (file.charAt(3) == 1 || file.charAt(4) == 1) {
         req.session.images.push(file);
       }
     });
