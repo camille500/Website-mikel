@@ -117,11 +117,18 @@ function initializeImages() {
 }
 
 function startImageInterval() {
-  console.log('start image interval')
+  setTimeout(function() {
+    image_groups[0].style.opacity = 1;
+    safari.style.display = 'none';
+  }, config.timeOut);
+  for(var i = 0; i < image.length; i++) {
+    image[i].style.opacity = 1;
+  }
+  // clearInterval(imageInterval);
+  // imageInterval = setInterval(images.crossFadeImage, config.interval);
 }
 
 
 
-// this.startInterval();
 
 initApplication();
