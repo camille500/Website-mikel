@@ -319,7 +319,8 @@ section {
     .__title_rotate {
       transition: .75s;
       display: block;
-      top: 4.25em !important;
+      right: 2em !important;
+      top: 4.35em !important;
       text-align: right; } }
 
 .one, .two, .three, .mobile, .__title_rotate {
