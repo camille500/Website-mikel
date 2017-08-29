@@ -247,7 +247,7 @@
     rotateTitle() {
       if(elements.rotate.style.color == 'black') {
         elements.rotate.style.opacity = 0;
-        elements.rotate.style.color = '#00FF24';
+        elements.rotate.style.color = '#ffffff';
         setTimeout(function() {
           elements.rotate.style.opacity = 1;
         }, 50)

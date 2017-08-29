@@ -62,10 +62,10 @@ section {
       display: block;
     }
     @include bp-iphone5 {
-      height: 195vh;
+      height: 197.5vh;
     }
     @include bp-android {
-      height: 185vh;
+      height: 187.5vh;
     }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
@@ -99,15 +99,15 @@ section {
       @include bp-medium {
         right: 12%!important;
         text-align: right;
-        top: 32.5em;
+        top: 35em;
         color: white;
       }
       @include bp-iphone5 {
         right: 12%!important;
-        top: 39.5em;
+        top: 42em;
       }
       @include bp-android {
-        top: 39.5em;
+        top: 42em;
       }
       h2 {
         font-size: 1.2em;
@@ -150,7 +150,7 @@ section {
       transition: 1s;
       max-width: 29em;
       position: absolute;
-      top: 6.2em;
+      top: 8.7em;
       left: 5em;
       margin-bottom: .25em;
       line-height: 1.2em;
@@ -216,19 +216,19 @@ section {
         font-weight: 700;
       }
       @include bp-medium {
-        top: 41em;
+        top: 43.5em;
         text-align: right;
         right: 7%;
         max-width: 19.5em!important;
       }
       @include bp-iphone5 {
-        top: 50em;
+        top: 52.5em;
         left: 3em;
         max-width: 15.5em;
         text-align: left;
       }
       @include bp-android {
-        top: 49.5em;
+        top: 52.5em;
       }
     }
   }
@@ -289,7 +289,7 @@ section {
   @include bp-medium {
     transition: .75s;
     display: block;
-    right: 1.5em!important;
+    top: 4.25em!important;
     text-align: right;
   }
 }
