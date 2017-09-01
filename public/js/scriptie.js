@@ -33,7 +33,7 @@ var imageInterval = false;
 
 function initApplication() {
   getData();
-  // initializeEventListeners();
+  initializeEventListeners();
   initializeLayout();
   var wrap = document.getElementsByClassName('__image_wrapper');
   var image = document.getElementsByClassName('__image');
@@ -278,5 +278,28 @@ function changeTitle() {
   }
 }
 
+function initializeEventListeners() {
+  for(var i = 0; i < image.length; i++) {
+    image[i].addEventListener("click", goToNext);
+  }
+  for(var i = 0; i < title.length; i++) {
+    title[i].addEventListener("click", openInfo);
+  }
+  close.addEventListener("click", closeInfo);
+}
+
+function goToNext() {
+  clearInterval(imageInterval);
+  crossFadeImage();
+  imageInterval = setInterval(crossFadeImage, config.interval);
+}
+
+function openInfo() {
+
+}
+
+function closeInfo() {
+
+}
 
 initApplication();
