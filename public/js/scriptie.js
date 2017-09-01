@@ -73,6 +73,8 @@ function getData() {
   request.send();
 }
 
+getData();
+
 // function makeDataArray() {
 //   for (var key in config.allData.images) {
 //     config.imageArray.push(key);
