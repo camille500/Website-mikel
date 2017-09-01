@@ -145,11 +145,12 @@
         elements.image_groups[config.actualImage].style.opacity = 1;
         const source = elements.image_groups[config.actualImage].childNodes[1].src
         const source_length = source.length;
-        if(source_length > 44) {
-          const description = source.substr(source_length - 9, source_length);
+        let description = false;
+        if(source_length != 44) {
+          description = source.substr(source_length - 9, source_length);
           elements.description.textContent = config.allData.images[description];
         } else {
-          const description = source.substr(source_length - 8, source_length);
+          description = source.substr(source_length - 8, source_length);
           elements.description.textContent = config.allData.images[description];
         }
       } else {
@@ -160,10 +161,11 @@
         elements.image_groups[next].style.opacity = 1;
         const source = elements.image_groups[config.actualImage].childNodes[1].src
         const source_length = source.length;
-        if(source_length > 44) {
-          const description = source.substr(source_length - 9, source_length);
+        let description = false;
+        if(source_length != 44) {
+          description = source.substr(source_length - 9, source_length);
         } else {
-          const description = source.substr(source_length - 8, source_length);
+          description = source.substr(source_length - 8, source_length);
         }
         elements.description.textContent = config.allData.images[description];
       }
