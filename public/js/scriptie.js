@@ -57,9 +57,9 @@ function checkForSafari() {
      } else {
        console.log(ua.indexOf('mobile'))
        if(ua.indexOf('mobile') != -1) {
-         elements.safari.style.display = 'none';
+         safari.style.display = 'none';
        } else {
-         elements.safari.style.display = 'block';
+         safari.style.display = 'block';
          config.timeOut = 1200;
        }
      }
@@ -221,7 +221,7 @@ function initializeLayout() {
   for(var i = 0; i < blink_mail.length; i++) {
     blink_mail[i].style.color = 'black';
   }
-  // this.changeTitle();
+  changeTitle();
   setCopyright();
   blinkInterval = setInterval(blinkMail, 750);
   rotateInterval = setInterval(rotateTitle, 750);
@@ -235,11 +235,25 @@ function setCopyright() {
 }
 
 function blinkMail() {
-
+  for(var i = 0; i < blink_mail.length; i++) {
+    if(blink_mail[i].style.color == 'black') {
+      blink_mail[i].style.color = '#00FF24';
+    } else {
+      blink_mail[i].style.color = 'black';
+    }
+  }
 }
 
 function rotateTitle() {
-
+  if(rotate.style.color == 'black') {
+    rotate.style.opacity = 0;
+    rotate.style.color = '#ffffff';
+    setTimeout(function() {
+      rotate.style.opacity = 1;
+    }, 50)
+  } else {
+    rotate.style.color = 'black';
+  }
 }
 
 function changeTitle() {
