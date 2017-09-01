@@ -1,6 +1,12 @@
   <!-- SCRIPTS HERE -->
 
-  <!--[if !IE]><!--><script src="/js/script.js"></script><!--<![endif]-->
+  <script type="text/javascript">
+    if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+      document.write('<script src="/js/scriptie.js"><\/script>');
+    } else {
+      document.write('<script src="/js/script.js"><\/script>');
+    }
+  </script>
   <!--[if IE]><script src="/js/scriptie.js"></script><![endif]-->
 
   </body>
