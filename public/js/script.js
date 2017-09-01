@@ -147,6 +147,9 @@
         const source_length = source.length;
         const description = source.substr(source_length - 8, source_length);
         elements.description.textContent = config.allData.images[description];
+        console.log(description);
+        console.log(source);
+        console.log(source_length);
       } else {
         if(config.actualImage > 2) {
           images.changeFirstThree();
