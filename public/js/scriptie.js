@@ -114,11 +114,13 @@ function initializeImages() {
 
 function startImageInterval() {
   setTimeout(function() {
+    console.log('Fired')
     image_groups[0].style.opacity = 1;
     safari.style.display = 'none';
   }, config.timeOut);
   for(var i = 0; i < image.length; i++) {
     image[i].style.opacity = 1;
+    console.log(image[i])
   }
   clearInterval(imageInterval);
   imageInterval = setInterval(crossFadeImages, config.interval);
@@ -139,6 +141,7 @@ function crossFadeImages() {
   if(config.actualImage > 4) {
     config.actualImage = 0;
     image_groups[actual].style.opacity = 0;
+    console.log(image_groups[actual].style)
     image_groups[config.actualImage].style.opacity = 1;
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
