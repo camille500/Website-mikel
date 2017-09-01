@@ -101,6 +101,7 @@ function shuffleDataArray(array) {
 }
 
 function initializeImages() {
+  image_groups[0].classList.remove = 'testing';
   var imageArray = config.imageArray;
   for(var i = 0; i < image_holders.length; i++) {
     image_holders[i].src = config.imageUrl + imageArray[i];
@@ -121,7 +122,6 @@ function initializeImages() {
 function startImageInterval() {
   setTimeout(function() {
     console.log('Fired')
-    image_groups[0].classList.remove = 'testing';
     safari.style.display = 'none';
   }, config.timeOut);
   for(var i = 0; i < image.length; i++) {
@@ -150,6 +150,8 @@ function crossFadeImages() {
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
+    console.log(description);
+    console.log(source);
     description.textContent = config.allData.images[description];
   } else {
     if(config.actualImage > 2) {
