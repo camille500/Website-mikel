@@ -311,7 +311,19 @@ function openInfo() {
 }
 
 function closeInfo() {
-
+  for(var i = 0; i < image_holders.length; i++) {
+    image_holders[i].style.display = 'block';
+  }
+  for(var i = 0; i < negative.length; i++) {
+    negative[i].style.display = 'none';
+  }
+  for(var i = 0; i < title.length; i++) {
+    title[i].style.display = 'block';
+  }
+  image_info[0].style.display = 'block';
+  info.style.display = 'none';
+  info.style.zIndex = -100000;
+  document.body.style.backgroundColor = 'black';
 }
 
 initApplication();
