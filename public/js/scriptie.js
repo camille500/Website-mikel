@@ -37,8 +37,12 @@ function initApplication() {
   // initializeEventListeners();
   // initializeLayout();
   var wrap = document.getElementsByClassName('__image_wrapper');
+  var image = document.getElementsByClassName('__image');
   for(var i = 0; i < wrap.length; i++) {
     wrap[i].classList.add('testing')
+  }
+  for(var i = 0; i < image.length; i++) {
+    wrap[i].classList.add('testing');
   }
   checkForSafari();
   setTimeout(function() {
