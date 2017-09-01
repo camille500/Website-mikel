@@ -101,6 +101,7 @@ function shuffleDataArray(array) {
 }
 
 function initializeImages() {
+  console.log('start');
   image[0].classList.remove('testing');
   image_groups[0].classList.remove = 'testing';
   var imageArray = config.imageArray;
@@ -291,7 +292,7 @@ function initializeEventListeners() {
 
 function goToNext() {
   clearInterval(imageInterval);
-  crossFadeImage();
+  crossFadeImages();
   imageInterval = setInterval(crossFadeImages, config.interval);
 }
 
