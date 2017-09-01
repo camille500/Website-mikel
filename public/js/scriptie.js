@@ -180,7 +180,7 @@ function changeFirstThreeImages() {
   config.atImage = atImage;
   for(var i = 0; i < negative.length; i++) {
     if(i < 2) {
-      var actualIndex = index + config.atImage;
+      var actualIndex = i + config.atImage;
       if(config.imageArray[actualIndex]) {
         var source = config.imageArray[actualIndex].replace('.1', '.2');
         negative[i].src = config.imageUrl + source;
