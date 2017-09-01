@@ -145,11 +145,13 @@
         elements.image_groups[config.actualImage].style.opacity = 1;
         const source = elements.image_groups[config.actualImage].childNodes[1].src
         const source_length = source.length;
-        const description = source.substr(source_length - 8, source_length);
-        elements.description.textContent = config.allData.images[description];
-        console.log(description);
-        console.log(source);
-        console.log(source_length);
+        if(source_length > 44) {
+          const description = source.substr(source_length - 9, source_length);
+          elements.description.textContent = config.allData.images[description];
+        } else {
+          const description = source.substr(source_length - 8, source_length);
+          elements.description.textContent = config.allData.images[description];
+        }
       } else {
         if(config.actualImage > 2) {
           images.changeFirstThree();
@@ -158,10 +160,11 @@
         elements.image_groups[next].style.opacity = 1;
         const source = elements.image_groups[config.actualImage].childNodes[1].src
         const source_length = source.length;
-        const description = source.substr(source_length - 8, source_length);
-        console.log(description);
-        console.log(source);
-        console.log(source_length);
+        if(source_length > 44) {
+          const description = source.substr(source_length - 9, source_length);
+        } else {
+          const description = source.substr(source_length - 8, source_length);
+        }
         elements.description.textContent = config.allData.images[description];
       }
     },
