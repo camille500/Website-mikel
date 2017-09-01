@@ -169,7 +169,7 @@ function crossFadeImages() {
     var description = source.substr(source_length - 8, source_length);
     console.log(description);
     description.innerHTML = config.allData.images[description];
-    console.log(config.allData.images[description];
+    console.log(config.allData.images[description]);
   }
 }
 
