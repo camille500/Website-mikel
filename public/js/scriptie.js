@@ -173,6 +173,7 @@ function crossFadeImages() {
     var newParagraph = document.createElement("p");
     newParagraph.innerHTML = config.allData.images[description]
     var container = document.getElementById('__image_info');
+    newParagraph.classList.add('description');
     container.appendChild(newParagraph);
   }
 }
