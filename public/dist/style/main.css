@@ -414,6 +414,10 @@ section {
     .__image_cap .__overview_image img {
       width: 25vw !important; }
 
+.testing {
+  opacity: 1;
+  display: none; }
+
 .edit_admin {
   text-align: center; }
   .edit_admin img {

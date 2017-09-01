@@ -123,7 +123,7 @@ function startImageInterval() {
     safari.style.display = 'none';
   }, config.timeOut);
   for(var i = 0; i < image.length; i++) {
-    image[i].style.opacity = 1;
+    image[i].style.display = 'block';
     console.log(image[i])
   }
   clearInterval(imageInterval);
@@ -144,9 +144,9 @@ function crossFadeImages() {
   config.actualImage ++;
   if(config.actualImage > 4) {
     config.actualImage = 0;
-    image_groups[actual].style.opacity = 0;
+    image_groups[actual].style.display = 'none';
     console.log(image_groups[actual].style)
-    image_groups[config.actualImage].style.opacity = 1;
+    image_groups[config.actualImage].style.display = 'block';
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
@@ -155,8 +155,8 @@ function crossFadeImages() {
     if(config.actualImage > 2) {
       changeFirstThreeImages();
     }
-    image_groups[actual].style.opacity = 0;
-    image_groups[next].style.opacity = 1;
+    image_groups[actual].style.display = 'none';
+    image_groups[next].style.opacity = 'block';
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
