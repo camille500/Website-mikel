@@ -58,20 +58,21 @@
 //      }
 //    }
 // }
-//
-// function getData() {
-//   var request = new XMLHttpRequest();
-//   request.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//       var data = JSON.parse(request.responseText);
-//       config.allData = data;
-//     }
-//     makeDataArray();
-//   };
-//   request.open("GET", "http://studio-orphee.eu/images", true);
-//   request.send();
-// }
-//
+
+function getData() {
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var data = JSON.parse(request.responseText);
+      config.allData = data;
+    }
+    alert(data);
+    // makeDataArray();
+  };
+  request.open("GET", "http://studio-orphee.eu/images", true);
+  request.send();
+}
+
 // function makeDataArray() {
 //   for (var key in config.allData.images) {
 //     config.imageArray.push(key);
@@ -168,5 +169,5 @@
 //
 //
 // initApplication();
-
-alert('Jolo')
+//
+// alert('Jolo')
