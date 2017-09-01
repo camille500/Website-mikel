@@ -32,7 +32,6 @@ var config = {
 var imageInterval = false;
 
 function initApplication() {
-  console.log(info)
   getData();
   // initializeEventListeners();
   // initializeLayout();
@@ -42,7 +41,7 @@ function initApplication() {
     wrap[i].classList.add('testing')
   }
   for(var i = 0; i < image.length; i++) {
-    wrap[i].classList.add('testing');
+    image[i].classList.add('testing');
   }
   checkForSafari();
   setTimeout(function() {
@@ -128,7 +127,6 @@ function startImageInterval() {
   }, config.timeOut);
   for(var i = 0; i < image.length; i++) {
     image[i].style.display = 'block';
-    console.log(image[i])
   }
   clearInterval(imageInterval);
   imageInterval = setInterval(crossFadeImages, config.interval);
@@ -149,7 +147,6 @@ function crossFadeImages() {
   if(config.actualImage > 4) {
     config.actualImage = 0;
     image_groups[actual].style.display = 'none';
-    console.log(image_groups[actual].style)
     image_groups[config.actualImage].style.display = 'block';
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
