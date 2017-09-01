@@ -153,8 +153,12 @@ function crossFadeImages() {
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
-    console.log(config.allData.images[description]);
     description.innerHTML = config.allData.images[description];
+    var newParagraph = document.createElement("p");
+    newParagraph.innerHTML = config.allData.images[description]
+    var container = document.getElementById('__image_info');
+    newParagraph.classList.add('description');
+    container.appendChild(newParagraph);
   } else {
     if(config.actualImage > 2) {
       changeFirstThreeImages();
