@@ -24,7 +24,8 @@
 * {
   box-sizing: border-box;
   letter-spacing: 0.02em;
-  user-select: none; }
+  user-select: none;
+  background-color: black; }
 
 body {
   overflow-x: hidden;
