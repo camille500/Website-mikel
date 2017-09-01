@@ -302,7 +302,7 @@ function openInfo() {
     image_holders[i].style.display = 'none';
   }
   for(var i = 0; i < negative.length; i++) {
-    negative[i].style.display = 'none';
+    negative[i].style.display = 'block';
   }
   for(var i = 0; i < title.length; i++) {
     title[i].style.display = 'none';
