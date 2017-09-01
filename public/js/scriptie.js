@@ -158,9 +158,9 @@ function crossFadeImages() {
     }
     var check = image_groups[actual].classList;
     console.log(check);
-    // if(check.indexOf('testing') != -1) {
+    if(check[1]) {
       image_groups[actual].classList.remove('testing')
-    // }
+    }
     image_groups[next].classList.add('testing')
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
