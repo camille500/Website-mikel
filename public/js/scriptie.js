@@ -291,11 +291,23 @@ function initializeEventListeners() {
 function goToNext() {
   clearInterval(imageInterval);
   crossFadeImage();
-  imageInterval = setInterval(crossFadeImage, config.interval);
+  imageInterval = setInterval(crossFadeImages, config.interval);
 }
 
 function openInfo() {
-
+  for(var i = 0; i < image_holders.length; i++) {
+    image_holders[i].style.display = 'none';
+  }
+  for(var i = 0; i < negative.length; i++) {
+    negative[i].style.display = 'none';
+  }
+  for(var i = 0; i < title.length; i++) {
+    title[i].style.display = 'none';
+  }
+  image_info[0].style.display = 'none';
+  info.style.display = 'block';
+  info.style.zIndex = 10000000000;
+  document.body.style.backgroundColor = 'white';
 }
 
 function closeInfo() {
