@@ -36,6 +36,10 @@ function initApplication() {
   getData();
   // initializeEventListeners();
   // initializeLayout();
+  var wrap = document.getElementsByClassName('__image_wrapper');
+  for(var i = 0; i < wrap.length; i++) {
+    wrap[i].classList.add('testing')
+  }
   checkForSafari();
   setTimeout(function() {
     info.style.opacity = 1;
