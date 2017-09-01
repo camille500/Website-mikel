@@ -3,21 +3,20 @@
   <script type="text/javascript">
   if (/MSIE 10/i.test(navigator.userAgent)) {
     document.write('<script src="/js/scriptie.js"><\/script>');
-  } else {
+  } else if(/MSIE 10/i.test(navigator.userAgent) == false && /MSIE 9/i.test(navigator.userAgent) == false || /rv:11.0/i.test(navigator.userAgent) == false && /Edge\/\d./i.test(navigator.userAgent)) == false) {
     document.write('<script src="/js/script.js"><\/script>');
   }
 
   if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent)) {
     document.write('<script src="/js/scriptie.js"><\/script>');
-  } else {
+  } else if(/MSIE 9/i.test(navigator.userAgent) == false && /rv:11.0/i.test(navigator.userAgent) == false && /Edge\/\d./i.test(navigator.userAgent)) == false) {
     document.write('<script src="/js/script.js"><\/script>');
   }
 
-  console.log(/Edge\/\d./i.test(navigator.userAgent));
 
   if (/Edge\/\d./i.test(navigator.userAgent)) {
      document.write('<script src="/js/scriptie.js"><\/script>');
-  } else {
+  } else if(/Edge\/\d./i.test(navigator.userAgent)) == false) {
     document.write('<script src="/js/script.js"><\/script>');
   }
 
