@@ -95,7 +95,6 @@ function shuffleDataArray(array) {
     _ref;
   });
   if (array.length) {
-    console.log(array)
     config.imageArray = array;
     initializeImages();
   }
@@ -122,11 +121,11 @@ function initializeImages() {
 function startImageInterval() {
   setTimeout(function() {
     console.log('Fired')
-    image_groups[0].style.opacity = 1;
+    image_groups[0].classList.remove = 'testing';
     safari.style.display = 'none';
   }, config.timeOut);
   for(var i = 0; i < image.length; i++) {
-    image[i].style.display = 'block';
+    image[i].classList.remove('testing');
   }
   clearInterval(imageInterval);
   imageInterval = setInterval(crossFadeImages, config.interval);
@@ -146,8 +145,8 @@ function crossFadeImages() {
   config.actualImage ++;
   if(config.actualImage > 4) {
     config.actualImage = 0;
-    image_groups[actual].style.display = 'none';
-    image_groups[config.actualImage].style.display = 'block';
+    image_groups[actual].classList.remove('testing')
+    image_groups[config.actualImage].classList.add('testing');
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
@@ -156,8 +155,8 @@ function crossFadeImages() {
     if(config.actualImage > 2) {
       changeFirstThreeImages();
     }
-    image_groups[actual].style.display = 'none';
-    image_groups[next].style.opacity = 'block';
+    image_groups[actual].classList.remove('testing')
+    image_groups[next].classList.add('testing')
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
