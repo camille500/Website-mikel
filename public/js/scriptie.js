@@ -154,7 +154,7 @@ function crossFadeImages() {
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
     console.log(description);
-    description.textContent = config.allData.images[description];
+    description.innerHTML = config.allData.images[description];
   } else {
     if(config.actualImage > 2) {
       changeFirstThreeImages();
@@ -168,7 +168,7 @@ function crossFadeImages() {
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
     console.log(description);
-    description.textContent = config.allData.images[description];
+    description.innerHTML = config.allData.images[description];
     console.log(config.allData.images);
   }
 }
