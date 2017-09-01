@@ -34,7 +34,7 @@ var imageInterval = false;
 function initApplication() {
   getData();
   // initializeEventListeners();
-  // initializeLayout();
+  initializeLayout();
   var wrap = document.getElementsByClassName('__image_wrapper');
   var image = document.getElementsByClassName('__image');
   for(var i = 0; i < wrap.length; i++) {
@@ -190,11 +190,77 @@ function changeFirstThreeImages() {
   }
 }
 
-
 function changeRestOfImages() {
-  // KOMT NOG
+  var atImage = config.atImage;
+  for (var i = 0; i < image_holders.length; i++) {
+    if(i >= 2) {
+      let actualIndex = i + config.atImage;
+      if(config.imageArray[actualIndex] != undefined) {
+        image_holders[i].src = config.imageUrl + config.imageArray[actualIndex];
+      } else {
+        image_holders[i].src = config.imageUrl + '08.1.jpg';
+      }
+      config.atImage ++;
+    }
+  }
+  config.atImage = atImage;
+  for(var i = 0; i < negative.length; i++) {
+    if(i >= 2) {
+      let actualIndex = i + config.atImage;
+      if(config.imageArray[actualIndex]) {
+        var source = config.imageArray[actualIndex].replace('.1', '.2');
+        negative[i].src = config.imageUrl + source;
+        config.atImage ++;
+      }
+    }
+  }
 }
 
+function initializeLayout() {
+  rotate.style.color = 'black';
+  for(var i = 0; i < blink_mail.length; i++) {
+    blink_mail[i].style.color = 'black';
+  }
+  // this.changeTitle();
+  setCopyright();
+  blinkInterval = setInterval(blinkMail, 750);
+  rotateInterval = setInterval(rotateTitle, 750);
+  titleInterval = setInterval(changeTitle, 750);
+}
+
+function setCopyright() {
+  var date = new Date();
+  var year = date.getFullYear();
+  copyright.textContent = year;
+}
+
+function blinkMail() {
+
+}
+
+function rotateTitle() {
+
+}
+
+function changeTitle() {
+  if(config.latestTitle === false) {
+    config.latestTitle = 'one';
+    title_three.style.opacity = 0;
+    title_one.style.opacity = 1;
+  } else if(config.latestTitle === 'one') {
+    config.latestTitle = 'two';
+    title_one.style.opacity = 0;
+    setTimeout(function() {
+      title_two.style.opacity = 1;
+    }, 50)
+  } else {
+    config.latestTitle = false;
+    title_two.style.opacity = 0;
+    setTimeout(function() {
+      title_three.style.opacity = 1;
+    }, 50)
+  }
+}
 
 
 initApplication();
