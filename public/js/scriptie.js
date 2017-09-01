@@ -163,13 +163,12 @@ function crossFadeImages() {
     if(check[1]) {
       image_groups[actual].classList.remove('testing')
     }
+    document.getElementsByClassName("description").remove();
     image_groups[next].classList.add('testing')
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
-    console.log(description);
     description.innerHTML = config.allData.images[description];
-    console.log(config.allData.images[description]);
     var newParagraph = document.createElement("p");
     newParagraph.innerHTML = config.allData.images[description]
     var container = document.getElementById('__image_info');
@@ -336,6 +335,17 @@ function closeInfo() {
   info.style.display = 'none';
   info.style.zIndex = -100000;
   document.body.style.backgroundColor = 'black';
+}
+
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
 }
 
 initApplication();
