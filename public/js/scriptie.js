@@ -35,13 +35,15 @@ function initApplication() {
   getData();
   initializeEventListeners();
   initializeLayout();
-  var wrap = document.getElementsByClassName('__image_wrapper');
-  var image = document.getElementsByClassName('__image');
-  for(var i = 0; i < wrap.length; i++) {
-    wrap[i].classList.add('testing')
+  for(var i = 0; i < image_groups.length; i++) {
+    if(i != 1) {
+      image_groups[i].classList.add('testing')
+    }
   }
   for(var i = 0; i < image.length; i++) {
-    image[i].classList.add('testing');
+    if(i != 1) {
+      image[i].classList.add('testing');
+    }
   }
   checkForSafari();
   setTimeout(function() {
