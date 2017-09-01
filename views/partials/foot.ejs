@@ -13,10 +13,9 @@
     document.write('<script src="/js/script.js"><\/script>');
   }
 
-
   if (/Edge\/\d./i.test(navigator.userAgent)) {
      document.write('<script src="/js/scriptie.js"><\/script>');
-  } else if(/Edge\/\d./i.test(navigator.userAgent)) == false) {
+  } else if(/Edge\/\d./i.test(navigator.userAgent)) == false && /rv:11.0/i.test(navigator.userAgent) == false && /Edge\/\d./i.test(navigator.userAgent)) == false) {
     document.write('<script src="/js/script.js"><\/script>');
   }
 
