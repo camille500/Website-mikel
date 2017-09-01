@@ -160,7 +160,6 @@ function crossFadeImages() {
       changeFirstThreeImages();
     }
     var check = image_groups[actual].classList;
-    console.log(description);
     if(check[1]) {
       image_groups[actual].classList.remove('testing')
     }
@@ -168,7 +167,9 @@ function crossFadeImages() {
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
+    console.log(description);
     description.textContent = config.allData.images[description];
+    console.log(config.allData.images);
   }
 }
 
