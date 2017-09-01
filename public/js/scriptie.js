@@ -170,6 +170,10 @@ function crossFadeImages() {
     console.log(description);
     description.innerHTML = config.allData.images[description];
     console.log(config.allData.images[description]);
+    var newParagraph = document.createElement("p");
+    newParagraph.innerHTML = config.allData.images[description]
+    var container = document.getElementById('__image_info');
+    container.appendChild(newParagraph);
   }
 }
 
