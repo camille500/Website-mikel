@@ -165,8 +165,31 @@ function crossFadeImages() {
 }
 
 function changeFirstThreeImages() {
-  // KOMT NOG
+  var atImage = config.atImage;
+  for(var i = 0; i < image_holders.length; i++) {
+    if(i < 2) {
+      var actualIndex = i + config.atImage;
+      if(config.imageArray[actualIndex] != undefined) {
+        image_holders[i].src = config.imageUrl + config.imageArray[actualIndex];
+      } else {
+        image_holders[i].src = config.imageUrl + '06.1.jpg';
+      }
+      config.atImage ++;
+    }
+  }
+  config.atImage = atImage;
+  for(var i = 0; i < negative.length; i++) {
+    if(i < 2) {
+      var actualIndex = index + config.atImage;
+      if(config.imageArray[actualIndex]) {
+        var source = config.imageArray[actualIndex].replace('.1', '.2');
+        negative[i].src = config.imageUrl + source;
+        config.atImage ++;
+      }
+    }
+  }
 }
+
 
 function changeRestOfImages() {
   // KOMT NOG
