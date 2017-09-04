@@ -32,7 +32,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Fruitiger-Bold', sans-serif;
-  background-color: black !important;
+  background-color: black;
   color: white; }
   @media (max-width: 50em) and (orientation: portrait) {
     body {
@@ -146,7 +146,7 @@ section {
     section.__info .__contact {
       transition: 1s;
       position: absolute;
-      top: 29.3em;
+      top: 30.4em;
       left: 5em; }
       @media only screen and (max-width: 50em) {
         section.__info .__contact {
@@ -195,7 +195,7 @@ section {
       transition: 1s;
       max-width: 29em;
       position: absolute;
-      top: 8.7em;
+      top: 6.5em;
       left: 5em;
       margin-bottom: .25em;
       line-height: 1.2em; }

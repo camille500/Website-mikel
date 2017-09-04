@@ -44,7 +44,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Fruitiger-Bold', sans-serif;
-	background-color: black!important;
+	background-color: black;
 	color: white;
 	@include bp-portrait {
 		overflow: auto!important;
