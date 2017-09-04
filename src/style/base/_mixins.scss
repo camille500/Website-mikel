@@ -38,8 +38,20 @@
   }
 }
 
+@mixin bp-specific {
+  @media only screen and (max-width: 510px) {
+    @content;
+  }
+}
+
 @mixin bp-iphone5 {
   @media only screen and (max-width: 20.313em) {
+    @content;
+  }
+}
+
+@mixin bp-large {
+  @media only screen and (max-width: 70em) {
     @content;
   }
 }

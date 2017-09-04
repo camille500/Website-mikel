@@ -65,7 +65,7 @@ section {
       height: 200vh;
     }
     @include bp-android {
-      height: 190vh;
+      height: 195vh;
     }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
@@ -154,6 +154,9 @@ section {
       left: 5em;
       margin-bottom: .25em;
       line-height: 1.2em;
+      @include bp-specific {
+        top: 8.5em!important;
+      }
       @include bp-medium {
         left: 2.5em;
         padding-right: 1em;

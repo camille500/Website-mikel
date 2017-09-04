@@ -121,7 +121,7 @@ section {
         height: 200vh; } }
     @media only screen and (max-width: 25em) {
       section.__info {
-        height: 190vh; } }
+        height: 195vh; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;
@@ -199,6 +199,9 @@ section {
       left: 5em;
       margin-bottom: .25em;
       line-height: 1.2em; }
+      @media only screen and (max-width: 510px) {
+        section.__info .__text {
+          top: 8.5em !important; } }
       @media only screen and (max-width: 50em) {
         section.__info .__text {
           left: 2.5em;
