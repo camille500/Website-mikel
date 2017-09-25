@@ -166,10 +166,10 @@ function crossFadeImages() {
     if(config.actualImage > 2) {
       changeFirstThreeImages();
     }
-    var check = image_groups[actual].classList;
-    if(check[1]) {
-      image_groups[actual].classList.remove('testing');
-    }
+    // var check = image_groups[actual].classList;
+    // if(check[1]) {
+    //   image_groups[actual].classList.remove('testing');
+    // }
     // document.getElementsByClassName("description").remove();
     image_groups[next].classList.add('testing')
     var source = image_groups[config.actualImage].childNodes[1].src
