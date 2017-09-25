@@ -300,7 +300,7 @@ function changeTitle() {
 
 function initializeEventListeners() {
   for(var i = 0; i < image.length; i++) {
-    console.log(image[i])
+    console.log('click: ' + image[i])
     image[i].addEventListener("click", goToNext);
   }
   for(var i = 0; i < title.length; i++) {
