@@ -137,6 +137,7 @@ function startImageInterval() {
 }
 
 function crossFadeImages() {
+  console.log('crossFadeImages')
   var actual = config.actualImage;
   var next = actual + 1;
   if(config.actualImage === 0) {
