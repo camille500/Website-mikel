@@ -37,12 +37,12 @@ function initApplication() {
   initializeLayout();
   for(var i = 0; i < image_groups.length; i++) {
     if(i != 1) {
-      image_groups[i].classList.add('testing')
+      image_groups[i].style.display = 'none';
     }
   }
   for(var i = 0; i < image.length; i++) {
     if(i != 1) {
-      image[i].classList.add('testing');
+      image[i].style.display = 'none';
     }
   }
   checkForSafari();
@@ -104,8 +104,8 @@ function shuffleDataArray(array) {
 
 function initializeImages() {
   console.log('start');
-  image[0].classList.remove('testing');
-  image_groups[0].classList.remove = 'testing';
+  image[0].classList.style.display = 'block';
+  image_groups[0].style.display = 'block';
   var imageArray = config.imageArray;
   for(var i = 0; i < image_holders.length; i++) {
     image_holders[i].src = config.imageUrl + imageArray[i];
