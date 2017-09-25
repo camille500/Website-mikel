@@ -170,6 +170,7 @@ function crossFadeImages() {
     if(check[1]) {
       console.log(image_groups[actual])
       image_groups[actual].classList.remove('testing');
+      console.log(image_groups[actual])
     }
     // document.getElementsByClassName("description").remove();
     image_groups[next].classList.add('testing')
