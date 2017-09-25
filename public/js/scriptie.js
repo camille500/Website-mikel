@@ -15,6 +15,7 @@ var image_groups = document.getElementsByClassName('__image_wrapper'),
     blink_mail = document.getElementsByClassName('blink_mail'),
     negative = document.getElementsByClassName('__negative'),
     safari = document.getElementsByClassName('__safari_layer')[0];
+    clickable = document.getElementsByClassName('__clickable')
 
 var config = {
   allData: {},
@@ -103,8 +104,7 @@ function shuffleDataArray(array) {
 }
 
 function initializeImages() {
-  console.log('start');
-  image[0].classList.style.display = 'block';
+  image[0].style.display = 'block';
   image_groups[0].style.display = 'block';
   var imageArray = config.imageArray;
   for(var i = 0; i < image_holders.length; i++) {
@@ -114,13 +114,12 @@ function initializeImages() {
   for(var i = 0; i < negative.length; i++) {
     var source = imageArray[i].replace('.1', '.2');
     negative[i].src = config.imageUrl + source;
+    negative[i].style.display = 'none';
   }
   var source = image_groups[0].childNodes[1].src;
   var source_length = source.length;
-  var description = source.substr(source_length - 8, source_length);
-  console.log(description);
-  description.innerHTML = config.allData.images[description];
-  console.log('init: ' + config.allData.images[description]);
+  var sourceElement = source.substr(source_length - 8, source_length);
+  description.innerHTML = config.allData.images[sourceElement];
   config.imageArray = imageArray;
   startImageInterval();
 }
@@ -129,8 +128,8 @@ function startImageInterval() {
   setTimeout(function() {
     safari.style.display = 'none';
   }, config.timeOut);
-  for(var i = 0; i < image.length; i++) {
-    image[i].classList.remove('testing');
+  for(var i = 0; i < clickable.length; i++) {
+    clickable[i].style.display = 'block';
   }
   clearInterval(imageInterval);
   imageInterval = setInterval(crossFadeImages, config.interval);
@@ -150,37 +149,27 @@ function crossFadeImages() {
   config.actualImage ++;
   if(config.actualImage > 4) {
     config.actualImage = 0;
-    image_groups[actual].classList.remove('testing')
-    image_groups[config.actualImage].classList.add('testing');
-    var source = image_groups[config.actualImage].childNodes[1].src
+    for(var i = 0; i < image_groups.length; i++) {
+      image_groups[i].style.display = 'none';
+    }
+    image_groups[4].style.display = 'block';
+    var source = image_groups[config.actualImage].childNodes[1].src;
     var source_length = source.length;
-    var description = source.substr(source_length - 8, source_length);
-    console.log('Cross-fade: ' + description);
-    description.innerHTML = config.allData.images[description];
-    var newParagraph = document.createElement("p");
-    newParagraph.innerHTML = config.allData.images[description]
-    var container = document.getElementById('__image_info');
-    newParagraph.classList.add('description');
-    container.appendChild(newParagraph);
+    var sourceElement = source.substr(source_length - 8, source_length);
+    description.innerHTML = config.allData.images[sourceElement];
   } else {
     if(config.actualImage > 2) {
       changeFirstThreeImages();
     }
-    var check = image_groups[actual].classList;
-    if(check[1]) {
-      image_groups[actual].classList.remove('testing');
+    for(var i = 0; i < image_groups.length; i++) {
+      image_groups[i].style.display = 'none';
     }
-    document.getElementsByClassName("description").remove();
-    image_groups[next].classList.add('testing')
+    image_groups[next].style.display = 'block';
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
-    var description = source.substr(source_length - 8, source_length);
-    description.innerHTML = config.allData.images[description];
-    var newParagraph = document.createElement("p");
-    newParagraph.innerHTML = config.allData.images[description]
-    var container = document.getElementById('__image_info');
-    newParagraph.classList.add('description');
-    container.appendChild(newParagraph);
+    var sourceElement = source.substr(source_length - 8, source_length);
+    description.innerHTML = config.allData.images[sourceElement];
+
   }
 }
 
