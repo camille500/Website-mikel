@@ -154,7 +154,7 @@ function crossFadeImages() {
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
-    console.log('Cross-fade: + 'description);
+    console.log('Cross-fade: ' + description);
     description.innerHTML = config.allData.images[description];
     // var newParagraph = document.createElement("p");
     // newParagraph.innerHTML = config.allData.images[description]
