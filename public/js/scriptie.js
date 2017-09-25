@@ -118,7 +118,8 @@ function initializeImages() {
   var source = image_groups[0].childNodes[1].src;
   var source_length = source.length;
   var description = source.substr(source_length - 8, source_length);
-  description.textContent = config.allData.images[description];
+  console.log(description);
+  description.innerHTML = config.allData.images[description];
   console.log('init: ' + config.allData.images[description]);
   config.imageArray = imageArray;
   startImageInterval();
