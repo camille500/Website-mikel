@@ -419,6 +419,9 @@ section {
   opacity: 1;
   display: block; }
 
+.fullOpacity {
+  opacity: 1 !important; }
+
 .edit_admin {
   text-align: center; }
   .edit_admin img {

@@ -30,6 +30,7 @@ var config = {
   timeOut: 0
 };
 
+var iPhone4 = navigator.userAgent.match(/iPhone/i) !== null  && window.screen.height == (960 / 2);
 var imageInterval = false;
 
 function initApplication() {
@@ -44,6 +45,11 @@ function initApplication() {
   for(var i = 0; i < image.length; i++) {
     if(i != 1) {
       image[i].style.display = 'none';
+    }
+    if(iPhone4) {
+      for(var i = 0; i < image_groups.length; i++) {
+        image_groups[i].classList.add('fullOpacity');
+      }
     }
   }
   checkForSafari();

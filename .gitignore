@@ -4,3 +4,4 @@ node_modules/
 npm-debuglog
 public/dist/images/
 /dist/images
+public/data
