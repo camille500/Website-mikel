@@ -167,8 +167,8 @@ function crossFadeImages() {
       changeFirstThreeImages();
     }
     var check = image_groups[actual].classList;
-    console.log(check)
     if(check[1]) {
+      console.log(image_groups[actual])
       image_groups[actual].classList.remove('testing');
     }
     // document.getElementsByClassName("description").remove();
