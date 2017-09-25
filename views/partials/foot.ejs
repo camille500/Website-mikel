@@ -1,8 +1,8 @@
   <!-- SCRIPTS HERE -->
 
   <script type="text/javascript">
-
-  if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+  var iPhone4 = navigator.userAgent.match(/iPhone/i) !== null  && window.screen.height == (960 / 2);
+  if (document.documentMode || /Edge/.test(navigator.userAgent) || iPhone4) {
     document.write('<script src="/js/scriptie.js"><\/script>');
   } else {
     document.write('<script src="/js/script.js"><\/script>');
@@ -10,7 +10,7 @@
   </script>
 
   <script>
-    console.log(navigator.userAgent.match(/iPhone/i) !== null  && window.screen.height == (960 / 2))
+    console.log()
   </script>
   </body>
 </html>
