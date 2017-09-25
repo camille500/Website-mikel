@@ -119,6 +119,7 @@ function initializeImages() {
   var source_length = source.length;
   var description = source.substr(source_length - 8, source_length);
   description.textContent = config.allData.images[description];
+  console.log(`init: ${config.allData.images[description]}`)
   config.imageArray = imageArray;
   startImageInterval();
 }
@@ -153,12 +154,13 @@ function crossFadeImages() {
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
+    console.log(`Cross-fade: ${description}`);
     description.innerHTML = config.allData.images[description];
-    var newParagraph = document.createElement("p");
-    newParagraph.innerHTML = config.allData.images[description]
-    var container = document.getElementById('__image_info');
-    newParagraph.classList.add('description');
-    container.appendChild(newParagraph);
+    // var newParagraph = document.createElement("p");
+    // newParagraph.innerHTML = config.allData.images[description]
+    // var container = document.getElementById('__image_info');
+    // newParagraph.classList.add('description');
+    // container.appendChild(newParagraph);
   } else {
     if(config.actualImage > 2) {
       changeFirstThreeImages();
