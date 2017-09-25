@@ -167,20 +167,21 @@ function crossFadeImages() {
       changeFirstThreeImages();
     }
     var check = image_groups[actual].classList;
+    console.log(check)
     if(check[1]) {
-      image_groups[actual].classList.remove('testing')
+      image_groups[actual].classList.remove('testing');
     }
-    document.getElementsByClassName("description").remove();
+    // document.getElementsByClassName("description").remove();
     image_groups[next].classList.add('testing')
     var source = image_groups[config.actualImage].childNodes[1].src
     var source_length = source.length;
     var description = source.substr(source_length - 8, source_length);
     description.innerHTML = config.allData.images[description];
-    var newParagraph = document.createElement("p");
-    newParagraph.innerHTML = config.allData.images[description]
-    var container = document.getElementById('__image_info');
-    newParagraph.classList.add('description');
-    container.appendChild(newParagraph);
+    // var newParagraph = document.createElement("p");
+    // newParagraph.innerHTML = config.allData.images[description]
+    // var container = document.getElementById('__image_info');
+    // newParagraph.classList.add('description');
+    // container.appendChild(newParagraph);
   }
 }
 
