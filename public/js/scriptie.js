@@ -168,9 +168,7 @@ function crossFadeImages() {
     }
     var check = image_groups[actual].classList;
     if(check[1]) {
-      console.log(image_groups[actual])
       image_groups[actual].classList.remove('testing');
-      console.log(image_groups[actual])
     }
     // document.getElementsByClassName("description").remove();
     image_groups[next].classList.add('testing')
@@ -300,7 +298,6 @@ function changeTitle() {
 
 function initializeEventListeners() {
   for(var i = 0; i < image.length; i++) {
-    console.log('click: ' + image[i])
     image[i].addEventListener("click", goToNext);
   }
   for(var i = 0; i < title.length; i++) {
@@ -310,6 +307,7 @@ function initializeEventListeners() {
 }
 
 function goToNext() {
+  console.log('Go To Next')
   clearInterval(imageInterval);
   crossFadeImages();
   imageInterval = setInterval(crossFadeImages, config.interval);
