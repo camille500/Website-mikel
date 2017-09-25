@@ -51,7 +51,6 @@
         if (ua.indexOf('chrome') > -1) {
           config.timeOut = 0;
         } else {
-          console.log(ua.indexOf('mobile'))
           if(ua.indexOf('mobile') != -1) {
             elements.safari.style.display = 'none';
           } else {
@@ -109,9 +108,6 @@
       const source = elements.image_groups[0].childNodes[1].src
       const source_length = source.length;
       const description = source.substr(source_length - 8, source_length);
-      console.log(description);
-      console.log(source);
-      console.log(source_length);
       elements.description.textContent = config.allData.images[description];
       config.imageArray = imageArray;
       this.startInterval();
@@ -146,11 +142,11 @@
         const source = elements.image_groups[config.actualImage].childNodes[1].src
         const source_length = source.length;
         let description = false;
-        if(source_length != 44) {
-          description = source.substr(source_length - 9, source_length);
+        if(source_length != 43) {
+          description = source.substr(source_length - 8, source_length);
           elements.description.textContent = config.allData.images[description];
         } else {
-          description = source.substr(source_length - 8, source_length);
+          description = source.substr(source_length - 9, source_length);
           elements.description.textContent = config.allData.images[description];
         }
       } else {
@@ -162,10 +158,10 @@
         const source = elements.image_groups[config.actualImage].childNodes[1].src
         const source_length = source.length;
         let description = false;
-        if(source_length != 44) {
-          description = source.substr(source_length - 9, source_length);
-        } else {
+        if(source_length != 43) {
           description = source.substr(source_length - 8, source_length);
+        } else {
+          description = source.substr(source_length - 9, source_length);
         }
         elements.description.textContent = config.allData.images[description];
       }

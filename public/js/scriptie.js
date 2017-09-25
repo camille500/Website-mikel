@@ -58,7 +58,6 @@ function checkForSafari() {
      if (ua.indexOf('chrome') > -1) {
        config.timeOut = 0;
      } else {
-       console.log(ua.indexOf('mobile'))
        if(ua.indexOf('mobile') != -1) {
          safari.style.display = 'none';
        } else {
@@ -296,7 +295,6 @@ function initializeEventListeners() {
 }
 
 function goToNext() {
-  console.log('Go To Next')
   clearInterval(imageInterval);
   crossFadeImages();
   imageInterval = setInterval(crossFadeImages, config.interval);
