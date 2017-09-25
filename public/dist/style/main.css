@@ -417,7 +417,7 @@ section {
 
 .testing {
   opacity: 1;
-  display: none; }
+  display: block; }
 
 .edit_admin {
   text-align: center; }

@@ -6,7 +6,7 @@ const imagemin = require('gulp-imagemin');
 
 /* TASK FOR COMPILING SASS TO CSS
 ----------------------------------------- */
-gulp.task('sass', ['images'], function() {
+gulp.task('sass', function() {
   return gulp.src('src/style/main.scss')
     .pipe(sass())
     .pipe(gulp.dest('public/dist/style'))
