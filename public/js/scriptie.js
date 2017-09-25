@@ -215,7 +215,7 @@ function changeRestOfImages() {
   var atImage = config.atImage;
   for (var i = 0; i < image_holders.length; i++) {
     if(i >= 2) {
-      let actualIndex = i + config.atImage;
+      var actualIndex = i + config.atImage;
       if(config.imageArray[actualIndex] != undefined) {
         image_holders[i].src = config.imageUrl + config.imageArray[actualIndex];
       } else {
@@ -227,7 +227,7 @@ function changeRestOfImages() {
   config.atImage = atImage;
   for(var i = 0; i < negative.length; i++) {
     if(i >= 2) {
-      let actualIndex = i + config.atImage;
+      var actualIndex = i + config.atImage;
       if(config.imageArray[actualIndex]) {
         var source = config.imageArray[actualIndex].replace('.1', '.2');
         negative[i].src = config.imageUrl + source;
