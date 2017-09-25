@@ -30,6 +30,23 @@ var config = {
   timeOut: 0
 };
 
+function iOSVersion() {
+  var match = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+  if(match) {
+    var	version = [
+  			parseInt(match[1], 10),
+  			parseInt(match[2], 10),
+  			parseInt(match[3] || 0, 10)
+  		];
+
+  	return parseFloat(version.join('.'));
+  } else {
+    return 15;
+  }
+}
+
+var version = iOSVersion();
+
 var iPhone4 = navigator.userAgent.match(/iPhone/i) !== null  && window.screen.height == (960 / 2);
 var imageInterval = false;
 
@@ -46,10 +63,10 @@ function initApplication() {
     if(i != 1) {
       image[i].style.display = 'none';
     }
-    if(iPhone4) {
-      for(var i = 0; i < image_groups.length; i++) {
-        image_groups[i].classList.add('fullOpacity');
-      }
+  }
+  if(iPhone4 || version < 10) {
+    for(var i = 0; i < image_groups.length; i++) {
+      image_groups[i].classList.add('fullOpacity');
     }
   }
   checkForSafari();
