@@ -31,6 +31,10 @@ var config = {
 };
 
 var iPhone4 = navigator.userAgent.match(/iPhone/i) !== null  && window.screen.height == (960 / 2);
+var iOS = parseFloat(
+  ('' + (/CPU.*OS ([0-9_]{1,5})|(CPU like).*AppleWebKit.*Mobile/i.exec(navigator.userAgent) || [0, ''])[1])
+  .replace('undefined', '3_2').replace('_', '.').replace('_', '')
+) || false;
 var imageInterval = false;
 
 function initApplication() {
@@ -46,7 +50,7 @@ function initApplication() {
     if(i != 1) {
       image[i].style.display = 'none';
     }
-    if(iPhone4) {
+    if(iPhone4 || iOS < 10) {
       for(var i = 0; i < image_groups.length; i++) {
         image_groups[i].classList.add('fullOpacity');
       }
