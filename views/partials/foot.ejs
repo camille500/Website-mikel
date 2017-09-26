@@ -20,11 +20,8 @@ function iOSVersion() {
 
 var version = iOSVersion();
 
-console.log(version)
-
   var iPhone4 = navigator.userAgent.match(/iPhone/i) !== null && window.screen.height == (960 / 2);
   if (document.documentMode || /Edge/.test(navigator.userAgent) || iPhone4 || version < 10) {
-    console.log('CONDITIONS TRUE')
     document.write('<script src="/js/scriptie.js"><\/script>');
   } else {
     document.write('<script src="/js/script.js"><\/script>');
