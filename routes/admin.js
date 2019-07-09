@@ -160,7 +160,9 @@ function getDescriptions(req, res, next) {
   data.forEach(function(d) {
     req.session.data.images[d.image_id] = d.description;
   });
-  next();
+  setTimeout(function() {
+    next();
+  }, 3000)
 }
 
 router.get('/add', function(req, res) {
