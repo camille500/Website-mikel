@@ -174,7 +174,7 @@
           if(config.imageArray[actualIndex] != undefined) {
             image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
           } else {
-            image.src = `${config.imageUrl}06.1.jpg`;
+            image.src = `${config.imageUrl}6.1.jpg`;
           }
           config.atImage ++;
         }
@@ -199,7 +199,7 @@
           if(config.imageArray[actualIndex] != undefined) {
             image.src = `${config.imageUrl}${config.imageArray[actualIndex]}`;
           } else {
-            image.src = `${config.imageUrl}08.1.jpg`;
+            image.src = `${config.imageUrl}8.1.jpg`;
           }
           config.atImage ++;
         }
