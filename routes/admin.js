@@ -57,6 +57,7 @@ router.get('/overview', checkForSession, getDescriptions, function(req, res) {
       }
     });
     res.locals.images = req.session.images;
+		console.log(req.session.images);
     res.render('admin/overview');
   });
 })
