@@ -36,7 +36,7 @@ router.post('/', function(req, res) {
     const imageFolder = 'public/dist/images'
     fs.readdir(imageFolder, (err, files) => {
       files.forEach(file => {
-        if (file.charAt(3) == 1 || file.charAt(4) == 1) {
+        if (file.indexOf('.1') >= 0 || file.indexOf('.2') >= 0) {
           req.session.images.push(file);
         }
       });
