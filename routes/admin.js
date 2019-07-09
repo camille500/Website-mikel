@@ -31,30 +31,30 @@ router.post('/', function(req, res) {
   let username = req.body.username;
   let password = req.body.password;
   if (username === process.env.USERNAME && password === process.env.PASSWORD) {
-    req.session.auth = true;
-    req.session.images = [];
-    const imageFolder = 'public/dist/images'
-    fs.readdir(imageFolder, (err, files) => {
-      files.forEach(file => {
-        if (file.indexOf('.1') >= 0 || file.indexOf('.2') >= 0) {
-          req.session.images.push(file);
-        }
-      });
-			console.log(req.session.images);
-      res.locals.images = req.session.images;
-      res.render('admin/overview');
-    });
+    // req.session.auth = true;
+    // req.session.images = [];
+    // const imageFolder = 'public/dist/images'
+    // fs.readdir(imageFolder, (err, files) => {
+    //   files.forEach(file => {
+    //     if (file.indexOf('.1') >= 0) {
+    //       req.session.images.push(file);
+    //     }
+    //   });
+		// 	console.log(req.session.images);
+    //   res.locals.images = req.session.images;
+    //   res.redirect('admin/overview');
+    // });
+		 res.redirect('admin/overview');
   }
 });
 
-router.get('/overview', checkForSession, function(req, res) {
-	console.log('OVERVIEW');
+router.get('/overview', checkForSession, getDescriptions, function(req, res) {
 	jsonfile.writeFile(file, req.session.data, function(err) {})
   req.session.images = [];
   const imageFolder = 'public/dist/images'
   fs.readdir(imageFolder, (err, files) => {
     files.forEach(file => {
-      if (file.charAt(3) == 1 || file.charAt(4) == 1) {
+			if (file.indexOf('.1') >= 0) {
         req.session.images.push(file);
       }
     });
