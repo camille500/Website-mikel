@@ -47,8 +47,6 @@ router.post('/', function(req, res) {
 });
 
 router.get('/overview', checkForSession, getDescriptions, function(req, res) {
-	console.log('OVERVIEW');
-	jsonfile.writeFile(file, req.session.data, function(err) {})
   req.session.images = [];
   const imageFolder = 'public/dist/images'
   fs.readdir(imageFolder, (err, files) => {
@@ -158,13 +156,9 @@ function getDescriptions(req, res, next) {
   const collection = db.collection('info');
   const data = collection.find({});
   data.forEach(function(d) {
-    console.log(d);
-    console.log(d.image_id);
     req.session.data.images[d.image_id] = d.description;
   });
-  setTimeout(function() {
-    next();
-  }, 3000)
+  next();
 }
 
 router.get('/add', function(req, res) {
