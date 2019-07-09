@@ -96,7 +96,7 @@ router.post('/edit/:image', checkForSession, function(req, res) {
 
 router.get('/delete/:image', checkForSession, function(req, res) {
   let image = req.params.image;
-  let negative = image.replace("1", "2");
+  let negative = image.replace(".1", ".2");
   const imagePaths = [`public/dist/images/${image}`, `public/dist/images/${negative}`];
   imagePaths.forEach(function(image) {
     fs.unlink(image, function(error) {});
