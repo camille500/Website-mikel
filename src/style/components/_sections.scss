@@ -62,10 +62,10 @@ section {
       display: block;
     }
     @include bp-iphone5 {
-      height: 200vh;
+      height: auto;
     }
     @include bp-android {
-      height: 195vh;
+      height: auto;
     }
     .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;

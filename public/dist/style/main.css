@@ -118,10 +118,10 @@ section {
         display: block; } }
     @media only screen and (max-width: 20.313em) {
       section.__info {
-        height: 200vh; } }
+        height: auto; } }
     @media only screen and (max-width: 25em) {
       section.__info {
-        height: 195vh; } }
+        height: auto; } }
     section.__info .__title_dark {
       font-family: 'Frutiger-Bold', sans-serif;
       font-weight: 700;

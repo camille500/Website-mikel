@@ -10,7 +10,6 @@ const multer = require('multer');
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null,'public/dist/images')
-    // cb(null, 'public/uploads')
   },
   filename: function(req, file, cb) {
     cb(null, file.originalname);
@@ -31,7 +30,6 @@ router.get('/', getDescriptions, function(req, res) {
 router.post('/', function(req, res) {
   let username = req.body.username;
   let password = req.body.password;
-  console.log(username === process.env.USERNAME);
   if (username === process.env.USERNAME && password === process.env.PASSWORD) {
     req.session.auth = true;
     req.session.images = [];
@@ -48,7 +46,8 @@ router.post('/', function(req, res) {
   }
 });
 
-router.get('/overview', checkForSession, function(req, res) {
+router.get('/overview', checkForSession, getDescriptions, function(req, res) {
+	jsonfile.writeFile(file, req.session.data, function(err) {})
   req.session.images = [];
   const imageFolder = 'public/dist/images'
   fs.readdir(imageFolder, (err, files) => {
@@ -143,7 +142,7 @@ router.post('/upload', upload.any(), getLatest, function(req, res) {
       collection.save(data, (err, result) => {
         if (err) return console.log(err);
         console.log(`${amount} is opgeslagen`);
-        res.redirect('/admin')
+        res.redirect('/admin/overview')
       });
       console.log('Bestaat nog niet');
     }
