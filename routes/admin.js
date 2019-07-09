@@ -31,7 +31,7 @@ router.post('/', function(req, res) {
   let username = req.body.username;
   let password = req.body.password;
   if (username === process.env.USERNAME && password === process.env.PASSWORD) {
-    // req.session.auth = true;
+    req.session.auth = true;
     // req.session.images = [];
     // const imageFolder = 'public/dist/images'
     // fs.readdir(imageFolder, (err, files) => {
