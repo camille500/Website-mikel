@@ -40,6 +40,7 @@ router.post('/', function(req, res) {
           req.session.images.push(file);
         }
       });
+			console.log(req.session.images);
       res.locals.images = req.session.images;
       res.render('admin/overview');
     });
