@@ -47,6 +47,7 @@ router.post('/', function(req, res) {
 });
 
 router.get('/overview', checkForSession, getDescriptions, function(req, res) {
+	console.log('OVERVIEW');
 	jsonfile.writeFile(file, req.session.data, function(err) {})
   req.session.images = [];
   const imageFolder = 'public/dist/images'
