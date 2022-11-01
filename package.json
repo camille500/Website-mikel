@@ -33,7 +33,7 @@
     "request": "^2.81.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-imagemin": "^3.3.0",
     "gulp-sass": "^3.1.0",
     "nodemon": "^1.11.0"
